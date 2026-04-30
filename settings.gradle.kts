@@ -14,10 +14,10 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven("https://jitpack.io")
-        maven("https://maven.pkg.github.com/REPLACE_WITH_GITHUB_USERNAME/Carnival-SDK") {
+        maven("https://maven.pkg.github.com/lmjoshi-mp/Carnival-SDK") {
             credentials {
-                username = System.getenv("GITHUB_ACTOR") ?: project.findProperty("gpr.user") as String?
-                password = System.getenv("GITHUB_TOKEN") ?: project.findProperty("gpr.key") as String?
+                username = System.getenv("GITHUB_ACTOR") ?: providers.gradleProperty("gpr.user").getOrNull()
+                password = System.getenv("GITHUB_TOKEN") ?: providers.gradleProperty("gpr.key").getOrNull()
             }
         }
     }

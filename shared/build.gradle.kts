@@ -110,14 +110,14 @@ publishing {
     publications {
         getByName<MavenPublication>("kotlinMultiplatform") {
             artifactId = "shared"
-            groupId = "com.github.REPLACE_WITH_GITHUB_USERNAME.Carnival-SDK"
+            groupId = "com.github.lmjoshi-mp.Carnival-SDK"
             version = "1.0.0"
         }
     }
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/REPLACE_WITH_GITHUB_USERNAME/Carnival-SDK")
+            url = uri("https://maven.pkg.github.com/lmjoshi-mp/Carnival-SDK")
             credentials {
                 username = System.getenv("GITHUB_ACTOR") ?: project.findProperty("gpr.user") as String?
                 password = System.getenv("GITHUB_TOKEN") ?: project.findProperty("gpr.key") as String?

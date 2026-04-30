@@ -46,7 +46,7 @@ dependencies {
         .orElse(false)
         .get()
     val sharedLibCoordinate = providers.gradleProperty("sharedLibCoordinate")
-        .orElse("com.github.REPLACE_WITH_GITHUB_USERNAME.Carnival-SDK:shared:REPLACE_WITH_TAG")
+        .orElse("com.github.lmjoshi-mp.Carnival-SDK:shared:REPLACE_WITH_TAG")
         .get()
 
     if (useLocalShared) {
