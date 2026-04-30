@@ -80,7 +80,7 @@ Current scope: shared<span class="separator">|</span>    <a href="../../index.ht
     100%
   </span>
   <span class="absValue">
-    (84/84)
+    (77/77)
   </span>
 </td>
 </tr>
@@ -98,15 +98,17 @@ Current scope: shared<span class="separator">|</span>    <a href="../../index.ht
 &nbsp;import com.carnival.sdk.core.database.LocalStore
 &nbsp;import com.carnival.sdk.core.dispatcher.DefaultDispatcherProvider
 &nbsp;import com.carnival.sdk.core.dispatcher.DispatcherProvider
-&nbsp;import com.carnival.sdk.core.network.MutableNetworkMonitor
 &nbsp;import com.carnival.sdk.core.network.NetworkMonitor
+&nbsp;import com.carnival.sdk.core.network.createPlatformNetworkMonitor
 &nbsp;import com.carnival.sdk.core.network.createCruiseHttpClient
-&nbsp;import com.carnival.sdk.core.util.InMemorySecureTokenStore
+&nbsp;import com.carnival.sdk.core.platform.createDeviceInfoProvider
+&nbsp;import com.carnival.sdk.core.logging.createPlatformLogger
 &nbsp;import com.carnival.sdk.core.util.JsonCodec
 &nbsp;import com.carnival.sdk.core.util.ResultState
 &nbsp;import com.carnival.sdk.core.util.SecureTokenStore
 &nbsp;import com.carnival.sdk.core.util.SystemTimeProvider
 &nbsp;import com.carnival.sdk.core.util.TimeProvider
+&nbsp;import com.carnival.sdk.core.util.createSecureTokenStore
 &nbsp;import com.carnival.sdk.data.cache.CachePolicy
 &nbsp;import com.carnival.sdk.data.local.CruiseLocalDataSource
 &nbsp;import com.carnival.sdk.data.repository.AuthRepositoryImpl
@@ -140,9 +142,9 @@ Current scope: shared<span class="separator">|</span>    <a href="../../index.ht
 &nbsp;data class CruiseSDKConfig(
 <b class="fc">&nbsp;    val baseUrl: String,</b>
 <b class="fc">&nbsp;    val enableNetworkLogs: Boolean = false,</b>
-<b class="fc">&nbsp;    val networkMonitor: NetworkMonitor = MutableNetworkMonitor(initialOnline = true),</b>
+<b class="fc">&nbsp;    val networkMonitor: NetworkMonitor = createPlatformNetworkMonitor(),</b>
 <b class="fc">&nbsp;    val localStore: LocalStore = InMemoryLocalStore(),</b>
-<b class="fc">&nbsp;    val secureTokenStore: SecureTokenStore = InMemorySecureTokenStore(),</b>
+<b class="fc">&nbsp;    val secureTokenStore: SecureTokenStore = createSecureTokenStore(),</b>
 <b class="fc">&nbsp;    val dispatcherProvider: DispatcherProvider = DefaultDispatcherProvider(),</b>
 <b class="fc">&nbsp;    val pollingIntervalMillis: Long = 5_000L,</b>
 <b class="fc">&nbsp;    val timeProvider: TimeProvider = SystemTimeProvider(),</b>
@@ -235,6 +237,7 @@ Current scope: shared<span class="separator">|</span>    <a href="../../index.ht
 &nbsp;}
 &nbsp;
 &nbsp;private class SDKComponents(config: CruiseSDKConfig) {
+&nbsp;    private val logger = createPlatformLogger(&quot;CruiseSDK&quot;)
 &nbsp;    private val scope = config.externalScope ?: CoroutineScope(SupervisorJob() + config.dispatcherProvider.io)
 &nbsp;    private val httpClient = config.httpClient ?: createCruiseHttpClient(config.enableNetworkLogs)
 &nbsp;    private val jsonCodec = JsonCodec()
@@ -317,6 +320,8 @@ Current scope: shared<span class="separator">|</span>    <a href="../../index.ht
 &nbsp;    val syncApi = SyncApi(triggerSyncUseCase)
 &nbsp;
 &nbsp;    fun start() {
+&nbsp;        val info = createDeviceInfoProvider().getDeviceInfo()
+&nbsp;        logger.i(&quot;Initializing on ${info.platform} ${info.osVersion} (${info.deviceModel})&quot;)
 &nbsp;        syncEngine.start(scope)
 &nbsp;    }
 &nbsp;
@@ -348,7 +353,7 @@ Current scope: shared<span class="separator">|</span>    <a href="../../index.ht
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2026-04-16 18:16</div>
+    <div style="float:right;">generated on 2026-04-30 22:40</div>
 </div>
 </body>
 </html>

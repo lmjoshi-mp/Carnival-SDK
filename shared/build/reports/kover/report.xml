@@ -17,6 +17,28 @@
 <counter type="LINE" missed="0" covered="4"/>
 <counter type="METHOD" missed="0" covered="2"/>
 </class>
+<class name="com/carnival/sdk/core/network/NetworkMonitorFactory_androidKt" sourcefilename="NetworkMonitorFactory.android.kt">
+<method name="createPlatformNetworkMonitor" desc="()Lcom/carnival/sdk/core/network/NetworkMonitor;">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="com/carnival/sdk/core/network/NetworkMonitorFactory_jvmKt" sourcefilename="NetworkMonitorFactory.jvm.kt">
+<method name="createPlatformNetworkMonitor" desc="()Lcom/carnival/sdk/core/network/NetworkMonitor;">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
 <sourcefile name="NetworkMonitor.kt">
 <line nr="11" mi="0" ci="11" mb="0" cb="0"/>
 <line nr="12" mi="0" ci="5" mb="0" cb="0"/>
@@ -26,221 +48,23 @@
 <counter type="BRANCH" missed="0" covered="0"/>
 <counter type="LINE" missed="0" covered="4"/>
 </sourcefile>
-<counter type="INSTRUCTION" missed="0" covered="28"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="4"/>
-<counter type="METHOD" missed="0" covered="2"/>
-<counter type="CLASS" missed="0" covered="1"/>
-</package>
-<package name="com/carnival/sdk/domain/usecase">
-<class name="com/carnival/sdk/domain/usecase/FetchItineraryUseCase" sourcefilename="UseCases.kt">
-<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/domain/repository/ItineraryRepository;)V">
+<sourcefile name="NetworkMonitorFactory.jvm.kt">
+<line nr="3" mi="0" ci="5" mb="0" cb="0"/>
 <counter type="INSTRUCTION" missed="0" covered="5"/>
 <counter type="BRANCH" missed="0" covered="0"/>
 <counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="invoke" desc="(II)Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="0" covered="5"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="10"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-<counter type="METHOD" missed="0" covered="2"/>
-</class>
-<class name="com/carnival/sdk/domain/usecase/FetchPreferencesUseCase" sourcefilename="UseCases.kt">
-<method name="invoke" desc="(Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="0" covered="4"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/domain/repository/PreferencesRepository;)V">
-<counter type="INSTRUCTION" missed="0" covered="5"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="9"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-<counter type="METHOD" missed="0" covered="2"/>
-</class>
-<class name="com/carnival/sdk/domain/usecase/GetCachedSessionUseCase" sourcefilename="UseCases.kt">
-<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/domain/repository/AuthRepository;)V">
-<counter type="INSTRUCTION" missed="0" covered="5"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="invoke" desc="()Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="0" covered="3"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="8"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-<counter type="METHOD" missed="0" covered="2"/>
-</class>
-<class name="com/carnival/sdk/domain/usecase/LoginUseCase" sourcefilename="UseCases.kt">
-<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/domain/repository/AuthRepository;)V">
-<counter type="INSTRUCTION" missed="0" covered="5"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="invoke" desc="(Ljava/lang/String;Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="0" covered="5"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="10"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-<counter type="METHOD" missed="0" covered="2"/>
-</class>
-<class name="com/carnival/sdk/domain/usecase/ObserveOrdersUseCase" sourcefilename="UseCases.kt">
-<method name="invoke" desc="(Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="0" covered="4"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/domain/repository/OrderRepository;)V">
-<counter type="INSTRUCTION" missed="0" covered="5"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="9"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-<counter type="METHOD" missed="0" covered="2"/>
-</class>
-<class name="com/carnival/sdk/domain/usecase/PlaceOrderUseCase" sourcefilename="UseCases.kt">
-<method name="invoke" desc="(Lcom/carnival/sdk/domain/model/KitchenOrder;)Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="0" covered="4"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/domain/repository/OrderRepository;)V">
-<counter type="INSTRUCTION" missed="0" covered="5"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="9"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-<counter type="METHOD" missed="0" covered="2"/>
-</class>
-<class name="com/carnival/sdk/domain/usecase/ReceiveMessagesUseCase" sourcefilename="UseCases.kt">
-<method name="invoke" desc="(Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="0" covered="4"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/domain/repository/ChatRepository;)V">
-<counter type="INSTRUCTION" missed="0" covered="5"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="9"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-<counter type="METHOD" missed="0" covered="2"/>
-</class>
-<class name="com/carnival/sdk/domain/usecase/SavePreferencesUseCase" sourcefilename="UseCases.kt">
-<method name="invoke" desc="(Lcom/carnival/sdk/domain/model/UserPreferences;)Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="0" covered="4"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/domain/repository/PreferencesRepository;)V">
-<counter type="INSTRUCTION" missed="0" covered="5"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="9"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-<counter type="METHOD" missed="0" covered="2"/>
-</class>
-<class name="com/carnival/sdk/domain/usecase/SendMessageUseCase" sourcefilename="UseCases.kt">
-<method name="invoke" desc="(Lcom/carnival/sdk/domain/model/ChatMessage;)Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="0" covered="4"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/domain/repository/ChatRepository;)V">
-<counter type="INSTRUCTION" missed="0" covered="5"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="9"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-<counter type="METHOD" missed="0" covered="2"/>
-</class>
-<class name="com/carnival/sdk/domain/usecase/TriggerSyncUseCase" sourcefilename="UseCases.kt">
-<method name="invoke" desc="()Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="0" covered="3"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/domain/repository/SyncRepository;)V">
-<counter type="INSTRUCTION" missed="0" covered="5"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="8"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-<counter type="METHOD" missed="0" covered="2"/>
-</class>
-<class name="com/carnival/sdk/domain/usecase/UpdateOrderStatusUseCase" sourcefilename="UseCases.kt">
-<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/domain/repository/OrderRepository;)V">
-<counter type="INSTRUCTION" missed="0" covered="5"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="invoke" desc="(Ljava/lang/String;Lcom/carnival/sdk/domain/model/OrderStatus;)Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="0" covered="5"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="10"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-<counter type="METHOD" missed="0" covered="2"/>
-</class>
-<sourcefile name="UseCases.kt">
-<line nr="18" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="20" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="23" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="24" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="27" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="29" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="32" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="34" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="37" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="39" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="42" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="44" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="47" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="49" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="52" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="54" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="57" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="59" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="62" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="64" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="67" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="68" mi="0" ci="3" mb="0" cb="0"/>
-<counter type="INSTRUCTION" missed="0" covered="100"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="22"/>
 </sourcefile>
-<counter type="INSTRUCTION" missed="0" covered="100"/>
+<sourcefile name="NetworkMonitorFactory.android.kt">
+<line nr="3" mi="0" ci="5" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="0" covered="5"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="22"/>
-<counter type="METHOD" missed="0" covered="22"/>
-<counter type="CLASS" missed="0" covered="11"/>
+<counter type="LINE" missed="0" covered="1"/>
+</sourcefile>
+<counter type="INSTRUCTION" missed="0" covered="38"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="6"/>
+<counter type="METHOD" missed="0" covered="4"/>
+<counter type="CLASS" missed="0" covered="3"/>
 </package>
 <package name="com/carnival/sdk/core/dispatcher">
 <class name="com/carnival/sdk/core/dispatcher/DefaultDispatcherProvider" sourcefilename="DispatcherProvider.kt">
@@ -267,810 +91,6 @@
 <counter type="LINE" missed="0" covered="3"/>
 <counter type="METHOD" missed="0" covered="1"/>
 <counter type="CLASS" missed="0" covered="1"/>
-</package>
-<package name="com/carnival/sdk/data/repository">
-<class name="com/carnival/sdk/data/repository/AuthRepositoryImpl" sourcefilename="RepositoryImpl.kt">
-<method name="login" desc="(Ljava/lang/String;Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="0" covered="14"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-</method>
-<method name="getCachedSession" desc="()Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="0" covered="12"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-</method>
-<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/data/remote/CruiseRemoteDataSource;Lcom/carnival/sdk/data/local/CruiseLocalDataSource;Lcom/carnival/sdk/core/network/NetworkMonitor;Lcom/carnival/sdk/core/util/SecureTokenStore;Lcom/carnival/sdk/core/dispatcher/DispatcherProvider;)V">
-<counter type="INSTRUCTION" missed="0" covered="17"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="6"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="43"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="10"/>
-<counter type="METHOD" missed="0" covered="3"/>
-</class>
-<class name="com/carnival/sdk/data/repository/AuthRepositoryImpl$getCachedSession$1" sourcefilename="RepositoryImpl.kt">
-<method name="invokeSuspend" desc="(Ljava/lang/Object;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="0" covered="51"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="51"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-<counter type="METHOD" missed="0" covered="1"/>
-</class>
-<class name="com/carnival/sdk/data/repository/AuthRepositoryImpl$login$1" sourcefilename="RepositoryImpl.kt">
-<method name="invokeSuspend" desc="(Ljava/lang/Object;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="58" covered="183"/>
-<counter type="BRANCH" missed="5" covered="5"/>
-<counter type="LINE" missed="3" covered="10"/>
-</method>
-<counter type="INSTRUCTION" missed="58" covered="183"/>
-<counter type="BRANCH" missed="5" covered="5"/>
-<counter type="LINE" missed="3" covered="10"/>
-<counter type="METHOD" missed="0" covered="1"/>
-</class>
-<class name="com/carnival/sdk/data/repository/ChatRepositoryImpl" sourcefilename="RepositoryImpl.kt">
-<method name="receiveMessages" desc="(Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="0" covered="13"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-</method>
-<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/data/remote/CruiseRemoteDataSource;Lcom/carnival/sdk/data/local/CruiseLocalDataSource;Lcom/carnival/sdk/core/network/NetworkMonitor;Lcom/carnival/sdk/core/util/SecureTokenStore;Lcom/carnival/sdk/core/util/JsonCodec;Lcom/carnival/sdk/core/dispatcher/DispatcherProvider;J)V">
-<counter type="INSTRUCTION" missed="0" covered="23"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="7"/>
-</method>
-<method name="sendMessage" desc="(Lcom/carnival/sdk/domain/model/ChatMessage;)Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="0" covered="13"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="49"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="11"/>
-<counter type="METHOD" missed="0" covered="3"/>
-</class>
-<class name="com/carnival/sdk/data/repository/ChatRepositoryImpl$receiveMessages$1" sourcefilename="RepositoryImpl.kt">
-<method name="invokeSuspend" desc="(Ljava/lang/Object;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="0" covered="115"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="5"/>
-</method>
-<method name="invokeSuspend$lambda$0" desc="(Lkotlinx/coroutines/Job;Lkotlinx/coroutines/Job;)Lkotlin/Unit;">
-<counter type="INSTRUCTION" missed="0" covered="10"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="125"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="7"/>
-<counter type="METHOD" missed="0" covered="2"/>
-</class>
-<class name="com/carnival/sdk/data/repository/ChatRepositoryImpl$receiveMessages$1$localJob$1" sourcefilename="RepositoryImpl.kt">
-<method name="invokeSuspend" desc="(Ljava/lang/Object;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="21" covered="0"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="1" covered="0"/>
-</method>
-<counter type="INSTRUCTION" missed="21" covered="0"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="1" covered="0"/>
-<counter type="METHOD" missed="1" covered="0"/>
-</class>
-<class name="com/carnival/sdk/data/repository/ChatRepositoryImpl$receiveMessages$1$localJob$1$1" sourcefilename="RepositoryImpl.kt">
-<method name="emit" desc="(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="13" covered="0"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="1" covered="0"/>
-</method>
-<counter type="INSTRUCTION" missed="13" covered="0"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="1" covered="0"/>
-<counter type="METHOD" missed="1" covered="0"/>
-</class>
-<class name="com/carnival/sdk/data/repository/ChatRepositoryImpl$receiveMessages$1$pollingJob$1" sourcefilename="RepositoryImpl.kt">
-<method name="invokeSuspend" desc="(Ljava/lang/Object;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="28" covered="63"/>
-<counter type="BRANCH" missed="3" covered="3"/>
-<counter type="LINE" missed="1" covered="6"/>
-</method>
-<counter type="INSTRUCTION" missed="28" covered="63"/>
-<counter type="BRANCH" missed="3" covered="3"/>
-<counter type="LINE" missed="1" covered="6"/>
-<counter type="METHOD" missed="0" covered="1"/>
-</class>
-<class name="com/carnival/sdk/data/repository/ChatRepositoryImpl$sendMessage$1" sourcefilename="RepositoryImpl.kt">
-<method name="invokeSuspend" desc="(Ljava/lang/Object;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="57" covered="216"/>
-<counter type="BRANCH" missed="1" covered="3"/>
-<counter type="LINE" missed="2" covered="11"/>
-</method>
-<counter type="INSTRUCTION" missed="57" covered="216"/>
-<counter type="BRANCH" missed="1" covered="3"/>
-<counter type="LINE" missed="2" covered="11"/>
-<counter type="METHOD" missed="0" covered="1"/>
-</class>
-<class name="com/carnival/sdk/data/repository/ItineraryRepositoryImpl" sourcefilename="RepositoryImpl.kt">
-<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/data/remote/CruiseRemoteDataSource;Lcom/carnival/sdk/data/local/CruiseLocalDataSource;Lcom/carnival/sdk/core/network/NetworkMonitor;Lcom/carnival/sdk/core/util/SecureTokenStore;Lcom/carnival/sdk/data/cache/CachePolicy;Lcom/carnival/sdk/core/dispatcher/DispatcherProvider;)V">
-<counter type="INSTRUCTION" missed="0" covered="20"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="7"/>
-</method>
-<method name="fetchItinerary" desc="(II)Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="0" covered="14"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="34"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="9"/>
-<counter type="METHOD" missed="0" covered="2"/>
-</class>
-<class name="com/carnival/sdk/data/repository/ItineraryRepositoryImpl$fetchItinerary$1" sourcefilename="RepositoryImpl.kt">
-<method name="invokeSuspend" desc="(Ljava/lang/Object;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="28" covered="184"/>
-<counter type="BRANCH" missed="3" covered="3"/>
-<counter type="LINE" missed="1" covered="10"/>
-</method>
-<counter type="INSTRUCTION" missed="28" covered="184"/>
-<counter type="BRANCH" missed="3" covered="3"/>
-<counter type="LINE" missed="1" covered="10"/>
-<counter type="METHOD" missed="0" covered="1"/>
-</class>
-<class name="com/carnival/sdk/data/repository/OrderRepositoryImpl" sourcefilename="RepositoryImpl.kt">
-<method name="observeOrders" desc="(Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="0" covered="13"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-</method>
-<method name="updateOrderStatus" desc="(Ljava/lang/String;Lcom/carnival/sdk/domain/model/OrderStatus;)Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="0" covered="14"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-</method>
-<method name="placeOrder" desc="(Lcom/carnival/sdk/domain/model/KitchenOrder;)Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="0" covered="13"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-</method>
-<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/data/remote/CruiseRemoteDataSource;Lcom/carnival/sdk/data/local/CruiseLocalDataSource;Lcom/carnival/sdk/core/network/NetworkMonitor;Lcom/carnival/sdk/core/util/SecureTokenStore;Lcom/carnival/sdk/core/util/JsonCodec;Lcom/carnival/sdk/core/dispatcher/DispatcherProvider;)V">
-<counter type="INSTRUCTION" missed="0" covered="20"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="7"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="60"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="13"/>
-<counter type="METHOD" missed="0" covered="4"/>
-</class>
-<class name="com/carnival/sdk/data/repository/OrderRepositoryImpl$observeOrders$1" sourcefilename="RepositoryImpl.kt">
-<method name="invokeSuspend" desc="(Ljava/lang/Object;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="0" covered="83"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="3"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="83"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="3"/>
-<counter type="METHOD" missed="0" covered="1"/>
-</class>
-<class name="com/carnival/sdk/data/repository/OrderRepositoryImpl$observeOrders$1$1" sourcefilename="RepositoryImpl.kt">
-<method name="emit" desc="(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="13" covered="0"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="1" covered="0"/>
-</method>
-<counter type="INSTRUCTION" missed="13" covered="0"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="1" covered="0"/>
-<counter type="METHOD" missed="1" covered="0"/>
-</class>
-<class name="com/carnival/sdk/data/repository/OrderRepositoryImpl$placeOrder$1" sourcefilename="RepositoryImpl.kt">
-<method name="invokeSuspend" desc="(Ljava/lang/Object;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="107" covered="213"/>
-<counter type="BRANCH" missed="1" covered="3"/>
-<counter type="LINE" missed="4" covered="10"/>
-</method>
-<counter type="INSTRUCTION" missed="107" covered="213"/>
-<counter type="BRANCH" missed="1" covered="3"/>
-<counter type="LINE" missed="4" covered="10"/>
-<counter type="METHOD" missed="0" covered="1"/>
-</class>
-<class name="com/carnival/sdk/data/repository/OrderRepositoryImpl$updateOrderStatus$1" sourcefilename="RepositoryImpl.kt">
-<method name="invokeSuspend" desc="(Ljava/lang/Object;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="128" covered="221"/>
-<counter type="BRANCH" missed="2" covered="4"/>
-<counter type="LINE" missed="5" covered="12"/>
-</method>
-<counter type="INSTRUCTION" missed="128" covered="221"/>
-<counter type="BRANCH" missed="2" covered="4"/>
-<counter type="LINE" missed="5" covered="12"/>
-<counter type="METHOD" missed="0" covered="1"/>
-</class>
-<class name="com/carnival/sdk/data/repository/PreferencesRepositoryImpl" sourcefilename="RepositoryImpl.kt">
-<method name="fetchPreferences" desc="(Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="0" covered="13"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-</method>
-<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/data/remote/CruiseRemoteDataSource;Lcom/carnival/sdk/data/local/CruiseLocalDataSource;Lcom/carnival/sdk/core/network/NetworkMonitor;Lcom/carnival/sdk/core/util/SecureTokenStore;Lcom/carnival/sdk/core/util/JsonCodec;Lcom/carnival/sdk/core/dispatcher/DispatcherProvider;)V">
-<counter type="INSTRUCTION" missed="0" covered="20"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="7"/>
-</method>
-<method name="savePreferences" desc="(Lcom/carnival/sdk/domain/model/UserPreferences;)Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="0" covered="13"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="46"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="11"/>
-<counter type="METHOD" missed="0" covered="3"/>
-</class>
-<class name="com/carnival/sdk/data/repository/PreferencesRepositoryImpl$fetchPreferences$1" sourcefilename="RepositoryImpl.kt">
-<method name="invokeSuspend" desc="(Ljava/lang/Object;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="28" covered="140"/>
-<counter type="BRANCH" missed="2" covered="2"/>
-<counter type="LINE" missed="1" covered="8"/>
-</method>
-<counter type="INSTRUCTION" missed="28" covered="140"/>
-<counter type="BRANCH" missed="2" covered="2"/>
-<counter type="LINE" missed="1" covered="8"/>
-<counter type="METHOD" missed="0" covered="1"/>
-</class>
-<class name="com/carnival/sdk/data/repository/PreferencesRepositoryImpl$savePreferences$1" sourcefilename="RepositoryImpl.kt">
-<method name="invokeSuspend" desc="(Ljava/lang/Object;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="78" covered="186"/>
-<counter type="BRANCH" missed="1" covered="3"/>
-<counter type="LINE" missed="3" covered="10"/>
-</method>
-<counter type="INSTRUCTION" missed="78" covered="186"/>
-<counter type="BRANCH" missed="1" covered="3"/>
-<counter type="LINE" missed="3" covered="10"/>
-<counter type="METHOD" missed="0" covered="1"/>
-</class>
-<sourcefile name="RepositoryImpl.kt">
-<line nr="40" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="41" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="42" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="43" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="44" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="45" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="47" mi="0" ci="9" mb="0" cb="0"/>
-<line nr="48" mi="0" ci="14" mb="0" cb="0"/>
-<line nr="49" mi="0" ci="16" mb="0" cb="0"/>
-<line nr="51" mi="0" ci="8" mb="0" cb="2"/>
-<line nr="52" mi="0" ci="5" mb="1" cb="3"/>
-<line nr="53" mi="0" ci="19" mb="0" cb="0"/>
-<line nr="55" mi="0" ci="24" mb="0" cb="0"/>
-<line nr="61" mi="0" ci="25" mb="0" cb="0"/>
-<line nr="62" mi="0" ci="22" mb="0" cb="0"/>
-<line nr="63" mi="0" ci="24" mb="0" cb="0"/>
-<line nr="64" mi="0" ci="26" mb="0" cb="0"/>
-<line nr="66" mi="5" ci="0" mb="4" cb="0"/>
-<line nr="67" mi="25" ci="0" mb="0" cb="0"/>
-<line nr="69" mi="28" ci="0" mb="0" cb="0"/>
-<line nr="72" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="74" mi="0" ci="7" mb="0" cb="0"/>
-<line nr="75" mi="0" ci="14" mb="0" cb="0"/>
-<line nr="76" mi="0" ci="37" mb="0" cb="0"/>
-<line nr="77" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="80" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="81" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="82" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="83" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="84" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="85" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="86" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="88" mi="0" ci="8" mb="0" cb="0"/>
-<line nr="89" mi="0" ci="14" mb="0" cb="0"/>
-<line nr="90" mi="0" ci="18" mb="0" cb="0"/>
-<line nr="91" mi="0" ci="19" mb="0" cb="0"/>
-<line nr="92" mi="2" ci="23" mb="1" cb="1"/>
-<line nr="93" mi="23" ci="0" mb="0" cb="0"/>
-<line nr="97" mi="0" ci="10" mb="0" cb="0"/>
-<line nr="98" mi="0" ci="8" mb="0" cb="2"/>
-<line nr="99" mi="0" ci="21" mb="0" cb="0"/>
-<line nr="104" mi="0" ci="25" mb="0" cb="0"/>
-<line nr="105" mi="0" ci="22" mb="0" cb="0"/>
-<line nr="106" mi="0" ci="26" mb="0" cb="0"/>
-<line nr="108" mi="27" ci="0" mb="0" cb="0"/>
-<line nr="109" mi="26" ci="0" mb="0" cb="0"/>
-<line nr="111" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="113" mi="0" ci="8" mb="0" cb="0"/>
-<line nr="114" mi="0" ci="14" mb="0" cb="0"/>
-<line nr="115" mi="0" ci="18" mb="0" cb="0"/>
-<line nr="116" mi="0" ci="17" mb="0" cb="0"/>
-<line nr="117" mi="1" ci="9" mb="1" cb="1"/>
-<line nr="118" mi="2" ci="19" mb="1" cb="1"/>
-<line nr="120" mi="0" ci="21" mb="0" cb="0"/>
-<line nr="121" mi="0" ci="19" mb="0" cb="0"/>
-<line nr="122" mi="0" ci="23" mb="0" cb="0"/>
-<line nr="124" mi="25" ci="0" mb="0" cb="0"/>
-<line nr="126" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="129" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="130" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="131" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="132" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="133" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="134" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="135" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="137" mi="0" ci="9" mb="0" cb="0"/>
-<line nr="138" mi="0" ci="14" mb="0" cb="0"/>
-<line nr="139" mi="0" ci="20" mb="0" cb="0"/>
-<line nr="140" mi="0" ci="17" mb="0" cb="0"/>
-<line nr="142" mi="1" ci="14" mb="2" cb="2"/>
-<line nr="143" mi="2" ci="19" mb="1" cb="1"/>
-<line nr="146" mi="0" ci="20" mb="0" cb="0"/>
-<line nr="147" mi="0" ci="11" mb="0" cb="0"/>
-<line nr="148" mi="0" ci="16" mb="0" cb="0"/>
-<line nr="149" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="150" mi="0" ci="48" mb="0" cb="0"/>
-<line nr="152" mi="25" ci="0" mb="0" cb="0"/>
-<line nr="154" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="157" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="158" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="159" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="160" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="161" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="162" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="163" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="165" mi="0" ci="8" mb="0" cb="0"/>
-<line nr="166" mi="0" ci="14" mb="0" cb="0"/>
-<line nr="167" mi="0" ci="29" mb="0" cb="0"/>
-<line nr="168" mi="0" ci="30" mb="0" cb="0"/>
-<line nr="170" mi="0" ci="11" mb="0" cb="0"/>
-<line nr="171" mi="0" ci="8" mb="0" cb="2"/>
-<line nr="172" mi="0" ci="21" mb="0" cb="0"/>
-<line nr="176" mi="9" ci="26" mb="1" cb="1"/>
-<line nr="177" mi="21" ci="0" mb="0" cb="0"/>
-<line nr="178" mi="24" ci="0" mb="0" cb="0"/>
-<line nr="183" mi="0" ci="26" mb="0" cb="0"/>
-<line nr="184" mi="0" ci="22" mb="0" cb="0"/>
-<line nr="185" mi="0" ci="26" mb="0" cb="0"/>
-<line nr="187" mi="27" ci="0" mb="0" cb="0"/>
-<line nr="188" mi="26" ci="0" mb="0" cb="0"/>
-<line nr="190" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="192" mi="0" ci="9" mb="0" cb="0"/>
-<line nr="193" mi="0" ci="14" mb="0" cb="0"/>
-<line nr="194" mi="0" ci="21" mb="0" cb="0"/>
-<line nr="195" mi="0" ci="18" mb="0" cb="0"/>
-<line nr="196" mi="0" ci="2" mb="0" cb="2"/>
-<line nr="197" mi="0" ci="26" mb="0" cb="0"/>
-<line nr="200" mi="0" ci="20" mb="0" cb="0"/>
-<line nr="202" mi="0" ci="10" mb="0" cb="0"/>
-<line nr="203" mi="0" ci="8" mb="1" cb="1"/>
-<line nr="204" mi="23" ci="0" mb="0" cb="0"/>
-<line nr="208" mi="9" ci="26" mb="1" cb="1"/>
-<line nr="209" mi="20" ci="0" mb="0" cb="0"/>
-<line nr="210" mi="24" ci="0" mb="0" cb="0"/>
-<line nr="215" mi="0" ci="28" mb="0" cb="0"/>
-<line nr="216" mi="0" ci="22" mb="0" cb="0"/>
-<line nr="217" mi="0" ci="26" mb="0" cb="0"/>
-<line nr="219" mi="26" ci="0" mb="0" cb="0"/>
-<line nr="220" mi="26" ci="0" mb="0" cb="0"/>
-<line nr="222" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="224" mi="0" ci="8" mb="0" cb="0"/>
-<line nr="225" mi="0" ci="14" mb="0" cb="0"/>
-<line nr="226" mi="0" ci="45" mb="0" cb="0"/>
-<line nr="227" mi="0" ci="24" mb="0" cb="0"/>
-<line nr="228" mi="13" ci="0" mb="0" cb="0"/>
-<line nr="230" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="234" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="235" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="236" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="237" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="238" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="239" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="240" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="242" mi="0" ci="8" mb="0" cb="0"/>
-<line nr="243" mi="0" ci="14" mb="0" cb="0"/>
-<line nr="244" mi="0" ci="14" mb="0" cb="0"/>
-<line nr="245" mi="0" ci="19" mb="0" cb="0"/>
-<line nr="246" mi="0" ci="21" mb="0" cb="0"/>
-<line nr="247" mi="0" ci="10" mb="0" cb="0"/>
-<line nr="249" mi="0" ci="8" mb="0" cb="2"/>
-<line nr="250" mi="0" ci="23" mb="0" cb="0"/>
-<line nr="253" mi="2" ci="25" mb="1" cb="1"/>
-<line nr="256" mi="0" ci="28" mb="0" cb="0"/>
-<line nr="257" mi="0" ci="25" mb="0" cb="0"/>
-<line nr="258" mi="0" ci="29" mb="0" cb="0"/>
-<line nr="260" mi="29" ci="0" mb="0" cb="0"/>
-<line nr="261" mi="26" ci="0" mb="0" cb="0"/>
-<line nr="263" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="265" mi="0" ci="8" mb="0" cb="0"/>
-<line nr="266" mi="0" ci="14" mb="0" cb="0"/>
-<line nr="267" mi="0" ci="45" mb="0" cb="0"/>
-<line nr="269" mi="0" ci="19" mb="0" cb="0"/>
-<line nr="270" mi="21" ci="0" mb="0" cb="0"/>
-<line nr="271" mi="13" ci="0" mb="0" cb="0"/>
-<line nr="275" mi="0" ci="21" mb="0" cb="0"/>
-<line nr="276" mi="0" ci="3" mb="1" cb="1"/>
-<line nr="277" mi="0" ci="8" mb="1" cb="1"/>
-<line nr="278" mi="0" ci="15" mb="0" cb="0"/>
-<line nr="279" mi="0" ci="2" mb="1" cb="1"/>
-<line nr="281" mi="0" ci="18" mb="0" cb="0"/>
-<line nr="282" mi="28" ci="0" mb="0" cb="0"/>
-<line nr="288" mi="0" ci="17" mb="0" cb="0"/>
-<line nr="292" mi="0" ci="16" mb="0" cb="0"/>
-<line nr="293" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="294" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="296" mi="0" ci="5" mb="0" cb="0"/>
-<counter type="INSTRUCTION" missed="559" covered="1897"/>
-<counter type="BRANCH" missed="18" covered="26"/>
-<counter type="LINE" missed="23" covered="143"/>
-</sourcefile>
-<counter type="INSTRUCTION" missed="559" covered="1897"/>
-<counter type="BRANCH" missed="18" covered="26"/>
-<counter type="LINE" missed="23" covered="143"/>
-<counter type="METHOD" missed="3" covered="27"/>
-<counter type="CLASS" missed="3" covered="16"/>
-</package>
-<package name="com/carnival/sdk/data/local">
-<class name="com/carnival/sdk/data/local/CruiseLocalDataSource" sourcefilename="CruiseLocalDataSource.kt">
-<method name="getSession" desc="(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="0" covered="4"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="updateOrderStatus" desc="(Ljava/lang/String;Lcom/carnival/sdk/domain/model/OrderStatus;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="0" covered="57"/>
-<counter type="BRANCH" missed="0" covered="2"/>
-<counter type="LINE" missed="0" covered="6"/>
-</method>
-<method name="enqueueSync" desc="(Ljava/lang/String;Ljava/lang/String;Lcom/carnival/sdk/domain/model/SyncOperationType;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="0" covered="25"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="11"/>
-</method>
-<method name="getSyncQueue" desc="(Lcom/carnival/sdk/data/local/CruiseLocalDataSource;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="0" covered="15"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="saveOrder" desc="(Lcom/carnival/sdk/domain/model/KitchenOrder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="0" covered="10"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="getPreferences" desc="(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="0" covered="5"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/core/database/LocalStore;Lcom/carnival/sdk/core/util/TimeProvider;)V">
-<counter type="INSTRUCTION" missed="0" covered="8"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="3"/>
-</method>
-<method name="saveMessages" desc="(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="10" covered="0"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="1" covered="0"/>
-</method>
-<method name="getOrders" desc="(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="0" covered="5"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="saveSession" desc="(Lcom/carnival/sdk/domain/model/UserSession;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="0" covered="10"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="buildSyncId" desc="()Ljava/lang/String;">
-<counter type="INSTRUCTION" missed="0" covered="8"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="removeSyncItem" desc="(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="0" covered="10"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="getMessage" desc="(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="0" covered="5"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="saveItinerary" desc="(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="0" covered="10"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="getOrder" desc="(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="0" covered="5"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="updateSyncItem" desc="(Lcom/carnival/sdk/domain/model/SyncQueueItem;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="0" covered="10"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="observeOrders" desc="(Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="0" covered="4"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="saveMessage" desc="(Lcom/carnival/sdk/domain/model/ChatMessage;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="0" covered="10"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="observePreferences" desc="(Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="4" covered="0"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="1" covered="0"/>
-</method>
-<method name="observeItinerary" desc="()Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="3" covered="0"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="1" covered="0"/>
-</method>
-<method name="observeSession" desc="()Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="3" covered="0"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="1" covered="0"/>
-</method>
-<method name="getItinerary" desc="(IILkotlin/coroutines/Continuation;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="0" covered="6"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="getMessages" desc="(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="0" covered="5"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="observeMessages" desc="(Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="4" covered="0"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="1" covered="0"/>
-</method>
-<method name="markOrderPending" desc="(Ljava/lang/String;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="0" covered="51"/>
-<counter type="BRANCH" missed="0" covered="2"/>
-<counter type="LINE" missed="0" covered="2"/>
-</method>
-<method name="observeSyncQueue" desc="()Lkotlinx/coroutines/flow/Flow;">
-<counter type="INSTRUCTION" missed="3" covered="0"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="1" covered="0"/>
-</method>
-<method name="savePreferences" desc="(Lcom/carnival/sdk/domain/model/UserPreferences;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="0" covered="10"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<counter type="INSTRUCTION" missed="27" covered="273"/>
-<counter type="BRANCH" missed="0" covered="4"/>
-<counter type="LINE" missed="6" covered="39"/>
-<counter type="METHOD" missed="6" covered="21"/>
-</class>
-<sourcefile name="CruiseLocalDataSource.kt">
-<line nr="16" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="17" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="18" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="20" mi="0" ci="10" mb="0" cb="0"/>
-<line nr="21" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="22" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="24" mi="0" ci="10" mb="0" cb="0"/>
-<line nr="25" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="26" mi="4" ci="0" mb="0" cb="0"/>
-<line nr="28" mi="0" ci="10" mb="0" cb="0"/>
-<line nr="29" mi="0" ci="6" mb="0" cb="0"/>
-<line nr="30" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="32" mi="0" ci="10" mb="0" cb="0"/>
-<line nr="33" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="34" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="35" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="37" mi="0" ci="10" mb="0" cb="0"/>
-<line nr="38" mi="10" ci="0" mb="0" cb="0"/>
-<line nr="39" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="40" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="41" mi="4" ci="0" mb="0" cb="0"/>
-<line nr="49" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="50" mi="0" ci="8" mb="0" cb="0"/>
-<line nr="51" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="52" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="53" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="54" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="55" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="56" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="57" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="58" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="59" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="64" mi="0" ci="15" mb="0" cb="0"/>
-<line nr="65" mi="0" ci="10" mb="0" cb="0"/>
-<line nr="66" mi="0" ci="10" mb="0" cb="0"/>
-<line nr="67" mi="3" ci="0" mb="0" cb="0"/>
-<line nr="70" mi="0" ci="22" mb="0" cb="2"/>
-<line nr="71" mi="0" ci="29" mb="0" cb="0"/>
-<line nr="75" mi="0" ci="25" mb="0" cb="2"/>
-<line nr="76" mi="0" ci="14" mb="0" cb="0"/>
-<line nr="77" mi="0" ci="10" mb="0" cb="0"/>
-<line nr="78" mi="0" ci="1" mb="0" cb="0"/>
-<line nr="79" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="80" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="85" mi="0" ci="8" mb="0" cb="0"/>
-<counter type="INSTRUCTION" missed="27" covered="273"/>
-<counter type="BRANCH" missed="0" covered="4"/>
-<counter type="LINE" missed="6" covered="39"/>
-</sourcefile>
-<counter type="INSTRUCTION" missed="27" covered="273"/>
-<counter type="BRANCH" missed="0" covered="4"/>
-<counter type="LINE" missed="6" covered="39"/>
-<counter type="METHOD" missed="6" covered="21"/>
-<counter type="CLASS" missed="0" covered="1"/>
-</package>
-<package name="com/carnival/sdk/core/util">
-<class name="com/carnival/sdk/core/util/ExponentialBackoff" sourcefilename="SupportUtils.kt">
-<method name="&lt;init&gt;" desc="(JJ)V">
-<counter type="INSTRUCTION" missed="0" covered="10"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-</method>
-<method name="nextDelayMillis" desc="(I)J">
-<counter type="INSTRUCTION" missed="0" covered="14"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="24"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="4"/>
-<counter type="METHOD" missed="0" covered="2"/>
-</class>
-<class name="com/carnival/sdk/core/util/InMemorySecureTokenStore" sourcefilename="SupportUtils.kt">
-<method name="getToken" desc="(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="0" covered="2"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="clear" desc="(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="0" covered="3"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="&lt;init&gt;" desc="()V">
-<counter type="INSTRUCTION" missed="0" covered="2"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="saveToken" desc="(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="0" covered="3"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="10"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="4"/>
-<counter type="METHOD" missed="0" covered="4"/>
-</class>
-<class name="com/carnival/sdk/core/util/JsonCodec" sourcefilename="SupportUtils.kt">
-<method name="_init_$lambda$0" desc="(Lkotlinx/serialization/json/JsonBuilder;)Lkotlin/Unit;">
-<counter type="INSTRUCTION" missed="0" covered="6"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-</method>
-<method name="encode" desc="(Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)Ljava/lang/String;">
-<counter type="INSTRUCTION" missed="0" covered="6"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="&lt;init&gt;" desc="(Lkotlinx/serialization/json/Json;)V">
-<counter type="INSTRUCTION" missed="0" covered="9"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="decode" desc="(Lkotlinx/serialization/KSerializer;Ljava/lang/String;)Ljava/lang/Object;">
-<counter type="INSTRUCTION" missed="0" covered="6"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="27"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="5"/>
-<counter type="METHOD" missed="0" covered="4"/>
-</class>
-<class name="com/carnival/sdk/core/util/ResultState" sourcefilename="ResultState.kt">
-<method name="&lt;init&gt;" desc="()V">
-<counter type="INSTRUCTION" missed="0" covered="2"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="2"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-<counter type="METHOD" missed="0" covered="1"/>
-</class>
-<class name="com/carnival/sdk/core/util/ResultState$Error" sourcefilename="ResultState.kt">
-<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/domain/error/DomainError;)V">
-<counter type="INSTRUCTION" missed="0" covered="8"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="8"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-<counter type="METHOD" missed="0" covered="1"/>
-</class>
-<class name="com/carnival/sdk/core/util/ResultState$Loading" sourcefilename="ResultState.kt">
-<method name="&lt;init&gt;" desc="()V">
-<counter type="INSTRUCTION" missed="0" covered="3"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="3"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-<counter type="METHOD" missed="0" covered="1"/>
-</class>
-<class name="com/carnival/sdk/core/util/ResultState$Success" sourcefilename="ResultState.kt">
-<method name="&lt;init&gt;" desc="(Ljava/lang/Object;)V">
-<counter type="INSTRUCTION" missed="0" covered="8"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="8"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-<counter type="METHOD" missed="0" covered="1"/>
-</class>
-<class name="com/carnival/sdk/core/util/SystemTimeProvider" sourcefilename="SupportUtils.kt">
-<method name="&lt;init&gt;" desc="()V">
-<counter type="INSTRUCTION" missed="0" covered="2"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<method name="nowEpochMillis" desc="()J">
-<counter type="INSTRUCTION" missed="0" covered="3"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
-</method>
-<counter type="INSTRUCTION" missed="0" covered="5"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="2"/>
-<counter type="METHOD" missed="0" covered="2"/>
-</class>
-<sourcefile name="SupportUtils.kt">
-<line nr="12" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="13" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="22" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="26" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="29" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="32" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="37" mi="0" ci="9" mb="0" cb="0"/>
-<line nr="38" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="39" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="42" mi="0" ci="6" mb="0" cb="0"/>
-<line nr="44" mi="0" ci="6" mb="0" cb="0"/>
-<line nr="48" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="49" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="52" mi="0" ci="10" mb="0" cb="0"/>
-<line nr="53" mi="0" ci="4" mb="0" cb="0"/>
-<counter type="INSTRUCTION" missed="0" covered="66"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="15"/>
-</sourcefile>
-<sourcefile name="ResultState.kt">
-<line nr="5" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="6" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="7" mi="0" ci="8" mb="0" cb="0"/>
-<line nr="8" mi="0" ci="8" mb="0" cb="0"/>
-<counter type="INSTRUCTION" missed="0" covered="21"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="4"/>
-</sourcefile>
-<counter type="INSTRUCTION" missed="0" covered="87"/>
-<counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="19"/>
-<counter type="METHOD" missed="0" covered="16"/>
-<counter type="CLASS" missed="0" covered="8"/>
 </package>
 <package name="com/carnival/sdk/domain/error">
 <class name="com/carnival/sdk/domain/error/DomainError" sourcefilename="DomainError.kt">
@@ -1418,6 +438,121 @@
 <counter type="METHOD" missed="0" covered="3"/>
 <counter type="CLASS" missed="0" covered="1"/>
 </package>
+<package name="com/carnival/sdk/core/files">
+<class name="com/carnival/sdk/core/files/AndroidFileSystemProvider" sourcefilename="FileSystemProvider.android.kt">
+<method name="writeText" desc="(Ljava/lang/String;Ljava/lang/String;)V">
+<counter type="INSTRUCTION" missed="0" covered="9"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="exists" desc="(Ljava/lang/String;)Z">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="0" covered="2"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="delete" desc="(Ljava/lang/String;)Z">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="readText" desc="(Ljava/lang/String;)Ljava/lang/String;">
+<counter type="INSTRUCTION" missed="1" covered="14"/>
+<counter type="BRANCH" missed="1" covered="1"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<counter type="INSTRUCTION" missed="1" covered="35"/>
+<counter type="BRANCH" missed="1" covered="1"/>
+<counter type="LINE" missed="0" covered="6"/>
+<counter type="METHOD" missed="0" covered="5"/>
+</class>
+<class name="com/carnival/sdk/core/files/FileSystemProvider_androidKt" sourcefilename="FileSystemProvider.android.kt">
+<method name="createFileSystemProvider" desc="()Lcom/carnival/sdk/core/files/FileSystemProvider;">
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="com/carnival/sdk/core/files/FileSystemProvider_jvmKt" sourcefilename="FileSystemProvider.jvm.kt">
+<method name="createFileSystemProvider" desc="()Lcom/carnival/sdk/core/files/FileSystemProvider;">
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="com/carnival/sdk/core/files/JvmFileSystemProvider" sourcefilename="FileSystemProvider.jvm.kt">
+<method name="writeText" desc="(Ljava/lang/String;Ljava/lang/String;)V">
+<counter type="INSTRUCTION" missed="0" covered="9"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="exists" desc="(Ljava/lang/String;)Z">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="0" covered="2"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="delete" desc="(Ljava/lang/String;)Z">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="readText" desc="(Ljava/lang/String;)Ljava/lang/String;">
+<counter type="INSTRUCTION" missed="1" covered="14"/>
+<counter type="BRANCH" missed="1" covered="1"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<counter type="INSTRUCTION" missed="1" covered="35"/>
+<counter type="BRANCH" missed="1" covered="1"/>
+<counter type="LINE" missed="0" covered="6"/>
+<counter type="METHOD" missed="0" covered="5"/>
+</class>
+<sourcefile name="FileSystemProvider.jvm.kt">
+<line nr="5" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="7" mi="0" ci="9" mb="0" cb="0"/>
+<line nr="11" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="12" mi="1" ci="9" mb="1" cb="1"/>
+<line nr="15" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="17" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="20" mi="0" ci="4" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="1" covered="39"/>
+<counter type="BRANCH" missed="1" covered="1"/>
+<counter type="LINE" missed="0" covered="7"/>
+</sourcefile>
+<sourcefile name="FileSystemProvider.android.kt">
+<line nr="5" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="7" mi="0" ci="9" mb="0" cb="0"/>
+<line nr="11" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="12" mi="1" ci="9" mb="1" cb="1"/>
+<line nr="15" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="17" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="20" mi="0" ci="4" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="1" covered="39"/>
+<counter type="BRANCH" missed="1" covered="1"/>
+<counter type="LINE" missed="0" covered="7"/>
+</sourcefile>
+<counter type="INSTRUCTION" missed="2" covered="78"/>
+<counter type="BRANCH" missed="2" covered="2"/>
+<counter type="LINE" missed="0" covered="14"/>
+<counter type="METHOD" missed="0" covered="12"/>
+<counter type="CLASS" missed="0" covered="4"/>
+</package>
 <package name="com/carnival/sdk">
 <class name="com/carnival/sdk/AuthApi" sourcefilename="CruiseSDK.kt">
 <method name="login" desc="(Ljava/lang/String;Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;">
@@ -1514,11 +649,11 @@
 </class>
 <class name="com/carnival/sdk/CruiseSDKConfig" sourcefilename="CruiseSDK.kt">
 <method name="&lt;init&gt;" desc="(Ljava/lang/String;ZLcom/carnival/sdk/core/network/NetworkMonitor;Lcom/carnival/sdk/core/database/LocalStore;Lcom/carnival/sdk/core/util/SecureTokenStore;Lcom/carnival/sdk/core/dispatcher/DispatcherProvider;JLcom/carnival/sdk/core/util/TimeProvider;Lkotlinx/coroutines/CoroutineScope;Lio/ktor/client/HttpClient;)V">
-<counter type="INSTRUCTION" missed="0" covered="84"/>
+<counter type="INSTRUCTION" missed="0" covered="77"/>
 <counter type="BRANCH" missed="0" covered="0"/>
 <counter type="LINE" missed="0" covered="10"/>
 </method>
-<counter type="INSTRUCTION" missed="0" covered="84"/>
+<counter type="INSTRUCTION" missed="0" covered="77"/>
 <counter type="BRANCH" missed="0" covered="0"/>
 <counter type="LINE" missed="0" covered="10"/>
 <counter type="METHOD" missed="0" covered="1"/>
@@ -1588,23 +723,23 @@
 </class>
 <class name="com/carnival/sdk/SDKComponents" sourcefilename="CruiseSDK.kt">
 <method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/CruiseSDKConfig;)V">
-<counter type="INSTRUCTION" missed="5" covered="319"/>
+<counter type="INSTRUCTION" missed="5" covered="323"/>
 <counter type="BRANCH" missed="2" covered="2"/>
-<counter type="LINE" missed="0" covered="67"/>
+<counter type="LINE" missed="0" covered="68"/>
 </method>
 <method name="start" desc="()V">
-<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="INSTRUCTION" missed="0" covered="18"/>
 <counter type="BRANCH" missed="0" covered="0"/>
-<counter type="LINE" missed="0" covered="1"/>
+<counter type="LINE" missed="0" covered="3"/>
 </method>
 <method name="close" desc="()V">
 <counter type="INSTRUCTION" missed="0" covered="6"/>
 <counter type="BRANCH" missed="0" covered="0"/>
 <counter type="LINE" missed="0" covered="2"/>
 </method>
-<counter type="INSTRUCTION" missed="5" covered="330"/>
+<counter type="INSTRUCTION" missed="5" covered="347"/>
 <counter type="BRANCH" missed="2" covered="2"/>
-<counter type="LINE" missed="0" covered="70"/>
+<counter type="LINE" missed="0" covered="73"/>
 <counter type="METHOD" missed="0" covered="3"/>
 </class>
 <class name="com/carnival/sdk/SyncApi" sourcefilename="CruiseSDK.kt">
@@ -1624,108 +759,106 @@
 <counter type="METHOD" missed="0" covered="2"/>
 </class>
 <sourcefile name="CruiseSDK.kt">
-<line nr="47" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="48" mi="0" ci="7" mb="0" cb="0"/>
-<line nr="49" mi="0" ci="11" mb="0" cb="0"/>
-<line nr="50" mi="0" ci="10" mb="0" cb="0"/>
-<line nr="51" mi="0" ci="10" mb="0" cb="0"/>
+<line nr="49" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="50" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="51" mi="0" ci="7" mb="0" cb="0"/>
 <line nr="52" mi="0" ci="10" mb="0" cb="0"/>
 <line nr="53" mi="0" ci="7" mb="0" cb="0"/>
 <line nr="54" mi="0" ci="10" mb="0" cb="0"/>
 <line nr="55" mi="0" ci="7" mb="0" cb="0"/>
-<line nr="56" mi="0" ci="7" mb="0" cb="0"/>
-<line nr="63" mi="2" ci="4" mb="1" cb="1"/>
-<line nr="64" mi="0" ci="11" mb="0" cb="0"/>
-<line nr="68" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="71" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="74" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="77" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="80" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="83" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="86" mi="0" ci="6" mb="0" cb="2"/>
-<line nr="87" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="91" mi="0" ci="10" mb="0" cb="2"/>
-<line nr="94" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="95" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="96" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="98" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="99" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="102" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="103" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="104" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="106" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="107" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="110" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="111" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="114" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="117" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="118" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="119" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="56" mi="0" ci="10" mb="0" cb="0"/>
+<line nr="57" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="58" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="65" mi="2" ci="4" mb="1" cb="1"/>
+<line nr="66" mi="0" ci="11" mb="0" cb="0"/>
+<line nr="70" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="73" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="76" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="79" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="82" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="85" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="88" mi="0" ci="6" mb="0" cb="2"/>
+<line nr="89" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="93" mi="0" ci="10" mb="0" cb="2"/>
+<line nr="96" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="97" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="98" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="100" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="101" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="104" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="105" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="106" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="108" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="109" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="112" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="113" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="116" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="119" mi="0" ci="2" mb="0" cb="0"/>
 <line nr="120" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="122" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="124" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="126" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="129" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="130" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="131" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="133" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="134" mi="0" ci="4" mb="0" cb="0"/>
-<line nr="137" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="138" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="121" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="122" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="124" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="126" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="128" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="131" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="132" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="133" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="135" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="136" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="139" mi="0" ci="2" mb="0" cb="0"/>
 <line nr="140" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="143" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="144" mi="1" ci="16" mb="1" cb="1"/>
-<line nr="145" mi="4" ci="6" mb="1" cb="1"/>
-<line nr="146" mi="0" ci="8" mb="0" cb="0"/>
-<line nr="147" mi="0" ci="9" mb="0" cb="0"/>
-<line nr="148" mi="0" ci="9" mb="0" cb="0"/>
+<line nr="142" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="145" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="146" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="147" mi="1" ci="16" mb="1" cb="1"/>
+<line nr="148" mi="4" ci="6" mb="1" cb="1"/>
 <line nr="149" mi="0" ci="8" mb="0" cb="0"/>
-<line nr="151" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="152" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="153" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="154" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="150" mi="0" ci="9" mb="0" cb="0"/>
+<line nr="151" mi="0" ci="9" mb="0" cb="0"/>
+<line nr="152" mi="0" ci="8" mb="0" cb="0"/>
+<line nr="154" mi="0" ci="5" mb="0" cb="0"/>
 <line nr="155" mi="0" ci="2" mb="0" cb="0"/>
 <line nr="156" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="159" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="160" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="161" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="162" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="157" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="158" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="159" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="162" mi="0" ci="5" mb="0" cb="0"/>
 <line nr="163" mi="0" ci="2" mb="0" cb="0"/>
 <line nr="164" mi="0" ci="2" mb="0" cb="0"/>
 <line nr="165" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="168" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="169" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="170" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="171" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="166" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="167" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="168" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="171" mi="0" ci="5" mb="0" cb="0"/>
 <line nr="172" mi="0" ci="2" mb="0" cb="0"/>
 <line nr="173" mi="0" ci="2" mb="0" cb="0"/>
 <line nr="174" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="177" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="178" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="179" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="180" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="175" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="176" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="177" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="180" mi="0" ci="5" mb="0" cb="0"/>
 <line nr="181" mi="0" ci="2" mb="0" cb="0"/>
 <line nr="182" mi="0" ci="2" mb="0" cb="0"/>
 <line nr="183" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="186" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="187" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="188" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="189" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="184" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="185" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="186" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="189" mi="0" ci="5" mb="0" cb="0"/>
 <line nr="190" mi="0" ci="2" mb="0" cb="0"/>
 <line nr="191" mi="0" ci="2" mb="0" cb="0"/>
 <line nr="192" mi="0" ci="2" mb="0" cb="0"/>
 <line nr="193" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="196" mi="0" ci="9" mb="0" cb="0"/>
-<line nr="197" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="198" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="199" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="194" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="195" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="196" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="199" mi="0" ci="9" mb="0" cb="0"/>
 <line nr="200" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="201" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="201" mi="0" ci="3" mb="0" cb="0"/>
 <line nr="202" mi="0" ci="2" mb="0" cb="0"/>
 <line nr="203" mi="0" ci="2" mb="0" cb="0"/>
-<line nr="206" mi="0" ci="8" mb="0" cb="0"/>
-<line nr="207" mi="0" ci="8" mb="0" cb="0"/>
-<line nr="208" mi="0" ci="8" mb="0" cb="0"/>
+<line nr="204" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="205" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="206" mi="0" ci="2" mb="0" cb="0"/>
 <line nr="209" mi="0" ci="8" mb="0" cb="0"/>
 <line nr="210" mi="0" ci="8" mb="0" cb="0"/>
 <line nr="211" mi="0" ci="8" mb="0" cb="0"/>
@@ -1734,24 +867,1321 @@
 <line nr="214" mi="0" ci="8" mb="0" cb="0"/>
 <line nr="215" mi="0" ci="8" mb="0" cb="0"/>
 <line nr="216" mi="0" ci="8" mb="0" cb="0"/>
-<line nr="218" mi="0" ci="11" mb="0" cb="0"/>
-<line nr="219" mi="0" ci="11" mb="0" cb="0"/>
-<line nr="220" mi="0" ci="9" mb="0" cb="0"/>
-<line nr="221" mi="0" ci="13" mb="0" cb="0"/>
+<line nr="217" mi="0" ci="8" mb="0" cb="0"/>
+<line nr="218" mi="0" ci="8" mb="0" cb="0"/>
+<line nr="219" mi="0" ci="8" mb="0" cb="0"/>
+<line nr="221" mi="0" ci="11" mb="0" cb="0"/>
 <line nr="222" mi="0" ci="11" mb="0" cb="0"/>
 <line nr="223" mi="0" ci="9" mb="0" cb="0"/>
-<line nr="226" mi="0" ci="5" mb="0" cb="0"/>
-<line nr="230" mi="0" ci="3" mb="0" cb="0"/>
-<line nr="231" mi="0" ci="3" mb="0" cb="0"/>
-<counter type="INSTRUCTION" missed="7" covered="555"/>
+<line nr="224" mi="0" ci="13" mb="0" cb="0"/>
+<line nr="225" mi="0" ci="11" mb="0" cb="0"/>
+<line nr="226" mi="0" ci="9" mb="0" cb="0"/>
+<line nr="229" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="230" mi="0" ci="10" mb="0" cb="0"/>
+<line nr="231" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="235" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="236" mi="0" ci="3" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="7" covered="565"/>
 <counter type="BRANCH" missed="3" covered="7"/>
-<counter type="LINE" missed="0" covered="119"/>
+<counter type="LINE" missed="0" covered="122"/>
 </sourcefile>
-<counter type="INSTRUCTION" missed="7" covered="555"/>
+<counter type="INSTRUCTION" missed="7" covered="565"/>
 <counter type="BRANCH" missed="3" covered="7"/>
-<counter type="LINE" missed="0" covered="119"/>
+<counter type="LINE" missed="0" covered="122"/>
 <counter type="METHOD" missed="0" covered="30"/>
 <counter type="CLASS" missed="0" covered="9"/>
+</package>
+<package name="com/carnival/sdk/domain/usecase">
+<class name="com/carnival/sdk/domain/usecase/FetchItineraryUseCase" sourcefilename="UseCases.kt">
+<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/domain/repository/ItineraryRepository;)V">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="invoke" desc="(II)Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="10"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+<counter type="METHOD" missed="0" covered="2"/>
+</class>
+<class name="com/carnival/sdk/domain/usecase/FetchPreferencesUseCase" sourcefilename="UseCases.kt">
+<method name="invoke" desc="(Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/domain/repository/PreferencesRepository;)V">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="9"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+<counter type="METHOD" missed="0" covered="2"/>
+</class>
+<class name="com/carnival/sdk/domain/usecase/GetCachedSessionUseCase" sourcefilename="UseCases.kt">
+<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/domain/repository/AuthRepository;)V">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="invoke" desc="()Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="0" covered="3"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="8"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+<counter type="METHOD" missed="0" covered="2"/>
+</class>
+<class name="com/carnival/sdk/domain/usecase/LoginUseCase" sourcefilename="UseCases.kt">
+<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/domain/repository/AuthRepository;)V">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="invoke" desc="(Ljava/lang/String;Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="10"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+<counter type="METHOD" missed="0" covered="2"/>
+</class>
+<class name="com/carnival/sdk/domain/usecase/ObserveOrdersUseCase" sourcefilename="UseCases.kt">
+<method name="invoke" desc="(Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/domain/repository/OrderRepository;)V">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="9"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+<counter type="METHOD" missed="0" covered="2"/>
+</class>
+<class name="com/carnival/sdk/domain/usecase/PlaceOrderUseCase" sourcefilename="UseCases.kt">
+<method name="invoke" desc="(Lcom/carnival/sdk/domain/model/KitchenOrder;)Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/domain/repository/OrderRepository;)V">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="9"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+<counter type="METHOD" missed="0" covered="2"/>
+</class>
+<class name="com/carnival/sdk/domain/usecase/ReceiveMessagesUseCase" sourcefilename="UseCases.kt">
+<method name="invoke" desc="(Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/domain/repository/ChatRepository;)V">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="9"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+<counter type="METHOD" missed="0" covered="2"/>
+</class>
+<class name="com/carnival/sdk/domain/usecase/SavePreferencesUseCase" sourcefilename="UseCases.kt">
+<method name="invoke" desc="(Lcom/carnival/sdk/domain/model/UserPreferences;)Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/domain/repository/PreferencesRepository;)V">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="9"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+<counter type="METHOD" missed="0" covered="2"/>
+</class>
+<class name="com/carnival/sdk/domain/usecase/SendMessageUseCase" sourcefilename="UseCases.kt">
+<method name="invoke" desc="(Lcom/carnival/sdk/domain/model/ChatMessage;)Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/domain/repository/ChatRepository;)V">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="9"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+<counter type="METHOD" missed="0" covered="2"/>
+</class>
+<class name="com/carnival/sdk/domain/usecase/TriggerSyncUseCase" sourcefilename="UseCases.kt">
+<method name="invoke" desc="()Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="0" covered="3"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/domain/repository/SyncRepository;)V">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="8"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+<counter type="METHOD" missed="0" covered="2"/>
+</class>
+<class name="com/carnival/sdk/domain/usecase/UpdateOrderStatusUseCase" sourcefilename="UseCases.kt">
+<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/domain/repository/OrderRepository;)V">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="invoke" desc="(Ljava/lang/String;Lcom/carnival/sdk/domain/model/OrderStatus;)Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="10"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+<counter type="METHOD" missed="0" covered="2"/>
+</class>
+<sourcefile name="UseCases.kt">
+<line nr="18" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="20" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="23" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="24" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="27" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="29" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="32" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="34" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="37" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="39" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="42" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="44" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="47" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="49" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="52" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="54" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="57" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="59" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="62" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="64" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="67" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="68" mi="0" ci="3" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="0" covered="100"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="22"/>
+</sourcefile>
+<counter type="INSTRUCTION" missed="0" covered="100"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="22"/>
+<counter type="METHOD" missed="0" covered="22"/>
+<counter type="CLASS" missed="0" covered="11"/>
+</package>
+<package name="com/carnival/sdk/core/logging">
+<class name="com/carnival/sdk/core/logging/AndroidLogger" sourcefilename="PlatformLogger.android.kt">
+<method name="&lt;init&gt;" desc="(Ljava/lang/String;)V">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="w" desc="(Ljava/lang/String;)V">
+<counter type="INSTRUCTION" missed="1" covered="41"/>
+<counter type="BRANCH" missed="1" covered="1"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<method name="e" desc="(Ljava/lang/String;Ljava/lang/Throwable;)V">
+<counter type="INSTRUCTION" missed="3" covered="48"/>
+<counter type="BRANCH" missed="2" covered="2"/>
+<counter type="LINE" missed="0" covered="5"/>
+</method>
+<method name="d" desc="(Ljava/lang/String;)V">
+<counter type="INSTRUCTION" missed="1" covered="41"/>
+<counter type="BRANCH" missed="1" covered="1"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<method name="i" desc="(Ljava/lang/String;)V">
+<counter type="INSTRUCTION" missed="1" covered="41"/>
+<counter type="BRANCH" missed="1" covered="1"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<counter type="INSTRUCTION" missed="6" covered="176"/>
+<counter type="BRANCH" missed="5" covered="5"/>
+<counter type="LINE" missed="0" covered="12"/>
+<counter type="METHOD" missed="0" covered="5"/>
+</class>
+<class name="com/carnival/sdk/core/logging/JvmLogger" sourcefilename="PlatformLogger.jvm.kt">
+<method name="&lt;init&gt;" desc="(Ljava/lang/String;)V">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="w" desc="(Ljava/lang/String;)V">
+<counter type="INSTRUCTION" missed="0" covered="7"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="e" desc="(Ljava/lang/String;Ljava/lang/Throwable;)V">
+<counter type="INSTRUCTION" missed="2" covered="11"/>
+<counter type="BRANCH" missed="1" covered="1"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<method name="d" desc="(Ljava/lang/String;)V">
+<counter type="INSTRUCTION" missed="0" covered="7"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="i" desc="(Ljava/lang/String;)V">
+<counter type="INSTRUCTION" missed="0" covered="7"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="2" covered="37"/>
+<counter type="BRANCH" missed="1" covered="1"/>
+<counter type="LINE" missed="0" covered="6"/>
+<counter type="METHOD" missed="0" covered="5"/>
+</class>
+<class name="com/carnival/sdk/core/logging/PlatformLogger$DefaultImpls" sourcefilename="PlatformLogger.kt">
+<method name="e" desc="(Lcom/carnival/sdk/core/logging/PlatformLogger;Ljava/lang/String;Ljava/lang/Throwable;)V">
+<counter type="INSTRUCTION" missed="17" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="17" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="com/carnival/sdk/core/logging/PlatformLogger_androidKt" sourcefilename="PlatformLogger.android.kt">
+<method name="createPlatformLogger" desc="(Ljava/lang/String;)Lcom/carnival/sdk/core/logging/PlatformLogger;">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="com/carnival/sdk/core/logging/PlatformLogger_jvmKt" sourcefilename="PlatformLogger.jvm.kt">
+<method name="createPlatformLogger" desc="(Ljava/lang/String;)Lcom/carnival/sdk/core/logging/PlatformLogger;">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<sourcefile name="PlatformLogger.kt">
+<line nr="7" mi="17" ci="0" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="17" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</sourcefile>
+<sourcefile name="PlatformLogger.jvm.kt">
+<line nr="3" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="4" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="5" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="6" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="8" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="9" mi="2" ci="4" mb="1" cb="1"/>
+<line nr="13" mi="0" ci="5" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="2" covered="42"/>
+<counter type="BRANCH" missed="1" covered="1"/>
+<counter type="LINE" missed="0" covered="7"/>
+</sourcefile>
+<sourcefile name="PlatformLogger.android.kt">
+<line nr="5" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="7" mi="0" ci="25" mb="0" cb="0"/>
+<line nr="8" mi="1" ci="16" mb="1" cb="1"/>
+<line nr="12" mi="0" ci="25" mb="0" cb="0"/>
+<line nr="13" mi="1" ci="16" mb="1" cb="1"/>
+<line nr="17" mi="0" ci="25" mb="0" cb="0"/>
+<line nr="18" mi="1" ci="16" mb="1" cb="1"/>
+<line nr="22" mi="0" ci="26" mb="0" cb="0"/>
+<line nr="23" mi="1" ci="10" mb="1" cb="1"/>
+<line nr="24" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="25" mi="2" ci="4" mb="1" cb="1"/>
+<line nr="26" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="30" mi="0" ci="5" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="6" covered="181"/>
+<counter type="BRANCH" missed="5" covered="5"/>
+<counter type="LINE" missed="0" covered="13"/>
+</sourcefile>
+<counter type="INSTRUCTION" missed="25" covered="223"/>
+<counter type="BRANCH" missed="6" covered="6"/>
+<counter type="LINE" missed="1" covered="20"/>
+<counter type="METHOD" missed="1" covered="12"/>
+<counter type="CLASS" missed="1" covered="4"/>
+</package>
+<package name="com/carnival/sdk/data/repository">
+<class name="com/carnival/sdk/data/repository/AuthRepositoryImpl" sourcefilename="RepositoryImpl.kt">
+<method name="login" desc="(Ljava/lang/String;Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="0" covered="14"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<method name="getCachedSession" desc="()Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="0" covered="12"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/data/remote/CruiseRemoteDataSource;Lcom/carnival/sdk/data/local/CruiseLocalDataSource;Lcom/carnival/sdk/core/network/NetworkMonitor;Lcom/carnival/sdk/core/util/SecureTokenStore;Lcom/carnival/sdk/core/dispatcher/DispatcherProvider;)V">
+<counter type="INSTRUCTION" missed="0" covered="17"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="6"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="43"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="10"/>
+<counter type="METHOD" missed="0" covered="3"/>
+</class>
+<class name="com/carnival/sdk/data/repository/AuthRepositoryImpl$getCachedSession$1" sourcefilename="RepositoryImpl.kt">
+<method name="invokeSuspend" desc="(Ljava/lang/Object;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="51"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="51"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="com/carnival/sdk/data/repository/AuthRepositoryImpl$login$1" sourcefilename="RepositoryImpl.kt">
+<method name="invokeSuspend" desc="(Ljava/lang/Object;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="58" covered="183"/>
+<counter type="BRANCH" missed="5" covered="5"/>
+<counter type="LINE" missed="3" covered="10"/>
+</method>
+<counter type="INSTRUCTION" missed="58" covered="183"/>
+<counter type="BRANCH" missed="5" covered="5"/>
+<counter type="LINE" missed="3" covered="10"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="com/carnival/sdk/data/repository/ChatRepositoryImpl" sourcefilename="RepositoryImpl.kt">
+<method name="receiveMessages" desc="(Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="0" covered="13"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/data/remote/CruiseRemoteDataSource;Lcom/carnival/sdk/data/local/CruiseLocalDataSource;Lcom/carnival/sdk/core/network/NetworkMonitor;Lcom/carnival/sdk/core/util/SecureTokenStore;Lcom/carnival/sdk/core/util/JsonCodec;Lcom/carnival/sdk/core/dispatcher/DispatcherProvider;J)V">
+<counter type="INSTRUCTION" missed="0" covered="23"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="7"/>
+</method>
+<method name="sendMessage" desc="(Lcom/carnival/sdk/domain/model/ChatMessage;)Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="0" covered="13"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="49"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="11"/>
+<counter type="METHOD" missed="0" covered="3"/>
+</class>
+<class name="com/carnival/sdk/data/repository/ChatRepositoryImpl$receiveMessages$1" sourcefilename="RepositoryImpl.kt">
+<method name="invokeSuspend" desc="(Ljava/lang/Object;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="115"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="5"/>
+</method>
+<method name="invokeSuspend$lambda$0" desc="(Lkotlinx/coroutines/Job;Lkotlinx/coroutines/Job;)Lkotlin/Unit;">
+<counter type="INSTRUCTION" missed="0" covered="10"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="125"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="7"/>
+<counter type="METHOD" missed="0" covered="2"/>
+</class>
+<class name="com/carnival/sdk/data/repository/ChatRepositoryImpl$receiveMessages$1$localJob$1" sourcefilename="RepositoryImpl.kt">
+<method name="invokeSuspend" desc="(Ljava/lang/Object;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="21"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="21"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="com/carnival/sdk/data/repository/ChatRepositoryImpl$receiveMessages$1$localJob$1$1" sourcefilename="RepositoryImpl.kt">
+<method name="emit" desc="(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="13" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="13" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="com/carnival/sdk/data/repository/ChatRepositoryImpl$receiveMessages$1$pollingJob$1" sourcefilename="RepositoryImpl.kt">
+<method name="invokeSuspend" desc="(Ljava/lang/Object;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="28" covered="63"/>
+<counter type="BRANCH" missed="2" covered="4"/>
+<counter type="LINE" missed="1" covered="6"/>
+</method>
+<counter type="INSTRUCTION" missed="28" covered="63"/>
+<counter type="BRANCH" missed="2" covered="4"/>
+<counter type="LINE" missed="1" covered="6"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="com/carnival/sdk/data/repository/ChatRepositoryImpl$sendMessage$1" sourcefilename="RepositoryImpl.kt">
+<method name="invokeSuspend" desc="(Ljava/lang/Object;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="57" covered="216"/>
+<counter type="BRANCH" missed="1" covered="3"/>
+<counter type="LINE" missed="2" covered="11"/>
+</method>
+<counter type="INSTRUCTION" missed="57" covered="216"/>
+<counter type="BRANCH" missed="1" covered="3"/>
+<counter type="LINE" missed="2" covered="11"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="com/carnival/sdk/data/repository/ItineraryRepositoryImpl" sourcefilename="RepositoryImpl.kt">
+<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/data/remote/CruiseRemoteDataSource;Lcom/carnival/sdk/data/local/CruiseLocalDataSource;Lcom/carnival/sdk/core/network/NetworkMonitor;Lcom/carnival/sdk/core/util/SecureTokenStore;Lcom/carnival/sdk/data/cache/CachePolicy;Lcom/carnival/sdk/core/dispatcher/DispatcherProvider;)V">
+<counter type="INSTRUCTION" missed="0" covered="20"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="7"/>
+</method>
+<method name="fetchItinerary" desc="(II)Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="0" covered="14"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="34"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="9"/>
+<counter type="METHOD" missed="0" covered="2"/>
+</class>
+<class name="com/carnival/sdk/data/repository/ItineraryRepositoryImpl$fetchItinerary$1" sourcefilename="RepositoryImpl.kt">
+<method name="invokeSuspend" desc="(Ljava/lang/Object;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="28" covered="184"/>
+<counter type="BRANCH" missed="3" covered="3"/>
+<counter type="LINE" missed="1" covered="10"/>
+</method>
+<counter type="INSTRUCTION" missed="28" covered="184"/>
+<counter type="BRANCH" missed="3" covered="3"/>
+<counter type="LINE" missed="1" covered="10"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="com/carnival/sdk/data/repository/OrderRepositoryImpl" sourcefilename="RepositoryImpl.kt">
+<method name="observeOrders" desc="(Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="0" covered="13"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<method name="updateOrderStatus" desc="(Ljava/lang/String;Lcom/carnival/sdk/domain/model/OrderStatus;)Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="0" covered="14"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<method name="placeOrder" desc="(Lcom/carnival/sdk/domain/model/KitchenOrder;)Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="0" covered="13"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/data/remote/CruiseRemoteDataSource;Lcom/carnival/sdk/data/local/CruiseLocalDataSource;Lcom/carnival/sdk/core/network/NetworkMonitor;Lcom/carnival/sdk/core/util/SecureTokenStore;Lcom/carnival/sdk/core/util/JsonCodec;Lcom/carnival/sdk/core/dispatcher/DispatcherProvider;)V">
+<counter type="INSTRUCTION" missed="0" covered="20"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="7"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="60"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="13"/>
+<counter type="METHOD" missed="0" covered="4"/>
+</class>
+<class name="com/carnival/sdk/data/repository/OrderRepositoryImpl$observeOrders$1" sourcefilename="RepositoryImpl.kt">
+<method name="invokeSuspend" desc="(Ljava/lang/Object;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="83"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="3"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="83"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="3"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="com/carnival/sdk/data/repository/OrderRepositoryImpl$observeOrders$1$1" sourcefilename="RepositoryImpl.kt">
+<method name="emit" desc="(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="13" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<counter type="INSTRUCTION" missed="13" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+<counter type="METHOD" missed="1" covered="0"/>
+</class>
+<class name="com/carnival/sdk/data/repository/OrderRepositoryImpl$placeOrder$1" sourcefilename="RepositoryImpl.kt">
+<method name="invokeSuspend" desc="(Ljava/lang/Object;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="107" covered="213"/>
+<counter type="BRANCH" missed="1" covered="3"/>
+<counter type="LINE" missed="4" covered="10"/>
+</method>
+<counter type="INSTRUCTION" missed="107" covered="213"/>
+<counter type="BRANCH" missed="1" covered="3"/>
+<counter type="LINE" missed="4" covered="10"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="com/carnival/sdk/data/repository/OrderRepositoryImpl$updateOrderStatus$1" sourcefilename="RepositoryImpl.kt">
+<method name="invokeSuspend" desc="(Ljava/lang/Object;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="128" covered="221"/>
+<counter type="BRANCH" missed="2" covered="4"/>
+<counter type="LINE" missed="5" covered="12"/>
+</method>
+<counter type="INSTRUCTION" missed="128" covered="221"/>
+<counter type="BRANCH" missed="2" covered="4"/>
+<counter type="LINE" missed="5" covered="12"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="com/carnival/sdk/data/repository/PreferencesRepositoryImpl" sourcefilename="RepositoryImpl.kt">
+<method name="fetchPreferences" desc="(Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="0" covered="13"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/data/remote/CruiseRemoteDataSource;Lcom/carnival/sdk/data/local/CruiseLocalDataSource;Lcom/carnival/sdk/core/network/NetworkMonitor;Lcom/carnival/sdk/core/util/SecureTokenStore;Lcom/carnival/sdk/core/util/JsonCodec;Lcom/carnival/sdk/core/dispatcher/DispatcherProvider;)V">
+<counter type="INSTRUCTION" missed="0" covered="20"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="7"/>
+</method>
+<method name="savePreferences" desc="(Lcom/carnival/sdk/domain/model/UserPreferences;)Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="0" covered="13"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="46"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="11"/>
+<counter type="METHOD" missed="0" covered="3"/>
+</class>
+<class name="com/carnival/sdk/data/repository/PreferencesRepositoryImpl$fetchPreferences$1" sourcefilename="RepositoryImpl.kt">
+<method name="invokeSuspend" desc="(Ljava/lang/Object;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="28" covered="140"/>
+<counter type="BRANCH" missed="2" covered="2"/>
+<counter type="LINE" missed="1" covered="8"/>
+</method>
+<counter type="INSTRUCTION" missed="28" covered="140"/>
+<counter type="BRANCH" missed="2" covered="2"/>
+<counter type="LINE" missed="1" covered="8"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="com/carnival/sdk/data/repository/PreferencesRepositoryImpl$savePreferences$1" sourcefilename="RepositoryImpl.kt">
+<method name="invokeSuspend" desc="(Ljava/lang/Object;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="78" covered="186"/>
+<counter type="BRANCH" missed="1" covered="3"/>
+<counter type="LINE" missed="3" covered="10"/>
+</method>
+<counter type="INSTRUCTION" missed="78" covered="186"/>
+<counter type="BRANCH" missed="1" covered="3"/>
+<counter type="LINE" missed="3" covered="10"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<sourcefile name="RepositoryImpl.kt">
+<line nr="40" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="41" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="42" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="43" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="44" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="45" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="47" mi="0" ci="9" mb="0" cb="0"/>
+<line nr="48" mi="0" ci="14" mb="0" cb="0"/>
+<line nr="49" mi="0" ci="16" mb="0" cb="0"/>
+<line nr="51" mi="0" ci="8" mb="0" cb="2"/>
+<line nr="52" mi="0" ci="5" mb="1" cb="3"/>
+<line nr="53" mi="0" ci="19" mb="0" cb="0"/>
+<line nr="55" mi="0" ci="24" mb="0" cb="0"/>
+<line nr="61" mi="0" ci="25" mb="0" cb="0"/>
+<line nr="62" mi="0" ci="22" mb="0" cb="0"/>
+<line nr="63" mi="0" ci="24" mb="0" cb="0"/>
+<line nr="64" mi="0" ci="26" mb="0" cb="0"/>
+<line nr="66" mi="5" ci="0" mb="4" cb="0"/>
+<line nr="67" mi="25" ci="0" mb="0" cb="0"/>
+<line nr="69" mi="28" ci="0" mb="0" cb="0"/>
+<line nr="72" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="74" mi="0" ci="7" mb="0" cb="0"/>
+<line nr="75" mi="0" ci="14" mb="0" cb="0"/>
+<line nr="76" mi="0" ci="37" mb="0" cb="0"/>
+<line nr="77" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="80" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="81" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="82" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="83" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="84" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="85" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="86" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="88" mi="0" ci="8" mb="0" cb="0"/>
+<line nr="89" mi="0" ci="14" mb="0" cb="0"/>
+<line nr="90" mi="0" ci="18" mb="0" cb="0"/>
+<line nr="91" mi="0" ci="19" mb="0" cb="0"/>
+<line nr="92" mi="2" ci="23" mb="1" cb="1"/>
+<line nr="93" mi="23" ci="0" mb="0" cb="0"/>
+<line nr="97" mi="0" ci="10" mb="0" cb="0"/>
+<line nr="98" mi="0" ci="8" mb="0" cb="2"/>
+<line nr="99" mi="0" ci="21" mb="0" cb="0"/>
+<line nr="104" mi="0" ci="25" mb="0" cb="0"/>
+<line nr="105" mi="0" ci="22" mb="0" cb="0"/>
+<line nr="106" mi="0" ci="26" mb="0" cb="0"/>
+<line nr="108" mi="27" ci="0" mb="0" cb="0"/>
+<line nr="109" mi="26" ci="0" mb="0" cb="0"/>
+<line nr="111" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="113" mi="0" ci="8" mb="0" cb="0"/>
+<line nr="114" mi="0" ci="14" mb="0" cb="0"/>
+<line nr="115" mi="0" ci="18" mb="0" cb="0"/>
+<line nr="116" mi="0" ci="17" mb="0" cb="0"/>
+<line nr="117" mi="1" ci="9" mb="1" cb="1"/>
+<line nr="118" mi="2" ci="19" mb="1" cb="1"/>
+<line nr="120" mi="0" ci="21" mb="0" cb="0"/>
+<line nr="121" mi="0" ci="19" mb="0" cb="0"/>
+<line nr="122" mi="0" ci="23" mb="0" cb="0"/>
+<line nr="124" mi="25" ci="0" mb="0" cb="0"/>
+<line nr="126" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="129" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="130" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="131" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="132" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="133" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="134" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="135" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="137" mi="0" ci="9" mb="0" cb="0"/>
+<line nr="138" mi="0" ci="14" mb="0" cb="0"/>
+<line nr="139" mi="0" ci="20" mb="0" cb="0"/>
+<line nr="140" mi="0" ci="17" mb="0" cb="0"/>
+<line nr="142" mi="1" ci="14" mb="2" cb="2"/>
+<line nr="143" mi="2" ci="19" mb="1" cb="1"/>
+<line nr="146" mi="0" ci="20" mb="0" cb="0"/>
+<line nr="147" mi="0" ci="11" mb="0" cb="0"/>
+<line nr="148" mi="0" ci="16" mb="0" cb="0"/>
+<line nr="149" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="150" mi="0" ci="48" mb="0" cb="0"/>
+<line nr="152" mi="25" ci="0" mb="0" cb="0"/>
+<line nr="154" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="157" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="158" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="159" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="160" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="161" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="162" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="163" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="165" mi="0" ci="8" mb="0" cb="0"/>
+<line nr="166" mi="0" ci="14" mb="0" cb="0"/>
+<line nr="167" mi="0" ci="29" mb="0" cb="0"/>
+<line nr="168" mi="0" ci="30" mb="0" cb="0"/>
+<line nr="170" mi="0" ci="11" mb="0" cb="0"/>
+<line nr="171" mi="0" ci="8" mb="0" cb="2"/>
+<line nr="172" mi="0" ci="21" mb="0" cb="0"/>
+<line nr="176" mi="9" ci="26" mb="1" cb="1"/>
+<line nr="177" mi="21" ci="0" mb="0" cb="0"/>
+<line nr="178" mi="24" ci="0" mb="0" cb="0"/>
+<line nr="183" mi="0" ci="26" mb="0" cb="0"/>
+<line nr="184" mi="0" ci="22" mb="0" cb="0"/>
+<line nr="185" mi="0" ci="26" mb="0" cb="0"/>
+<line nr="187" mi="27" ci="0" mb="0" cb="0"/>
+<line nr="188" mi="26" ci="0" mb="0" cb="0"/>
+<line nr="190" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="192" mi="0" ci="9" mb="0" cb="0"/>
+<line nr="193" mi="0" ci="14" mb="0" cb="0"/>
+<line nr="194" mi="0" ci="21" mb="0" cb="0"/>
+<line nr="195" mi="0" ci="18" mb="0" cb="0"/>
+<line nr="196" mi="0" ci="2" mb="0" cb="2"/>
+<line nr="197" mi="0" ci="26" mb="0" cb="0"/>
+<line nr="200" mi="0" ci="20" mb="0" cb="0"/>
+<line nr="202" mi="0" ci="10" mb="0" cb="0"/>
+<line nr="203" mi="0" ci="8" mb="1" cb="1"/>
+<line nr="204" mi="23" ci="0" mb="0" cb="0"/>
+<line nr="208" mi="9" ci="26" mb="1" cb="1"/>
+<line nr="209" mi="20" ci="0" mb="0" cb="0"/>
+<line nr="210" mi="24" ci="0" mb="0" cb="0"/>
+<line nr="215" mi="0" ci="28" mb="0" cb="0"/>
+<line nr="216" mi="0" ci="22" mb="0" cb="0"/>
+<line nr="217" mi="0" ci="26" mb="0" cb="0"/>
+<line nr="219" mi="26" ci="0" mb="0" cb="0"/>
+<line nr="220" mi="26" ci="0" mb="0" cb="0"/>
+<line nr="222" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="224" mi="0" ci="8" mb="0" cb="0"/>
+<line nr="225" mi="0" ci="14" mb="0" cb="0"/>
+<line nr="226" mi="0" ci="45" mb="0" cb="0"/>
+<line nr="227" mi="0" ci="24" mb="0" cb="0"/>
+<line nr="228" mi="13" ci="0" mb="0" cb="0"/>
+<line nr="230" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="234" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="235" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="236" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="237" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="238" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="239" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="240" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="242" mi="0" ci="8" mb="0" cb="0"/>
+<line nr="243" mi="0" ci="14" mb="0" cb="0"/>
+<line nr="244" mi="0" ci="14" mb="0" cb="0"/>
+<line nr="245" mi="0" ci="19" mb="0" cb="0"/>
+<line nr="246" mi="0" ci="21" mb="0" cb="0"/>
+<line nr="247" mi="0" ci="10" mb="0" cb="0"/>
+<line nr="249" mi="0" ci="8" mb="0" cb="2"/>
+<line nr="250" mi="0" ci="23" mb="0" cb="0"/>
+<line nr="253" mi="2" ci="25" mb="1" cb="1"/>
+<line nr="256" mi="0" ci="28" mb="0" cb="0"/>
+<line nr="257" mi="0" ci="25" mb="0" cb="0"/>
+<line nr="258" mi="0" ci="29" mb="0" cb="0"/>
+<line nr="260" mi="29" ci="0" mb="0" cb="0"/>
+<line nr="261" mi="26" ci="0" mb="0" cb="0"/>
+<line nr="263" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="265" mi="0" ci="8" mb="0" cb="0"/>
+<line nr="266" mi="0" ci="14" mb="0" cb="0"/>
+<line nr="267" mi="0" ci="45" mb="0" cb="0"/>
+<line nr="269" mi="0" ci="19" mb="0" cb="0"/>
+<line nr="270" mi="0" ci="21" mb="0" cb="0"/>
+<line nr="271" mi="13" ci="0" mb="0" cb="0"/>
+<line nr="275" mi="0" ci="21" mb="0" cb="0"/>
+<line nr="276" mi="0" ci="3" mb="1" cb="1"/>
+<line nr="277" mi="0" ci="8" mb="0" cb="2"/>
+<line nr="278" mi="0" ci="15" mb="0" cb="0"/>
+<line nr="279" mi="0" ci="2" mb="1" cb="1"/>
+<line nr="281" mi="0" ci="18" mb="0" cb="0"/>
+<line nr="282" mi="28" ci="0" mb="0" cb="0"/>
+<line nr="288" mi="0" ci="17" mb="0" cb="0"/>
+<line nr="292" mi="0" ci="16" mb="0" cb="0"/>
+<line nr="293" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="294" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="296" mi="0" ci="5" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="538" covered="1918"/>
+<counter type="BRANCH" missed="17" covered="27"/>
+<counter type="LINE" missed="22" covered="144"/>
+</sourcefile>
+<counter type="INSTRUCTION" missed="538" covered="1918"/>
+<counter type="BRANCH" missed="17" covered="27"/>
+<counter type="LINE" missed="22" covered="144"/>
+<counter type="METHOD" missed="2" covered="28"/>
+<counter type="CLASS" missed="2" covered="17"/>
+</package>
+<package name="com/carnival/sdk/data/local">
+<class name="com/carnival/sdk/data/local/CruiseLocalDataSource" sourcefilename="CruiseLocalDataSource.kt">
+<method name="getSession" desc="(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="updateOrderStatus" desc="(Ljava/lang/String;Lcom/carnival/sdk/domain/model/OrderStatus;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="57"/>
+<counter type="BRANCH" missed="0" covered="2"/>
+<counter type="LINE" missed="0" covered="6"/>
+</method>
+<method name="enqueueSync" desc="(Ljava/lang/String;Ljava/lang/String;Lcom/carnival/sdk/domain/model/SyncOperationType;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="25"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="11"/>
+</method>
+<method name="getSyncQueue" desc="(Lcom/carnival/sdk/data/local/CruiseLocalDataSource;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="15"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="saveOrder" desc="(Lcom/carnival/sdk/domain/model/KitchenOrder;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="10"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="getPreferences" desc="(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/core/database/LocalStore;Lcom/carnival/sdk/core/util/TimeProvider;)V">
+<counter type="INSTRUCTION" missed="0" covered="8"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="3"/>
+</method>
+<method name="saveMessages" desc="(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="10" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="getOrders" desc="(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="saveSession" desc="(Lcom/carnival/sdk/domain/model/UserSession;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="10"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="buildSyncId" desc="()Ljava/lang/String;">
+<counter type="INSTRUCTION" missed="0" covered="8"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="removeSyncItem" desc="(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="10"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="getMessage" desc="(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="saveItinerary" desc="(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="10"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="getOrder" desc="(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="updateSyncItem" desc="(Lcom/carnival/sdk/domain/model/SyncQueueItem;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="10"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="observeOrders" desc="(Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="saveMessage" desc="(Lcom/carnival/sdk/domain/model/ChatMessage;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="10"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="observePreferences" desc="(Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="4" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="observeItinerary" desc="()Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="3" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="observeSession" desc="()Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="3" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="getItinerary" desc="(IILkotlin/coroutines/Continuation;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="6"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="getMessages" desc="(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="observeMessages" desc="(Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="markOrderPending" desc="(Ljava/lang/String;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="51"/>
+<counter type="BRANCH" missed="0" covered="2"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<method name="observeSyncQueue" desc="()Lkotlinx/coroutines/flow/Flow;">
+<counter type="INSTRUCTION" missed="3" covered="0"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="1" covered="0"/>
+</method>
+<method name="savePreferences" desc="(Lcom/carnival/sdk/domain/model/UserPreferences;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="10"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="23" covered="277"/>
+<counter type="BRANCH" missed="0" covered="4"/>
+<counter type="LINE" missed="5" covered="40"/>
+<counter type="METHOD" missed="5" covered="22"/>
+</class>
+<sourcefile name="CruiseLocalDataSource.kt">
+<line nr="16" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="17" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="18" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="20" mi="0" ci="10" mb="0" cb="0"/>
+<line nr="21" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="22" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="24" mi="0" ci="10" mb="0" cb="0"/>
+<line nr="25" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="26" mi="4" ci="0" mb="0" cb="0"/>
+<line nr="28" mi="0" ci="10" mb="0" cb="0"/>
+<line nr="29" mi="0" ci="6" mb="0" cb="0"/>
+<line nr="30" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="32" mi="0" ci="10" mb="0" cb="0"/>
+<line nr="33" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="34" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="35" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="37" mi="0" ci="10" mb="0" cb="0"/>
+<line nr="38" mi="10" ci="0" mb="0" cb="0"/>
+<line nr="39" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="40" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="41" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="49" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="50" mi="0" ci="8" mb="0" cb="0"/>
+<line nr="51" mi="0" ci="4" mb="0" cb="0"/>
+<line nr="52" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="53" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="54" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="55" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="56" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="57" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="58" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="59" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="64" mi="0" ci="15" mb="0" cb="0"/>
+<line nr="65" mi="0" ci="10" mb="0" cb="0"/>
+<line nr="66" mi="0" ci="10" mb="0" cb="0"/>
+<line nr="67" mi="3" ci="0" mb="0" cb="0"/>
+<line nr="70" mi="0" ci="22" mb="0" cb="2"/>
+<line nr="71" mi="0" ci="29" mb="0" cb="0"/>
+<line nr="75" mi="0" ci="25" mb="0" cb="2"/>
+<line nr="76" mi="0" ci="14" mb="0" cb="0"/>
+<line nr="77" mi="0" ci="10" mb="0" cb="0"/>
+<line nr="78" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="79" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="80" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="85" mi="0" ci="8" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="23" covered="277"/>
+<counter type="BRANCH" missed="0" covered="4"/>
+<counter type="LINE" missed="5" covered="40"/>
+</sourcefile>
+<counter type="INSTRUCTION" missed="23" covered="277"/>
+<counter type="BRANCH" missed="0" covered="4"/>
+<counter type="LINE" missed="5" covered="40"/>
+<counter type="METHOD" missed="5" covered="22"/>
+<counter type="CLASS" missed="0" covered="1"/>
+</package>
+<package name="com/carnival/sdk/core/util">
+<class name="com/carnival/sdk/core/util/ExponentialBackoff" sourcefilename="SupportUtils.kt">
+<method name="&lt;init&gt;" desc="(JJ)V">
+<counter type="INSTRUCTION" missed="0" covered="10"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<method name="nextDelayMillis" desc="(I)J">
+<counter type="INSTRUCTION" missed="0" covered="14"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="24"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="4"/>
+<counter type="METHOD" missed="0" covered="2"/>
+</class>
+<class name="com/carnival/sdk/core/util/InMemorySecureTokenStore" sourcefilename="SupportUtils.kt">
+<method name="getToken" desc="(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="2"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="clear" desc="(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="3"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="0" covered="2"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="saveToken" desc="(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="3"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="10"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="4"/>
+<counter type="METHOD" missed="0" covered="4"/>
+</class>
+<class name="com/carnival/sdk/core/util/JsonCodec" sourcefilename="SupportUtils.kt">
+<method name="_init_$lambda$0" desc="(Lkotlinx/serialization/json/JsonBuilder;)Lkotlin/Unit;">
+<counter type="INSTRUCTION" missed="0" covered="6"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+</method>
+<method name="encode" desc="(Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)Ljava/lang/String;">
+<counter type="INSTRUCTION" missed="0" covered="6"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="&lt;init&gt;" desc="(Lkotlinx/serialization/json/Json;)V">
+<counter type="INSTRUCTION" missed="0" covered="9"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="decode" desc="(Lkotlinx/serialization/KSerializer;Ljava/lang/String;)Ljava/lang/Object;">
+<counter type="INSTRUCTION" missed="0" covered="6"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="27"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="5"/>
+<counter type="METHOD" missed="0" covered="4"/>
+</class>
+<class name="com/carnival/sdk/core/util/ResultState" sourcefilename="ResultState.kt">
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="0" covered="2"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="2"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="com/carnival/sdk/core/util/ResultState$Error" sourcefilename="ResultState.kt">
+<method name="&lt;init&gt;" desc="(Lcom/carnival/sdk/domain/error/DomainError;)V">
+<counter type="INSTRUCTION" missed="0" covered="8"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="8"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="com/carnival/sdk/core/util/ResultState$Loading" sourcefilename="ResultState.kt">
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="0" covered="3"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="3"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="com/carnival/sdk/core/util/ResultState$Success" sourcefilename="ResultState.kt">
+<method name="&lt;init&gt;" desc="(Ljava/lang/Object;)V">
+<counter type="INSTRUCTION" missed="0" covered="8"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="8"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="com/carnival/sdk/core/util/SecureTokenStoreFactory_androidKt" sourcefilename="SecureTokenStoreFactory.android.kt">
+<method name="createSecureTokenStore" desc="()Lcom/carnival/sdk/core/util/SecureTokenStore;">
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="com/carnival/sdk/core/util/SecureTokenStoreFactory_jvmKt" sourcefilename="SecureTokenStoreFactory.jvm.kt">
+<method name="createSecureTokenStore" desc="()Lcom/carnival/sdk/core/util/SecureTokenStore;">
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="com/carnival/sdk/core/util/SystemTimeProvider" sourcefilename="SupportUtils.kt">
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="0" covered="2"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<method name="nowEpochMillis" desc="()J">
+<counter type="INSTRUCTION" missed="0" covered="3"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="5"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="2"/>
+<counter type="METHOD" missed="0" covered="2"/>
+</class>
+<sourcefile name="SecureTokenStoreFactory.jvm.kt">
+<line nr="3" mi="0" ci="4" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</sourcefile>
+<sourcefile name="SupportUtils.kt">
+<line nr="12" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="13" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="22" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="26" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="29" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="32" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="37" mi="0" ci="9" mb="0" cb="0"/>
+<line nr="38" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="39" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="42" mi="0" ci="6" mb="0" cb="0"/>
+<line nr="44" mi="0" ci="6" mb="0" cb="0"/>
+<line nr="48" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="49" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="52" mi="0" ci="10" mb="0" cb="0"/>
+<line nr="53" mi="0" ci="4" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="0" covered="66"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="15"/>
+</sourcefile>
+<sourcefile name="ResultState.kt">
+<line nr="5" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="6" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="7" mi="0" ci="8" mb="0" cb="0"/>
+<line nr="8" mi="0" ci="8" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="0" covered="21"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="4"/>
+</sourcefile>
+<sourcefile name="SecureTokenStoreFactory.android.kt">
+<line nr="3" mi="0" ci="4" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</sourcefile>
+<counter type="INSTRUCTION" missed="0" covered="95"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="21"/>
+<counter type="METHOD" missed="0" covered="18"/>
+<counter type="CLASS" missed="0" covered="10"/>
+</package>
+<package name="com/carnival/sdk/core/platform">
+<class name="com/carnival/sdk/core/platform/AndroidDeviceInfoProvider" sourcefilename="DeviceInfoProvider.android.kt">
+<method name="getDeviceInfo" desc="()Lcom/carnival/sdk/core/platform/DeviceInfo;">
+<counter type="INSTRUCTION" missed="0" covered="15"/>
+<counter type="BRANCH" missed="2" covered="2"/>
+<counter type="LINE" missed="0" covered="5"/>
+</method>
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="0" covered="2"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="17"/>
+<counter type="BRANCH" missed="2" covered="2"/>
+<counter type="LINE" missed="0" covered="6"/>
+<counter type="METHOD" missed="0" covered="2"/>
+</class>
+<class name="com/carnival/sdk/core/platform/DeviceInfo" sourcefilename="DeviceInfoProvider.kt">
+<method name="&lt;init&gt;" desc="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V">
+<counter type="INSTRUCTION" missed="0" covered="22"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="5"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="22"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="5"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="com/carnival/sdk/core/platform/DeviceInfoProvider_androidKt" sourcefilename="DeviceInfoProvider.android.kt">
+<method name="createDeviceInfoProvider" desc="()Lcom/carnival/sdk/core/platform/DeviceInfoProvider;">
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="com/carnival/sdk/core/platform/DeviceInfoProvider_jvmKt" sourcefilename="DeviceInfoProvider.jvm.kt">
+<method name="createDeviceInfoProvider" desc="()Lcom/carnival/sdk/core/platform/DeviceInfoProvider;">
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="0" covered="4"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+<counter type="METHOD" missed="0" covered="1"/>
+</class>
+<class name="com/carnival/sdk/core/platform/JvmDeviceInfoProvider" sourcefilename="DeviceInfoProvider.jvm.kt">
+<method name="getDeviceInfo" desc="()Lcom/carnival/sdk/core/platform/DeviceInfo;">
+<counter type="INSTRUCTION" missed="4" covered="13"/>
+<counter type="BRANCH" missed="2" covered="2"/>
+<counter type="LINE" missed="0" covered="5"/>
+</method>
+<method name="&lt;init&gt;" desc="()V">
+<counter type="INSTRUCTION" missed="0" covered="2"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="1"/>
+</method>
+<counter type="INSTRUCTION" missed="4" covered="15"/>
+<counter type="BRANCH" missed="2" covered="2"/>
+<counter type="LINE" missed="0" covered="6"/>
+<counter type="METHOD" missed="0" covered="2"/>
+</class>
+<sourcefile name="DeviceInfoProvider.jvm.kt">
+<line nr="3" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="4" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="5" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="6" mi="2" ci="4" mb="1" cb="1"/>
+<line nr="7" mi="2" ci="4" mb="1" cb="1"/>
+<line nr="8" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="12" mi="0" ci="4" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="4" covered="19"/>
+<counter type="BRANCH" missed="2" covered="2"/>
+<counter type="LINE" missed="0" covered="7"/>
+</sourcefile>
+<sourcefile name="DeviceInfoProvider.android.kt">
+<line nr="5" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="6" mi="0" ci="3" mb="0" cb="0"/>
+<line nr="7" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="8" mi="0" ci="5" mb="1" cb="1"/>
+<line nr="9" mi="0" ci="5" mb="1" cb="1"/>
+<line nr="10" mi="0" ci="1" mb="0" cb="0"/>
+<line nr="14" mi="0" ci="4" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="0" covered="21"/>
+<counter type="BRANCH" missed="2" covered="2"/>
+<counter type="LINE" missed="0" covered="7"/>
+</sourcefile>
+<sourcefile name="DeviceInfoProvider.kt">
+<line nr="3" mi="0" ci="2" mb="0" cb="0"/>
+<line nr="4" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="5" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="6" mi="0" ci="5" mb="0" cb="0"/>
+<line nr="7" mi="0" ci="5" mb="0" cb="0"/>
+<counter type="INSTRUCTION" missed="0" covered="22"/>
+<counter type="BRANCH" missed="0" covered="0"/>
+<counter type="LINE" missed="0" covered="5"/>
+</sourcefile>
+<counter type="INSTRUCTION" missed="4" covered="62"/>
+<counter type="BRANCH" missed="4" covered="4"/>
+<counter type="LINE" missed="0" covered="19"/>
+<counter type="METHOD" missed="0" covered="7"/>
+<counter type="CLASS" missed="0" covered="5"/>
 </package>
 <package name="com/carnival/sdk/data/remote">
 <class name="com/carnival/sdk/data/remote/CruiseRemoteDataSource" sourcefilename="CruiseRemoteDataSource.kt">
@@ -2070,9 +2500,9 @@
 <counter type="METHOD" missed="0" covered="13"/>
 <counter type="CLASS" missed="0" covered="5"/>
 </package>
-<counter type="INSTRUCTION" missed="732" covered="4623"/>
-<counter type="BRANCH" missed="42" covered="77"/>
-<counter type="LINE" missed="40" covered="541"/>
-<counter type="METHOD" missed="13" covered="176"/>
-<counter type="CLASS" missed="4" covered="61"/>
+<counter type="INSTRUCTION" missed="738" covered="5039"/>
+<counter type="BRANCH" missed="53" covered="90"/>
+<counter type="LINE" missed="39" covered="603"/>
+<counter type="METHOD" missed="12" covered="213"/>
+<counter type="CLASS" missed="4" covered="79"/>
 </report>

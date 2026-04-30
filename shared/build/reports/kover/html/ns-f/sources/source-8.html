@@ -1,0 +1,190 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>shared Coverage Report > SavePreferencesUseCase</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope: shared<span class="separator">|</span>    <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.carnival.sdk.domain.usecase</a>
+</div>
+
+<h1>Coverage Summary for Class: SavePreferencesUseCase (com.carnival.sdk.domain.usecase)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">SavePreferencesUseCase</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (9/9)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.carnival.sdk.domain.usecase
+&nbsp;
+&nbsp;import com.carnival.sdk.core.util.ResultState
+&nbsp;import com.carnival.sdk.domain.model.ChatMessage
+&nbsp;import com.carnival.sdk.domain.model.ItineraryItem
+&nbsp;import com.carnival.sdk.domain.model.KitchenOrder
+&nbsp;import com.carnival.sdk.domain.model.OrderStatus
+&nbsp;import com.carnival.sdk.domain.model.UserPreferences
+&nbsp;import com.carnival.sdk.domain.model.UserSession
+&nbsp;import com.carnival.sdk.domain.repository.AuthRepository
+&nbsp;import com.carnival.sdk.domain.repository.ChatRepository
+&nbsp;import com.carnival.sdk.domain.repository.ItineraryRepository
+&nbsp;import com.carnival.sdk.domain.repository.OrderRepository
+&nbsp;import com.carnival.sdk.domain.repository.PreferencesRepository
+&nbsp;import com.carnival.sdk.domain.repository.SyncRepository
+&nbsp;import kotlinx.coroutines.flow.Flow
+&nbsp;
+&nbsp;class LoginUseCase(private val repository: AuthRepository) {
+&nbsp;    operator fun invoke(email: String, password: String): Flow&lt;ResultState&lt;UserSession&gt;&gt; =
+&nbsp;        repository.login(email, password)
+&nbsp;}
+&nbsp;
+&nbsp;class GetCachedSessionUseCase(private val repository: AuthRepository) {
+&nbsp;    operator fun invoke(): Flow&lt;ResultState&lt;UserSession?&gt;&gt; = repository.getCachedSession()
+&nbsp;}
+&nbsp;
+<b class="fc">&nbsp;class SavePreferencesUseCase(private val repository: PreferencesRepository) {</b>
+&nbsp;    operator fun invoke(preferences: UserPreferences): Flow&lt;ResultState&lt;UserPreferences&gt;&gt; =
+<b class="fc">&nbsp;        repository.savePreferences(preferences)</b>
+&nbsp;}
+&nbsp;
+&nbsp;class FetchPreferencesUseCase(private val repository: PreferencesRepository) {
+&nbsp;    operator fun invoke(userId: String): Flow&lt;ResultState&lt;UserPreferences?&gt;&gt; =
+&nbsp;        repository.fetchPreferences(userId)
+&nbsp;}
+&nbsp;
+&nbsp;class FetchItineraryUseCase(private val repository: ItineraryRepository) {
+&nbsp;    operator fun invoke(page: Int, pageSize: Int): Flow&lt;ResultState&lt;List&lt;ItineraryItem&gt;&gt;&gt; =
+&nbsp;        repository.fetchItinerary(page, pageSize)
+&nbsp;}
+&nbsp;
+&nbsp;class PlaceOrderUseCase(private val repository: OrderRepository) {
+&nbsp;    operator fun invoke(order: KitchenOrder): Flow&lt;ResultState&lt;KitchenOrder&gt;&gt; =
+&nbsp;        repository.placeOrder(order)
+&nbsp;}
+&nbsp;
+&nbsp;class UpdateOrderStatusUseCase(private val repository: OrderRepository) {
+&nbsp;    operator fun invoke(orderId: String, status: OrderStatus): Flow&lt;ResultState&lt;KitchenOrder&gt;&gt; =
+&nbsp;        repository.updateOrderStatus(orderId, status)
+&nbsp;}
+&nbsp;
+&nbsp;class ObserveOrdersUseCase(private val repository: OrderRepository) {
+&nbsp;    operator fun invoke(userId: String): Flow&lt;ResultState&lt;List&lt;KitchenOrder&gt;&gt;&gt; =
+&nbsp;        repository.observeOrders(userId)
+&nbsp;}
+&nbsp;
+&nbsp;class SendMessageUseCase(private val repository: ChatRepository) {
+&nbsp;    operator fun invoke(message: ChatMessage): Flow&lt;ResultState&lt;ChatMessage&gt;&gt; =
+&nbsp;        repository.sendMessage(message)
+&nbsp;}
+&nbsp;
+&nbsp;class ReceiveMessagesUseCase(private val repository: ChatRepository) {
+&nbsp;    operator fun invoke(roomId: String): Flow&lt;ResultState&lt;List&lt;ChatMessage&gt;&gt;&gt; =
+&nbsp;        repository.receiveMessages(roomId)
+&nbsp;}
+&nbsp;
+&nbsp;class TriggerSyncUseCase(private val repository: SyncRepository) {
+&nbsp;    operator fun invoke(): Flow&lt;ResultState&lt;Unit&gt;&gt; = repository.triggerSync()
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2026-04-30 22:40</div>
+</div>
+</body>
+</html>

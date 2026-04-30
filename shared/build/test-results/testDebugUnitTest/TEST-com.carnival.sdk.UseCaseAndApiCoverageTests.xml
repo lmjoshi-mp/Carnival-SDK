@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.carnival.sdk.UseCaseAndApiCoverageTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-04-17T11:25:52" hostname="Admins-MacBook-Air.local" time="0.003">
+<testsuite name="com.carnival.sdk.UseCaseAndApiCoverageTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-04-30T17:10:31" hostname="Admins-MacBook-Air.local" time="0.003">
   <properties/>
-  <testcase name="domainErrors_areConstructible" classname="com.carnival.sdk.UseCaseAndApiCoverageTests" time="0.0"/>
-  <testcase name="useCases_delegateToRepositories" classname="com.carnival.sdk.UseCaseAndApiCoverageTests" time="0.003"/>
+  <testcase name="domainErrors_areConstructible" classname="com.carnival.sdk.UseCaseAndApiCoverageTests" time="0.001"/>
+  <testcase name="useCases_delegateToRepositories" classname="com.carnival.sdk.UseCaseAndApiCoverageTests" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

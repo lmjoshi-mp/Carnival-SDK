@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>shared Coverage Report > CachePolicy</title>
+  <title>shared Coverage Report > MutableNetworkMonitor</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -19,10 +19,10 @@
 <div class="breadCrumbs">
 Current scope: shared<span class="separator">|</span>    <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">com.carnival.sdk.data.cache</a>
+    <a href="../index.html">com.carnival.sdk.core.network</a>
 </div>
 
-<h1>Coverage Summary for Class: CachePolicy (com.carnival.sdk.data.cache)</h1>
+<h1>Coverage Summary for Class: MutableNetworkMonitor (com.carnival.sdk.core.network)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -49,7 +49,7 @@ Current scope: shared<span class="separator">|</span>    <a href="../../index.ht
 </th>
 </tr>
 <tr>
-  <td class="name">CachePolicy</td>
+  <td class="name">MutableNetworkMonitor</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -63,9 +63,10 @@ Current scope: shared<span class="separator">|</span>    <a href="../../index.ht
     100%
   </span>
   <span class="absValue">
-    (3/3)
+    (2/2)
   </span>
 </td>
+    <td class="coverageStat"/>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -79,15 +80,7 @@ Current scope: shared<span class="separator">|</span>    <a href="../../index.ht
     100%
   </span>
   <span class="absValue">
-    (6/6)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (32/32)
+    (28/28)
   </span>
 </td>
 </tr>
@@ -99,23 +92,22 @@ Current scope: shared<span class="separator">|</span>    <a href="../../index.ht
 
 
 <pre>
-<code class="sourceCode" id="sourceCode">&nbsp;package com.carnival.sdk.data.cache
+<code class="sourceCode" id="sourceCode">&nbsp;package com.carnival.sdk.core.network
 &nbsp;
-&nbsp;import com.carnival.sdk.core.util.TimeProvider
+&nbsp;import kotlinx.coroutines.flow.MutableStateFlow
+&nbsp;import kotlinx.coroutines.flow.StateFlow
+&nbsp;import kotlinx.coroutines.flow.asStateFlow
 &nbsp;
-<b class="fc">&nbsp;class CachePolicy(</b>
-<b class="fc">&nbsp;    private val timeProvider: TimeProvider,</b>
-<b class="fc">&nbsp;    private val ttlMillis: Long,</b>
-&nbsp;) {
-&nbsp;    private var lastUpdatedAt: Long = 0L
+&nbsp;interface NetworkMonitor {
+&nbsp;    val isOnline: StateFlow&lt;Boolean&gt;
+&nbsp;}
 &nbsp;
-&nbsp;    fun markUpdated() {
-<b class="fc">&nbsp;        lastUpdatedAt = timeProvider.nowEpochMillis()</b>
-&nbsp;    }
+<b class="fc">&nbsp;class MutableNetworkMonitor(initialOnline: Boolean = true) : NetworkMonitor {</b>
+<b class="fc">&nbsp;    private val _isOnline = MutableStateFlow(initialOnline)</b>
+<b class="fc">&nbsp;    override val isOnline: StateFlow&lt;Boolean&gt; = _isOnline.asStateFlow()</b>
 &nbsp;
-&nbsp;    fun isExpired(): Boolean {
-<b class="fc">&nbsp;        if (lastUpdatedAt == 0L) return true</b>
-<b class="fc">&nbsp;        return timeProvider.nowEpochMillis() - lastUpdatedAt &gt; ttlMillis</b>
+&nbsp;    fun update(isOnline: Boolean) {
+<b class="fc">&nbsp;        _isOnline.value = isOnline</b>
 &nbsp;    }
 &nbsp;}
 </code>
@@ -141,7 +133,7 @@ Current scope: shared<span class="separator">|</span>    <a href="../../index.ht
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2026-04-16 18:16</div>
+    <div style="float:right;">generated on 2026-04-30 22:40</div>
 </div>
 </body>
 </html>

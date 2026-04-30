@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.carnival.sdk.PlatformAbstractionsTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-04-17T11:25:53" hostname="Admins-MacBook-Air.local" time="0.017">
+<testsuite name="com.carnival.sdk.PlatformAbstractionsTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-04-30T17:10:32" hostname="Admins-MacBook-Air.local" time="0.016">
   <properties/>
   <testcase name="deviceInfoProvider_returnsValues" classname="com.carnival.sdk.PlatformAbstractionsTests" time="0.002"/>
   <testcase name="platformLogger_acceptsAllLevels" classname="com.carnival.sdk.PlatformAbstractionsTests" time="0.005"/>
-  <testcase name="fileSystemProvider_readsWritesAndDeletes" classname="com.carnival.sdk.PlatformAbstractionsTests" time="0.008"/>
-  <testcase name="secureTokenStoreFactory_returnsWorkingStore" classname="com.carnival.sdk.PlatformAbstractionsTests" time="0.001"/>
-  <testcase name="platformNetworkMonitor_hasState" classname="com.carnival.sdk.PlatformAbstractionsTests" time="0.001"/>
+  <testcase name="fileSystemProvider_readsWritesAndDeletes" classname="com.carnival.sdk.PlatformAbstractionsTests" time="0.007"/>
+  <testcase name="secureTokenStoreFactory_returnsWorkingStore" classname="com.carnival.sdk.PlatformAbstractionsTests" time="0.002"/>
+  <testcase name="platformNetworkMonitor_hasState" classname="com.carnival.sdk.PlatformAbstractionsTests" time="0.0"/>
   <system-out><![CDATA[DEBUG [PlatformAbstractionsTests] debug
 INFO [PlatformAbstractionsTests] info
 WARN [PlatformAbstractionsTests] warn

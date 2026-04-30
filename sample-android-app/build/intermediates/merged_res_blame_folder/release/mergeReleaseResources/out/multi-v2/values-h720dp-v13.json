@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.carnival.sample.app.sample-android-app-mergeReleaseResources-52:/values-h720dp-v13/values-h720dp-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/lalitjoshi/.gradle/caches/transforms-4/4a22162854e1db659a404e64b20f9166/transformed/appcompat-1.7.0/res/values-h720dp-v13/values-h720dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "66",
+                        "endOffsets": "117"
+                    }
+                }
+            ]
+        }
+    ]
+}

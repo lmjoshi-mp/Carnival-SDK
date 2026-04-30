@@ -1,0 +1,15 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/lalitjoshi/AndroidStudioProjects/Carnival-SDK/shared/src/androidMain/AndroidManifest.xml:2:1-40
+INJECTED from /Users/lalitjoshi/AndroidStudioProjects/Carnival-SDK/shared/src/androidMain/AndroidManifest.xml:2:1-40
+	package
+		ADDED from /Users/lalitjoshi/AndroidStudioProjects/Carnival-SDK/shared/src/androidMain/AndroidManifest.xml:2:11-37
+		INJECTED from /Users/lalitjoshi/AndroidStudioProjects/Carnival-SDK/shared/src/androidMain/AndroidManifest.xml
+uses-sdk
+INJECTED from /Users/lalitjoshi/AndroidStudioProjects/Carnival-SDK/shared/src/androidMain/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/lalitjoshi/AndroidStudioProjects/Carnival-SDK/shared/src/androidMain/AndroidManifest.xml
+INJECTED from /Users/lalitjoshi/AndroidStudioProjects/Carnival-SDK/shared/src/androidMain/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/lalitjoshi/AndroidStudioProjects/Carnival-SDK/shared/src/androidMain/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/lalitjoshi/AndroidStudioProjects/Carnival-SDK/shared/src/androidMain/AndroidManifest.xml

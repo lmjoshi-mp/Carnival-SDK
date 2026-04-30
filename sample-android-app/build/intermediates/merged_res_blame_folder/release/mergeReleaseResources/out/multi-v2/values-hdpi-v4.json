@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.carnival.sample.app.sample-android-app-mergeReleaseResources-52:/values-hdpi-v4/values-hdpi-v4.xml",
+            "map": [
+                {
+                    "source": "/Users/lalitjoshi/.gradle/caches/transforms-4/4a22162854e1db659a404e64b20f9166/transformed/appcompat-1.7.0/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "13",
+                        "endOffsets": "327"
+                    }
+                }
+            ]
+        }
+    ]
+}

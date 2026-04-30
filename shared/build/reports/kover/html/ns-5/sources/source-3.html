@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>shared Coverage Report > JsonCodec</title>
+  <title>shared Coverage Report > PlatformLogger</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -19,18 +19,15 @@
 <div class="breadCrumbs">
 Current scope: shared<span class="separator">|</span>    <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">com.carnival.sdk.core.util</a>
+    <a href="../index.html">com.carnival.sdk.core.logging</a>
 </div>
 
-<h1>Coverage Summary for Class: JsonCodec (com.carnival.sdk.core.util)</h1>
+<h1>Coverage Summary for Class: PlatformLogger (com.carnival.sdk.core.logging)</h1>
 
 <table class="coverageStats">
+
 <tr>
   <th class="name">Class</th>
-<th class="coverageStat 
-">
-  Class, %
-</th>
 <th class="coverageStat 
 ">
   Method, %
@@ -48,43 +45,62 @@ Current scope: shared<span class="separator">|</span>    <a href="../../index.ht
   Instruction, %
 </th>
 </tr>
-<tr>
-  <td class="name">JsonCodec</td>
+  <tr>
+    <td class="name">PlatformLogger$DefaultImpls</td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    0%
   </span>
   <span class="absValue">
-    (1/1)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (4/4)
+    (0/1)
   </span>
 </td>
     <td class="coverageStat"/>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    0%
   </span>
   <span class="absValue">
-    (5/5)
+    (0/1)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    0%
   </span>
   <span class="absValue">
-    (27/27)
+    (0/17)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/17)
   </span>
 </td>
 </tr>
-
 </table>
 
 <br/>
@@ -92,61 +108,16 @@ Current scope: shared<span class="separator">|</span>    <a href="../../index.ht
 
 
 <pre>
-<code class="sourceCode" id="sourceCode">&nbsp;package com.carnival.sdk.core.util
+<code class="sourceCode" id="sourceCode">&nbsp;package com.carnival.sdk.core.logging
 &nbsp;
-&nbsp;import kotlinx.serialization.KSerializer
-&nbsp;import kotlinx.serialization.json.Json
-&nbsp;import kotlinx.datetime.Clock
-&nbsp;import kotlin.math.pow
-&nbsp;
-&nbsp;interface TimeProvider {
-&nbsp;    fun nowEpochMillis(): Long
+&nbsp;interface PlatformLogger {
+&nbsp;    fun d(message: String)
+&nbsp;    fun i(message: String)
+&nbsp;    fun w(message: String)
+<b class="nc">&nbsp;    fun e(message: String, throwable: Throwable? = null)</b>
 &nbsp;}
 &nbsp;
-&nbsp;class SystemTimeProvider : TimeProvider {
-&nbsp;    override fun nowEpochMillis(): Long = Clock.System.now().toEpochMilliseconds()
-&nbsp;}
-&nbsp;
-&nbsp;interface SecureTokenStore {
-&nbsp;    suspend fun saveToken(token: String)
-&nbsp;    suspend fun getToken(): String?
-&nbsp;    suspend fun clear()
-&nbsp;}
-&nbsp;
-&nbsp;class InMemorySecureTokenStore : SecureTokenStore {
-&nbsp;    private var token: String? = null
-&nbsp;
-&nbsp;    override suspend fun saveToken(token: String) {
-&nbsp;        this.token = token
-&nbsp;    }
-&nbsp;
-&nbsp;    override suspend fun getToken(): String? = token
-&nbsp;
-&nbsp;    override suspend fun clear() {
-&nbsp;        token = null
-&nbsp;    }
-&nbsp;}
-&nbsp;
-&nbsp;class JsonCodec(
-<b class="fc">&nbsp;    private val json: Json = Json {</b>
-<b class="fc">&nbsp;        ignoreUnknownKeys = true</b>
-<b class="fc">&nbsp;        encodeDefaults = true</b>
-&nbsp;    },
-&nbsp;) {
-<b class="fc">&nbsp;    fun &lt;T&gt; encode(serializer: KSerializer&lt;T&gt;, value: T): String = json.encodeToString(serializer, value)</b>
-&nbsp;
-<b class="fc">&nbsp;    fun &lt;T&gt; decode(serializer: KSerializer&lt;T&gt;, raw: String): T = json.decodeFromString(serializer, raw)</b>
-&nbsp;}
-&nbsp;
-&nbsp;class ExponentialBackoff(
-&nbsp;    private val baseDelayMillis: Long = 1_000,
-&nbsp;    private val maxDelayMillis: Long = 60_000,
-&nbsp;) {
-&nbsp;    fun nextDelayMillis(retryCount: Int): Long {
-&nbsp;        val delay = (baseDelayMillis * 2.0.pow(retryCount.toDouble())).toLong()
-&nbsp;        return delay.coerceAtMost(maxDelayMillis)
-&nbsp;    }
-&nbsp;}
+&nbsp;expect fun createPlatformLogger(tag: String): PlatformLogger
 </code>
 </pre>
 </div>
@@ -170,7 +141,7 @@ Current scope: shared<span class="separator">|</span>    <a href="../../index.ht
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2026-04-16 18:16</div>
+    <div style="float:right;">generated on 2026-04-30 22:40</div>
 </div>
 </body>
 </html>

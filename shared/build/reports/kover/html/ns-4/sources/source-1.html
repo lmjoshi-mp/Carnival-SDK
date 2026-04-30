@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>shared Coverage Report > MutableNetworkMonitor</title>
+  <title>shared Coverage Report > AndroidFileSystemProvider</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -19,10 +19,10 @@
 <div class="breadCrumbs">
 Current scope: shared<span class="separator">|</span>    <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">com.carnival.sdk.core.network</a>
+    <a href="../index.html">com.carnival.sdk.core.files</a>
 </div>
 
-<h1>Coverage Summary for Class: MutableNetworkMonitor (com.carnival.sdk.core.network)</h1>
+<h1>Coverage Summary for Class: AndroidFileSystemProvider (com.carnival.sdk.core.files)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -49,7 +49,7 @@ Current scope: shared<span class="separator">|</span>    <a href="../../index.ht
 </th>
 </tr>
 <tr>
-  <td class="name">MutableNetworkMonitor</td>
+  <td class="name">AndroidFileSystemProvider</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -63,24 +63,31 @@ Current scope: shared<span class="separator">|</span>    <a href="../../index.ht
     100%
   </span>
   <span class="absValue">
-    (2/2)
+    (5/5)
   </span>
 </td>
-    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (1/2)
+  </span>
+</td>
 <td class="coverageStat">
   <span class="percent">
     100%
   </span>
   <span class="absValue">
-    (4/4)
+    (6/6)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    97.2%
   </span>
   <span class="absValue">
-    (28/28)
+    (35/36)
   </span>
 </td>
 </tr>
@@ -92,24 +99,26 @@ Current scope: shared<span class="separator">|</span>    <a href="../../index.ht
 
 
 <pre>
-<code class="sourceCode" id="sourceCode">&nbsp;package com.carnival.sdk.core.network
+<code class="sourceCode" id="sourceCode">&nbsp;package com.carnival.sdk.core.files
 &nbsp;
-&nbsp;import kotlinx.coroutines.flow.MutableStateFlow
-&nbsp;import kotlinx.coroutines.flow.StateFlow
-&nbsp;import kotlinx.coroutines.flow.asStateFlow
+&nbsp;import java.io.File
 &nbsp;
-&nbsp;interface NetworkMonitor {
-&nbsp;    val isOnline: StateFlow&lt;Boolean&gt;
-&nbsp;}
-&nbsp;
-<b class="fc">&nbsp;class MutableNetworkMonitor(initialOnline: Boolean = true) : NetworkMonitor {</b>
-<b class="fc">&nbsp;    private val _isOnline = MutableStateFlow(initialOnline)</b>
-<b class="fc">&nbsp;    override val isOnline: StateFlow&lt;Boolean&gt; = _isOnline.asStateFlow()</b>
-&nbsp;
-&nbsp;    fun update(isOnline: Boolean) {
-<b class="fc">&nbsp;        _isOnline.value = isOnline</b>
+<b class="fc">&nbsp;private class AndroidFileSystemProvider : FileSystemProvider {</b>
+&nbsp;    override fun writeText(path: String, content: String) {
+<b class="fc">&nbsp;        File(path).writeText(content)</b>
 &nbsp;    }
+&nbsp;
+&nbsp;    override fun readText(path: String): String? {
+<b class="fc">&nbsp;        val file = File(path)</b>
+<b class="pc">&nbsp;        return if (file.exists()) file.readText() else null</b>
+&nbsp;    }
+&nbsp;
+<b class="fc">&nbsp;    override fun exists(path: String): Boolean = File(path).exists()</b>
+&nbsp;
+<b class="fc">&nbsp;    override fun delete(path: String): Boolean = File(path).delete()</b>
 &nbsp;}
+&nbsp;
+&nbsp;actual fun createFileSystemProvider(): FileSystemProvider = AndroidFileSystemProvider()
 </code>
 </pre>
 </div>
@@ -133,7 +142,7 @@ Current scope: shared<span class="separator">|</span>    <a href="../../index.ht
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2026-04-16 18:16</div>
+    <div style="float:right;">generated on 2026-04-30 22:40</div>
 </div>
 </body>
 </html>

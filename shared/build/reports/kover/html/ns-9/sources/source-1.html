@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>shared Coverage Report > AuthRepositoryImpl</title>
+  <title>shared Coverage Report > CachePolicy</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -19,15 +19,18 @@
 <div class="breadCrumbs">
 Current scope: shared<span class="separator">|</span>    <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">com.carnival.sdk.data.repository</a>
+    <a href="../index.html">com.carnival.sdk.data.cache</a>
 </div>
 
-<h1>Coverage Summary for Class: AuthRepositoryImpl (com.carnival.sdk.data.repository)</h1>
+<h1>Coverage Summary for Class: CachePolicy (com.carnival.sdk.data.cache)</h1>
 
 <table class="coverageStats">
-
 <tr>
   <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
 <th class="coverageStat 
 ">
   Method, %
@@ -46,7 +49,15 @@ Current scope: shared<span class="separator">|</span>    <a href="../../index.ht
 </th>
 </tr>
 <tr>
-  <td class="name">AuthRepositoryImpl</td>
+  <td class="name">CachePolicy</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -55,13 +66,12 @@ Current scope: shared<span class="separator">|</span>    <a href="../../index.ht
     (3/3)
   </span>
 </td>
-    <td class="coverageStat"/>
 <td class="coverageStat">
   <span class="percent">
     100%
   </span>
   <span class="absValue">
-    (10/10)
+    (4/4)
   </span>
 </td>
 <td class="coverageStat">
@@ -69,108 +79,19 @@ Current scope: shared<span class="separator">|</span>    <a href="../../index.ht
     100%
   </span>
   <span class="absValue">
-    (43/43)
+    (6/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (32/32)
   </span>
 </td>
 </tr>
-  <tr>
-    <td class="name">AuthRepositoryImpl$getCachedSession$1</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (1/1)
-  </span>
-</td>
-    <td class="coverageStat"/>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (2/2)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (51/51)
-  </span>
-</td>
-  </tr>
-  <tr>
-    <td class="name">AuthRepositoryImpl$login$1</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (1/1)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    50%
-  </span>
-  <span class="absValue">
-    (5/10)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    76.9%
-  </span>
-  <span class="absValue">
-    (10/13)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    75.9%
-  </span>
-  <span class="absValue">
-    (183/241)
-  </span>
-</td>
-  </tr>
-<tr>
-  <td class="name"><strong>Total</strong></td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (5/5)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    50%
-  </span>
-  <span class="absValue">
-    (5/10)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    88%
-  </span>
-  <span class="absValue">
-    (22/25)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    82.7%
-  </span>
-  <span class="absValue">
-    (277/335)
-  </span>
-</td>
-</tr>
+
 </table>
 
 <br/>
@@ -178,302 +99,24 @@ Current scope: shared<span class="separator">|</span>    <a href="../../index.ht
 
 
 <pre>
-<code class="sourceCode" id="sourceCode">&nbsp;package com.carnival.sdk.data.repository
+<code class="sourceCode" id="sourceCode">&nbsp;package com.carnival.sdk.data.cache
 &nbsp;
-&nbsp;import com.carnival.sdk.core.dispatcher.DispatcherProvider
-&nbsp;import com.carnival.sdk.core.network.NetworkMonitor
-&nbsp;import com.carnival.sdk.core.util.JsonCodec
-&nbsp;import com.carnival.sdk.core.util.ResultState
-&nbsp;import com.carnival.sdk.core.util.SecureTokenStore
-&nbsp;import com.carnival.sdk.data.cache.CachePolicy
-&nbsp;import com.carnival.sdk.data.local.CruiseLocalDataSource
-&nbsp;import com.carnival.sdk.data.mapper.toDomain
-&nbsp;import com.carnival.sdk.data.mapper.toDto
-&nbsp;import com.carnival.sdk.data.remote.CruiseRemoteDataSource
-&nbsp;import com.carnival.sdk.data.remote.dto.ChatMessageDto
-&nbsp;import com.carnival.sdk.data.remote.dto.OrderDto
-&nbsp;import com.carnival.sdk.data.remote.dto.PreferencesDto
-&nbsp;import com.carnival.sdk.domain.error.DomainError
-&nbsp;import com.carnival.sdk.domain.model.ChatMessage
-&nbsp;import com.carnival.sdk.domain.model.ItineraryItem
-&nbsp;import com.carnival.sdk.domain.model.KitchenOrder
-&nbsp;import com.carnival.sdk.domain.model.OrderStatus
-&nbsp;import com.carnival.sdk.domain.model.SyncOperationType
-&nbsp;import com.carnival.sdk.domain.model.UserPreferences
-&nbsp;import com.carnival.sdk.domain.model.UserSession
-&nbsp;import com.carnival.sdk.domain.repository.AuthRepository
-&nbsp;import com.carnival.sdk.domain.repository.ChatRepository
-&nbsp;import com.carnival.sdk.domain.repository.ItineraryRepository
-&nbsp;import com.carnival.sdk.domain.repository.OrderRepository
-&nbsp;import com.carnival.sdk.domain.repository.PreferencesRepository
-&nbsp;import kotlinx.coroutines.CoroutineScope
-&nbsp;import kotlinx.coroutines.channels.awaitClose
-&nbsp;import kotlinx.coroutines.delay
-&nbsp;import kotlinx.coroutines.flow.Flow
-&nbsp;import kotlinx.coroutines.flow.channelFlow
-&nbsp;import kotlinx.coroutines.flow.collect
-&nbsp;import kotlinx.coroutines.flow.flow
-&nbsp;import kotlinx.coroutines.flow.flowOn
-&nbsp;import kotlinx.coroutines.isActive
-&nbsp;import kotlinx.coroutines.launch
+&nbsp;import com.carnival.sdk.core.util.TimeProvider
 &nbsp;
-<b class="fc">&nbsp;class AuthRepositoryImpl(</b>
-<b class="fc">&nbsp;    private val remoteDataSource: CruiseRemoteDataSource,</b>
-<b class="fc">&nbsp;    private val localDataSource: CruiseLocalDataSource,</b>
-<b class="fc">&nbsp;    private val networkMonitor: NetworkMonitor,</b>
-<b class="fc">&nbsp;    private val secureTokenStore: SecureTokenStore,</b>
-<b class="fc">&nbsp;    private val dispatcherProvider: DispatcherProvider,</b>
-&nbsp;) : AuthRepository {
-<b class="fc">&nbsp;    override fun login(email: String, password: String): Flow&lt;ResultState&lt;UserSession&gt;&gt; = flow {</b>
-<b class="fc">&nbsp;        emit(ResultState.Loading)</b>
-<b class="fc">&nbsp;        val cachedSession = localDataSource.getSession()</b>
+<b class="fc">&nbsp;class CachePolicy(</b>
+<b class="fc">&nbsp;    private val timeProvider: TimeProvider,</b>
+<b class="fc">&nbsp;    private val ttlMillis: Long,</b>
+&nbsp;) {
+&nbsp;    private var lastUpdatedAt: Long = 0L
 &nbsp;
-<b class="fc">&nbsp;        if (!networkMonitor.isOnline.value) {</b>
-<b class="pc">&nbsp;            if (cachedSession != null &amp;&amp; !cachedSession.isExpired) {</b>
-<b class="fc">&nbsp;                emit(ResultState.Success(cachedSession))</b>
-&nbsp;            } else {
-<b class="fc">&nbsp;                emit(ResultState.Error(DomainError.UnauthorizedError(&quot;No valid offline session found&quot;)))</b>
-&nbsp;            }
-&nbsp;            return@flow
-&nbsp;        }
+&nbsp;    fun markUpdated() {
+<b class="fc">&nbsp;        lastUpdatedAt = timeProvider.nowEpochMillis()</b>
+&nbsp;    }
 &nbsp;
-&nbsp;        try {
-<b class="fc">&nbsp;            val session = remoteDataSource.login(email, password).toDomain()</b>
-<b class="fc">&nbsp;            localDataSource.saveSession(session)</b>
-<b class="fc">&nbsp;            secureTokenStore.saveToken(session.token)</b>
-<b class="fc">&nbsp;            emit(ResultState.Success(session))</b>
-&nbsp;        } catch (throwable: Throwable) {
-<b class="nc">&nbsp;            if (cachedSession != null &amp;&amp; !cachedSession.isExpired) {</b>
-<b class="nc">&nbsp;                emit(ResultState.Success(cachedSession))</b>
-&nbsp;            } else {
-<b class="nc">&nbsp;                emit(ResultState.Error(DomainError.NetworkError(&quot;Login failed&quot;, throwable)))</b>
-&nbsp;            }
-&nbsp;        }
-<b class="fc">&nbsp;    }.flowOn(dispatcherProvider.io)</b>
-&nbsp;
-<b class="fc">&nbsp;    override fun getCachedSession(): Flow&lt;ResultState&lt;UserSession?&gt;&gt; = flow {</b>
-<b class="fc">&nbsp;        emit(ResultState.Loading)</b>
-<b class="fc">&nbsp;        emit(ResultState.Success(localDataSource.getSession()))</b>
-<b class="fc">&nbsp;    }.flowOn(dispatcherProvider.io)</b>
-&nbsp;}
-&nbsp;
-&nbsp;class PreferencesRepositoryImpl(
-&nbsp;    private val remoteDataSource: CruiseRemoteDataSource,
-&nbsp;    private val localDataSource: CruiseLocalDataSource,
-&nbsp;    private val networkMonitor: NetworkMonitor,
-&nbsp;    private val secureTokenStore: SecureTokenStore,
-&nbsp;    private val jsonCodec: JsonCodec,
-&nbsp;    private val dispatcherProvider: DispatcherProvider,
-&nbsp;) : PreferencesRepository {
-&nbsp;    override fun savePreferences(preferences: UserPreferences): Flow&lt;ResultState&lt;UserPreferences&gt;&gt; = flow {
-&nbsp;        emit(ResultState.Loading)
-&nbsp;        localDataSource.savePreferences(preferences)
-&nbsp;        emit(ResultState.Success(preferences))
-&nbsp;        val token = secureTokenStore.getToken() ?: run {
-&nbsp;            emit(ResultState.Error(DomainError.UnauthorizedError()))
-&nbsp;            return@flow
-&nbsp;        }
-&nbsp;
-&nbsp;        val payload = jsonCodec.encode(PreferencesDto.serializer(), preferences.toDto())
-&nbsp;        if (!networkMonitor.isOnline.value) {
-&nbsp;            localDataSource.enqueueSync(&quot;preferences&quot;, preferences.userId, SyncOperationType.UPDATE, payload)
-&nbsp;            return@flow
-&nbsp;        }
-&nbsp;
-&nbsp;        try {
-&nbsp;            val updated = remoteDataSource.savePreferences(preferences.toDto(), token).toDomain()
-&nbsp;            localDataSource.savePreferences(updated)
-&nbsp;            emit(ResultState.Success(updated))
-&nbsp;        } catch (throwable: Throwable) {
-&nbsp;            localDataSource.enqueueSync(&quot;preferences&quot;, preferences.userId, SyncOperationType.UPDATE, payload)
-&nbsp;            emit(ResultState.Error(DomainError.NetworkError(&quot;Preferences sync failed; queued for retry&quot;, throwable)))
-&nbsp;        }
-&nbsp;    }.flowOn(dispatcherProvider.io)
-&nbsp;
-&nbsp;    override fun fetchPreferences(userId: String): Flow&lt;ResultState&lt;UserPreferences?&gt;&gt; = flow {
-&nbsp;        emit(ResultState.Loading)
-&nbsp;        val cached = localDataSource.getPreferences(userId)
-&nbsp;        emit(ResultState.Success(cached))
-&nbsp;        if (!networkMonitor.isOnline.value) return@flow
-&nbsp;        val token = secureTokenStore.getToken() ?: return@flow
-&nbsp;        try {
-&nbsp;            val remote = remoteDataSource.fetchPreferences(userId, token).toDomain()
-&nbsp;            localDataSource.savePreferences(remote)
-&nbsp;            emit(ResultState.Success(remote))
-&nbsp;        } catch (throwable: Throwable) {
-&nbsp;            emit(ResultState.Error(DomainError.NetworkError(&quot;Failed to refresh preferences&quot;, throwable)))
-&nbsp;        }
-&nbsp;    }.flowOn(dispatcherProvider.io)
-&nbsp;}
-&nbsp;
-&nbsp;class ItineraryRepositoryImpl(
-&nbsp;    private val remoteDataSource: CruiseRemoteDataSource,
-&nbsp;    private val localDataSource: CruiseLocalDataSource,
-&nbsp;    private val networkMonitor: NetworkMonitor,
-&nbsp;    private val secureTokenStore: SecureTokenStore,
-&nbsp;    private val cachePolicy: CachePolicy,
-&nbsp;    private val dispatcherProvider: DispatcherProvider,
-&nbsp;) : ItineraryRepository {
-&nbsp;    override fun fetchItinerary(page: Int, pageSize: Int): Flow&lt;ResultState&lt;List&lt;ItineraryItem&gt;&gt;&gt; = flow {
-&nbsp;        emit(ResultState.Loading)
-&nbsp;        val cachedPage = localDataSource.getItinerary(page, pageSize)
-&nbsp;        emit(ResultState.Success(cachedPage))
-&nbsp;
-&nbsp;        if (!networkMonitor.isOnline.value || !cachePolicy.isExpired()) return@flow
-&nbsp;        val token = secureTokenStore.getToken() ?: return@flow
-&nbsp;
-&nbsp;        try {
-&nbsp;            val pageDto = remoteDataSource.fetchItinerary(page, pageSize, token)
-&nbsp;            val mapped = pageDto.items.map { it.toDomain() }
-&nbsp;            localDataSource.saveItinerary(mapped)
-&nbsp;            cachePolicy.markUpdated()
-&nbsp;            emit(ResultState.Success(localDataSource.getItinerary(page, pageSize)))
-&nbsp;        } catch (throwable: Throwable) {
-&nbsp;            emit(ResultState.Error(DomainError.NetworkError(&quot;Failed to refresh itinerary&quot;, throwable)))
-&nbsp;        }
-&nbsp;    }.flowOn(dispatcherProvider.io)
-&nbsp;}
-&nbsp;
-&nbsp;class OrderRepositoryImpl(
-&nbsp;    private val remoteDataSource: CruiseRemoteDataSource,
-&nbsp;    private val localDataSource: CruiseLocalDataSource,
-&nbsp;    private val networkMonitor: NetworkMonitor,
-&nbsp;    private val secureTokenStore: SecureTokenStore,
-&nbsp;    private val jsonCodec: JsonCodec,
-&nbsp;    private val dispatcherProvider: DispatcherProvider,
-&nbsp;) : OrderRepository {
-&nbsp;    override fun placeOrder(order: KitchenOrder): Flow&lt;ResultState&lt;KitchenOrder&gt;&gt; = flow {
-&nbsp;        emit(ResultState.Loading)
-&nbsp;        localDataSource.saveOrder(order.copy(pendingSync = true))
-&nbsp;        emit(ResultState.Success(order.copy(pendingSync = true)))
-&nbsp;
-&nbsp;        val payload = jsonCodec.encode(OrderDto.serializer(), order.toDto())
-&nbsp;        if (!networkMonitor.isOnline.value) {
-&nbsp;            localDataSource.enqueueSync(&quot;order&quot;, order.id, SyncOperationType.CREATE, payload)
-&nbsp;            return@flow
-&nbsp;        }
-&nbsp;
-&nbsp;        val token = secureTokenStore.getToken() ?: run {
-&nbsp;            localDataSource.enqueueSync(&quot;order&quot;, order.id, SyncOperationType.CREATE, payload)
-&nbsp;            emit(ResultState.Error(DomainError.UnauthorizedError()))
-&nbsp;            return@flow
-&nbsp;        }
-&nbsp;
-&nbsp;        try {
-&nbsp;            val remoteOrder = remoteDataSource.placeOrder(order.toDto(), token).toDomain(pendingSync = false)
-&nbsp;            localDataSource.saveOrder(remoteOrder)
-&nbsp;            emit(ResultState.Success(remoteOrder))
-&nbsp;        } catch (throwable: Throwable) {
-&nbsp;            localDataSource.enqueueSync(&quot;order&quot;, order.id, SyncOperationType.CREATE, payload)
-&nbsp;            emit(ResultState.Error(DomainError.NetworkError(&quot;Order queued for sync&quot;, throwable)))
-&nbsp;        }
-&nbsp;    }.flowOn(dispatcherProvider.io)
-&nbsp;
-&nbsp;    override fun updateOrderStatus(orderId: String, status: OrderStatus): Flow&lt;ResultState&lt;KitchenOrder&gt;&gt; = flow {
-&nbsp;        emit(ResultState.Loading)
-&nbsp;        localDataSource.updateOrderStatus(orderId, status, pendingSync = true)
-&nbsp;        val updated = localDataSource.getOrder(orderId)
-&nbsp;        if (updated == null) {
-&nbsp;            emit(ResultState.Error(DomainError.CacheError(&quot;Order not found: $orderId&quot;)))
-&nbsp;            return@flow
-&nbsp;        }
-&nbsp;        emit(ResultState.Success(updated))
-&nbsp;
-&nbsp;        val payload = jsonCodec.encode(OrderDto.serializer(), updated.toDto())
-&nbsp;        if (!networkMonitor.isOnline.value) {
-&nbsp;            localDataSource.enqueueSync(&quot;order&quot;, orderId, SyncOperationType.UPDATE, payload)
-&nbsp;            return@flow
-&nbsp;        }
-&nbsp;
-&nbsp;        val token = secureTokenStore.getToken() ?: run {
-&nbsp;            localDataSource.enqueueSync(&quot;order&quot;, orderId, SyncOperationType.UPDATE, payload)
-&nbsp;            emit(ResultState.Error(DomainError.UnauthorizedError()))
-&nbsp;            return@flow
-&nbsp;        }
-&nbsp;
-&nbsp;        try {
-&nbsp;            val remoteOrder = remoteDataSource.updateOrderStatus(orderId, status.name, token).toDomain(pendingSync = false)
-&nbsp;            localDataSource.saveOrder(remoteOrder)
-&nbsp;            emit(ResultState.Success(remoteOrder))
-&nbsp;        } catch (throwable: Throwable) {
-&nbsp;            localDataSource.enqueueSync(&quot;order&quot;, orderId, SyncOperationType.UPDATE, payload)
-&nbsp;            emit(ResultState.Error(DomainError.NetworkError(&quot;Status update queued for sync&quot;, throwable)))
-&nbsp;        }
-&nbsp;    }.flowOn(dispatcherProvider.io)
-&nbsp;
-&nbsp;    override fun observeOrders(userId: String): Flow&lt;ResultState&lt;List&lt;KitchenOrder&gt;&gt;&gt; = flow {
-&nbsp;        emit(ResultState.Loading)
-&nbsp;        emit(ResultState.Success(localDataSource.getOrders(userId)))
-&nbsp;        localDataSource.observeOrders(userId).collect { orders -&gt;
-&nbsp;            emit(ResultState.Success(orders))
-&nbsp;        }
-&nbsp;    }.flowOn(dispatcherProvider.io)
-&nbsp;}
-&nbsp;
-&nbsp;class ChatRepositoryImpl(
-&nbsp;    private val remoteDataSource: CruiseRemoteDataSource,
-&nbsp;    private val localDataSource: CruiseLocalDataSource,
-&nbsp;    private val networkMonitor: NetworkMonitor,
-&nbsp;    private val secureTokenStore: SecureTokenStore,
-&nbsp;    private val jsonCodec: JsonCodec,
-&nbsp;    private val dispatcherProvider: DispatcherProvider,
-&nbsp;    private val pollingIntervalMillis: Long = 5_000,
-&nbsp;) : ChatRepository {
-&nbsp;    override fun sendMessage(message: ChatMessage): Flow&lt;ResultState&lt;ChatMessage&gt;&gt; = flow {
-&nbsp;        emit(ResultState.Loading)
-&nbsp;        val localMessage = message.copy(pendingSync = true)
-&nbsp;        localDataSource.saveMessage(localMessage)
-&nbsp;        emit(ResultState.Success(localMessage))
-&nbsp;        val payload = jsonCodec.encode(ChatMessageDto.serializer(), localMessage.toDto())
-&nbsp;
-&nbsp;        if (!networkMonitor.isOnline.value) {
-&nbsp;            localDataSource.enqueueSync(&quot;chat&quot;, localMessage.id, SyncOperationType.CREATE, payload)
-&nbsp;            return@flow
-&nbsp;        }
-&nbsp;        val token = secureTokenStore.getToken() ?: return@flow
-&nbsp;
-&nbsp;        try {
-&nbsp;            val remote = remoteDataSource.sendMessage(localMessage.toDto(), token).toDomain(pendingSync = false)
-&nbsp;            localDataSource.saveMessage(remote)
-&nbsp;            emit(ResultState.Success(remote))
-&nbsp;        } catch (throwable: Throwable) {
-&nbsp;            localDataSource.enqueueSync(&quot;chat&quot;, localMessage.id, SyncOperationType.CREATE, payload)
-&nbsp;            emit(ResultState.Error(DomainError.NetworkError(&quot;Message will be retried by sync engine&quot;, throwable)))
-&nbsp;        }
-&nbsp;    }.flowOn(dispatcherProvider.io)
-&nbsp;
-&nbsp;    override fun receiveMessages(roomId: String): Flow&lt;ResultState&lt;List&lt;ChatMessage&gt;&gt;&gt; = channelFlow {
-&nbsp;        send(ResultState.Loading)
-&nbsp;        send(ResultState.Success(localDataSource.getMessages(roomId)))
-&nbsp;
-&nbsp;        val localJob = launch {
-&nbsp;            localDataSource.observeMessages(roomId).collect { messages -&gt;
-&nbsp;                send(ResultState.Success(messages))
-&nbsp;            }
-&nbsp;        }
-&nbsp;
-&nbsp;        val pollingJob = CoroutineScope(dispatcherProvider.io).launch {
-&nbsp;            while (isActive) {
-&nbsp;                if (networkMonitor.isOnline.value) {
-&nbsp;                    val token = secureTokenStore.getToken()
-&nbsp;                    if (token != null) {
-&nbsp;                        try {
-&nbsp;                            val remoteMessages = remoteDataSource.fetchMessages(roomId, token)
-&nbsp;                            localDataSource.saveMessages(remoteMessages.map { it.toDomain() })
-&nbsp;                        } catch (_: Throwable) {
-&nbsp;                            // Keep local stream active; next poll will retry.
-&nbsp;                        }
-&nbsp;                    }
-&nbsp;                }
-&nbsp;                delay(pollingIntervalMillis)
-&nbsp;            }
-&nbsp;        }
-&nbsp;
-&nbsp;        awaitClose {
-&nbsp;            localJob.cancel()
-&nbsp;            pollingJob.cancel()
-&nbsp;        }
-&nbsp;    }.flowOn(dispatcherProvider.io)
+&nbsp;    fun isExpired(): Boolean {
+<b class="fc">&nbsp;        if (lastUpdatedAt == 0L) return true</b>
+<b class="fc">&nbsp;        return timeProvider.nowEpochMillis() - lastUpdatedAt &gt; ttlMillis</b>
+&nbsp;    }
 &nbsp;}
 </code>
 </pre>
@@ -498,7 +141,7 @@ Current scope: shared<span class="separator">|</span>    <a href="../../index.ht
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2026-04-16 18:16</div>
+    <div style="float:right;">generated on 2026-04-30 22:40</div>
 </div>
 </body>
 </html>

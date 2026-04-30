@@ -1,0 +1,128 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>shared Coverage Report > TimeProvider</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope: shared<span class="separator">|</span>    <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.carnival.sdk.core.util</a>
+</div>
+
+<h1>Coverage Summary for Class: TimeProvider (com.carnival.sdk.core.util)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+</tr>
+<tr>
+  <td class="name">TimeProvider</td>
+    <td class="coverageStat"/>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.carnival.sdk.core.util
+&nbsp;
+&nbsp;import kotlinx.serialization.KSerializer
+&nbsp;import kotlinx.serialization.json.Json
+&nbsp;import kotlinx.datetime.Clock
+&nbsp;import kotlin.math.pow
+&nbsp;
+&nbsp;interface TimeProvider {
+&nbsp;    fun nowEpochMillis(): Long
+&nbsp;}
+&nbsp;
+&nbsp;class SystemTimeProvider : TimeProvider {
+&nbsp;    override fun nowEpochMillis(): Long = Clock.System.now().toEpochMilliseconds()
+&nbsp;}
+&nbsp;
+&nbsp;interface SecureTokenStore {
+&nbsp;    suspend fun saveToken(token: String)
+&nbsp;    suspend fun getToken(): String?
+&nbsp;    suspend fun clear()
+&nbsp;}
+&nbsp;
+&nbsp;class InMemorySecureTokenStore : SecureTokenStore {
+&nbsp;    private var token: String? = null
+&nbsp;
+&nbsp;    override suspend fun saveToken(token: String) {
+&nbsp;        this.token = token
+&nbsp;    }
+&nbsp;
+&nbsp;    override suspend fun getToken(): String? = token
+&nbsp;
+&nbsp;    override suspend fun clear() {
+&nbsp;        token = null
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;class JsonCodec(
+&nbsp;    private val json: Json = Json {
+&nbsp;        ignoreUnknownKeys = true
+&nbsp;        encodeDefaults = true
+&nbsp;    },
+&nbsp;) {
+&nbsp;    fun &lt;T&gt; encode(serializer: KSerializer&lt;T&gt;, value: T): String = json.encodeToString(serializer, value)
+&nbsp;
+&nbsp;    fun &lt;T&gt; decode(serializer: KSerializer&lt;T&gt;, raw: String): T = json.decodeFromString(serializer, raw)
+&nbsp;}
+&nbsp;
+&nbsp;class ExponentialBackoff(
+&nbsp;    private val baseDelayMillis: Long = 1_000,
+&nbsp;    private val maxDelayMillis: Long = 60_000,
+&nbsp;) {
+&nbsp;    fun nextDelayMillis(retryCount: Int): Long {
+&nbsp;        val delay = (baseDelayMillis * 2.0.pow(retryCount.toDouble())).toLong()
+&nbsp;        return delay.coerceAtMost(maxDelayMillis)
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2026-04-30 22:40</div>
+</div>
+</body>
+</html>
