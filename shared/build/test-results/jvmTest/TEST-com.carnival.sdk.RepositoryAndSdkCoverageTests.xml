@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.carnival.sdk.RepositoryAndSdkCoverageTests" tests="12" skipped="0" failures="0" errors="0" timestamp="2026-04-17T11:25:29" hostname="Admins-MacBook-Air.local" time="0.372">
+  <properties/>
+  <testcase name="syncEngine_pullsRemoteChangesAndMarksEntitiesSynced[jvm]" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.251"/>
+  <testcase name="preferencesRepository_queuesOfflineSaveAndRefreshesOnlineFetch[jvm]" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.017"/>
+  <testcase name="cruiseSdk_requiresInitializationAndExposesFeatureApis[jvm]" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.08"/>
+  <testcase name="chatRepository_sendsOfflineAndReceivesLocalMessages[jvm]" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.002"/>
+  <testcase name="authRepository_supportsOnlineAndOfflineFallback[jvm]" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.002"/>
+  <testcase name="syncEngine_startStopAndCancellationAreSafe[jvm]" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.001"/>
+  <testcase name="orderRepository_handlesOfflineQueueAndStatusError[jvm]" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.003"/>
+  <testcase name="authRepository_returnsUnauthorizedWithoutOfflineSession[jvm]" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.002"/>
+  <testcase name="chatRepository_sendsOnlineSuccessfully[jvm]" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.004"/>
+  <testcase name="orderRepository_updatesStatusOnline[jvm]" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.003"/>
+  <testcase name="orderRepository_placesOrderOnline[jvm]" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.002"/>
+  <testcase name="itineraryRepository_refreshesExpiredCache[jvm]" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.003"/>
+  <system-out><![CDATA[INFO [CruiseSDK] Initializing on JVM 15.6 (Mac OS X)
+]]></system-out>
+  <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+]]></system-err>
+</testsuite>

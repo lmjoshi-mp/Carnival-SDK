@@ -1,0 +1,230 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>shared Coverage Report > ConflictResolver</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope: shared<span class="separator">|</span>    <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.carnival.sdk.data.sync</a>
+</div>
+
+<h1>Coverage Summary for Class: ConflictResolver (com.carnival.sdk.data.sync)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+</tr>
+<tr>
+  <td class="name">ConflictResolver</td>
+    <td class="coverageStat"/>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.carnival.sdk.data.sync
+&nbsp;
+&nbsp;import com.carnival.sdk.core.dispatcher.DispatcherProvider
+&nbsp;import com.carnival.sdk.core.network.NetworkMonitor
+&nbsp;import com.carnival.sdk.core.util.ExponentialBackoff
+&nbsp;import com.carnival.sdk.core.util.JsonCodec
+&nbsp;import com.carnival.sdk.core.util.TimeProvider
+&nbsp;import com.carnival.sdk.data.local.CruiseLocalDataSource
+&nbsp;import com.carnival.sdk.data.mapper.toDomain
+&nbsp;import com.carnival.sdk.data.remote.SyncRemoteGateway
+&nbsp;import com.carnival.sdk.data.remote.dto.ChatMessageDto
+&nbsp;import com.carnival.sdk.data.remote.dto.OrderDto
+&nbsp;import com.carnival.sdk.data.remote.dto.PreferencesDto
+&nbsp;import com.carnival.sdk.domain.error.DomainError
+&nbsp;import com.carnival.sdk.domain.model.SyncQueueItem
+&nbsp;import com.carnival.sdk.domain.repository.SyncRepository
+&nbsp;import com.carnival.sdk.core.util.ResultState
+&nbsp;import com.carnival.sdk.core.util.SecureTokenStore
+&nbsp;import kotlinx.coroutines.CoroutineScope
+&nbsp;import kotlinx.coroutines.Job
+&nbsp;import kotlinx.coroutines.CancellationException
+&nbsp;import kotlinx.coroutines.delay
+&nbsp;import kotlinx.coroutines.flow.Flow
+&nbsp;import kotlinx.coroutines.flow.flow
+&nbsp;import kotlinx.coroutines.flow.launchIn
+&nbsp;import kotlinx.coroutines.flow.onEach
+&nbsp;import kotlinx.coroutines.launch
+&nbsp;
+&nbsp;interface ConflictResolver {
+&nbsp;    fun shouldApplyRemote(localUpdatedAt: Long, remoteUpdatedAt: Long): Boolean
+&nbsp;}
+&nbsp;
+&nbsp;class LastWriteWinsConflictResolver : ConflictResolver {
+&nbsp;    override fun shouldApplyRemote(localUpdatedAt: Long, remoteUpdatedAt: Long): Boolean =
+&nbsp;        remoteUpdatedAt &gt;= localUpdatedAt
+&nbsp;}
+&nbsp;
+&nbsp;class SyncEngine(
+&nbsp;    private val localDataSource: CruiseLocalDataSource,
+&nbsp;    private val remoteDataSource: SyncRemoteGateway,
+&nbsp;    private val secureTokenStore: SecureTokenStore,
+&nbsp;    private val networkMonitor: NetworkMonitor,
+&nbsp;    private val jsonCodec: JsonCodec,
+&nbsp;    private val dispatcherProvider: DispatcherProvider,
+&nbsp;    private val timeProvider: TimeProvider,
+&nbsp;    private val backoff: ExponentialBackoff = ExponentialBackoff(),
+&nbsp;    private val conflictResolver: ConflictResolver = LastWriteWinsConflictResolver(),
+&nbsp;) : SyncRepository {
+&nbsp;    private var workerJob: Job? = null
+&nbsp;    private var lastPullEpochMillis: Long = 0L
+&nbsp;
+&nbsp;    fun start(scope: CoroutineScope) {
+&nbsp;        if (workerJob != null) return
+&nbsp;        workerJob = scope.launch(dispatcherProvider.io) {
+&nbsp;            networkMonitor.isOnline.onEach { online -&gt;
+&nbsp;                if (online) {
+&nbsp;                    syncNowInternal()
+&nbsp;                }
+&nbsp;            }.launchIn(this)
+&nbsp;
+&nbsp;            while (true) {
+&nbsp;                if (networkMonitor.isOnline.value) {
+&nbsp;                    syncNowInternal()
+&nbsp;                }
+&nbsp;                delay(15_000)
+&nbsp;            }
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    fun stop() {
+&nbsp;        workerJob?.cancel()
+&nbsp;        workerJob = null
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun triggerSync(): Flow&lt;ResultState&lt;Unit&gt;&gt; = flow {
+&nbsp;        emit(ResultState.Loading)
+&nbsp;        try {
+&nbsp;            syncNowInternal()
+&nbsp;            emit(ResultState.Success(Unit))
+&nbsp;        } catch (throwable: Throwable) {
+&nbsp;            if (throwable is CancellationException) throw throwable
+&nbsp;            emit(ResultState.Error(DomainError.SyncError(&quot;Manual sync failed&quot;, throwable)))
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    private suspend fun syncNowInternal() {
+&nbsp;        val token = secureTokenStore.getToken() ?: return
+&nbsp;        pullRemoteChanges(token)
+&nbsp;        pushLocalChanges(token)
+&nbsp;    }
+&nbsp;
+&nbsp;    private suspend fun pushLocalChanges(token: String) {
+&nbsp;        val now = timeProvider.nowEpochMillis()
+&nbsp;        val queue = localDataSource.getSyncQueue()
+&nbsp;        queue.forEach { item -&gt;
+&nbsp;            if (item.nextRetryEpochMillis &gt; now) return@forEach
+&nbsp;
+&nbsp;            try {
+&nbsp;                remoteDataSource.pushSyncChange(item.payload, token)
+&nbsp;                localDataSource.removeSyncItem(item.id)
+&nbsp;                markEntitySynced(item)
+&nbsp;            } catch (throwable: Throwable) {
+&nbsp;                val newRetry = item.retryCount + 1
+&nbsp;                localDataSource.updateSyncItem(
+&nbsp;                    item.copy(
+&nbsp;                        retryCount = newRetry,
+&nbsp;                        nextRetryEpochMillis = now + backoff.nextDelayMillis(newRetry),
+&nbsp;                    ),
+&nbsp;                )
+&nbsp;            }
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    private suspend fun pullRemoteChanges(token: String) {
+&nbsp;        val changes = remoteDataSource.pullRemoteChanges(token, lastPullEpochMillis)
+&nbsp;        for (change in changes) {
+&nbsp;            when (change.entityType) {
+&nbsp;                &quot;preferences&quot; -&gt; {
+&nbsp;                    val remote = jsonCodec.decode(PreferencesDto.serializer(), change.payload).toDomain()
+&nbsp;                    val local = localDataSource.getPreferences(remote.userId)
+&nbsp;                    if (local == null || conflictResolver.shouldApplyRemote(local.updatedAtEpochMillis, remote.updatedAtEpochMillis)) {
+&nbsp;                        localDataSource.savePreferences(remote)
+&nbsp;                    }
+&nbsp;                }
+&nbsp;
+&nbsp;                &quot;order&quot; -&gt; {
+&nbsp;                    val remote = jsonCodec.decode(OrderDto.serializer(), change.payload).toDomain(pendingSync = false)
+&nbsp;                    val local = localDataSource.getOrder(remote.id)
+&nbsp;                    if (local == null || conflictResolver.shouldApplyRemote(local.updatedAtEpochMillis, remote.updatedAtEpochMillis)) {
+&nbsp;                        localDataSource.saveOrder(remote.copy(pendingSync = false))
+&nbsp;                    }
+&nbsp;                }
+&nbsp;
+&nbsp;                &quot;chat&quot; -&gt; {
+&nbsp;                    val remote = jsonCodec.decode(ChatMessageDto.serializer(), change.payload).toDomain(pendingSync = false)
+&nbsp;                    val local = localDataSource.getMessages(remote.roomId).firstOrNull { it.id == remote.id }
+&nbsp;                    if (local == null || conflictResolver.shouldApplyRemote(local.createdAtEpochMillis, remote.createdAtEpochMillis)) {
+&nbsp;                        localDataSource.saveMessage(remote)
+&nbsp;                    }
+&nbsp;                }
+&nbsp;            }
+&nbsp;        }
+&nbsp;        if (changes.isNotEmpty()) {
+&nbsp;            lastPullEpochMillis = changes.maxOf { it.updatedAtEpochMillis }
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    private suspend fun markEntitySynced(item: SyncQueueItem) {
+&nbsp;        when (item.entityType) {
+&nbsp;            &quot;order&quot; -&gt; localDataSource.markOrderPending(item.entityId, pendingSync = false)
+&nbsp;            &quot;chat&quot; -&gt; {
+&nbsp;                val message = localDataSource.getMessage(item.entityId) ?: return
+&nbsp;                localDataSource.saveMessage(message.copy(pendingSync = false))
+&nbsp;            }
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2026-04-16 18:16</div>
+</div>
+</body>
+</html>

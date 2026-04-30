@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.carnival.sdk.RepositoryAndSdkCoverageTests" tests="12" skipped="0" failures="0" errors="0" timestamp="2026-04-17T11:24:08" hostname="Admins-MacBook-Air.local" time="0.019">
+  <properties/>
+  <testcase name="authRepository_supportsOnlineAndOfflineFallback[iosSimulatorArm64]" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.006"/>
+  <testcase name="authRepository_returnsUnauthorizedWithoutOfflineSession[iosSimulatorArm64]" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.001"/>
+  <testcase name="preferencesRepository_queuesOfflineSaveAndRefreshesOnlineFetch[iosSimulatorArm64]" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.0"/>
+  <testcase name="itineraryRepository_refreshesExpiredCache[iosSimulatorArm64]" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.0"/>
+  <testcase name="orderRepository_handlesOfflineQueueAndStatusError[iosSimulatorArm64]" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.001"/>
+  <testcase name="orderRepository_updatesStatusOnline[iosSimulatorArm64]" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.001"/>
+  <testcase name="orderRepository_placesOrderOnline[iosSimulatorArm64]" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.001"/>
+  <testcase name="chatRepository_sendsOfflineAndReceivesLocalMessages[iosSimulatorArm64]" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.001"/>
+  <testcase name="chatRepository_sendsOnlineSuccessfully[iosSimulatorArm64]" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.001"/>
+  <testcase name="syncEngine_pullsRemoteChangesAndMarksEntitiesSynced[iosSimulatorArm64]" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.001"/>
+  <testcase name="syncEngine_startStopAndCancellationAreSafe[iosSimulatorArm64]" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.0"/>
+  <testcase name="cruiseSdk_requiresInitializationAndExposesFeatureApis[iosSimulatorArm64]" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.005"/>
+  <system-out><![CDATA[INFO [CruiseSDK] Initializing on iOS 26.2 (iPhone)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

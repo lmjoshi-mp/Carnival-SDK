@@ -1,0 +1,177 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>shared Coverage Report > LocalStore</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope: shared<span class="separator">|</span>    <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.carnival.sdk.core.database</a>
+</div>
+
+<h1>Coverage Summary for Class: LocalStore (com.carnival.sdk.core.database)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+  <tr>
+    <td class="name">LocalStore$DefaultImpls</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (17/17)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (17/17)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.carnival.sdk.core.database
+&nbsp;
+&nbsp;import com.carnival.sdk.domain.model.ChatMessage
+&nbsp;import com.carnival.sdk.domain.model.ItineraryItem
+&nbsp;import com.carnival.sdk.domain.model.KitchenOrder
+&nbsp;import com.carnival.sdk.domain.model.SyncQueueItem
+&nbsp;import com.carnival.sdk.domain.model.UserPreferences
+&nbsp;import com.carnival.sdk.domain.model.UserSession
+&nbsp;import kotlinx.coroutines.flow.Flow
+&nbsp;
+&nbsp;interface LocalStore {
+&nbsp;    suspend fun upsertSession(session: UserSession)
+&nbsp;    suspend fun getSession(): UserSession?
+&nbsp;    fun observeSession(): Flow&lt;UserSession?&gt;
+&nbsp;
+&nbsp;    suspend fun upsertPreferences(preferences: UserPreferences)
+&nbsp;    suspend fun getPreferences(userId: String): UserPreferences?
+&nbsp;    fun observePreferences(userId: String): Flow&lt;UserPreferences?&gt;
+&nbsp;
+&nbsp;    suspend fun upsertItinerary(items: List&lt;ItineraryItem&gt;)
+&nbsp;    suspend fun getItinerary(page: Int, pageSize: Int): List&lt;ItineraryItem&gt;
+&nbsp;    fun observeItinerary(): Flow&lt;List&lt;ItineraryItem&gt;&gt;
+&nbsp;
+&nbsp;    suspend fun upsertOrder(order: KitchenOrder)
+&nbsp;    suspend fun getOrder(orderId: String): KitchenOrder?
+&nbsp;    suspend fun getOrders(userId: String): List&lt;KitchenOrder&gt;
+&nbsp;    fun observeOrders(userId: String): Flow&lt;List&lt;KitchenOrder&gt;&gt;
+&nbsp;
+&nbsp;    suspend fun upsertMessage(message: ChatMessage)
+&nbsp;    suspend fun upsertMessages(messages: List&lt;ChatMessage&gt;)
+&nbsp;    suspend fun getMessage(messageId: String): ChatMessage?
+&nbsp;    suspend fun getMessages(roomId: String): List&lt;ChatMessage&gt;
+&nbsp;    fun observeMessages(roomId: String): Flow&lt;List&lt;ChatMessage&gt;&gt;
+&nbsp;
+&nbsp;    suspend fun enqueueSync(item: SyncQueueItem)
+&nbsp;    suspend fun updateSyncItem(item: SyncQueueItem)
+&nbsp;    suspend fun removeSyncItem(syncItemId: String)
+<b class="fc">&nbsp;    suspend fun getSyncQueue(limit: Int = 50): List&lt;SyncQueueItem&gt;</b>
+&nbsp;    fun observeSyncQueue(): Flow&lt;List&lt;SyncQueueItem&gt;&gt;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2026-04-16 18:16</div>
+</div>
+</body>
+</html>

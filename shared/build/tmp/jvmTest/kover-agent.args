@@ -1,0 +1,4 @@
+report.file=/Users/lalitjoshi/AndroidStudioProjects/Carnival-SDK/shared/build/kover/bin-reports/jvmTest.ic
+exclude=android.*
+exclude=com.android.*
+exclude=jdk.internal.*

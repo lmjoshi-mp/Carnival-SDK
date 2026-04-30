@@ -1,0 +1,354 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>shared Coverage Report > ChatApi</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope: shared<span class="separator">|</span>    <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.carnival.sdk</a>
+</div>
+
+<h1>Coverage Summary for Class: ChatApi (com.carnival.sdk)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">ChatApi</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    33.3%
+  </span>
+  <span class="absValue">
+    (1/3)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    60%
+  </span>
+  <span class="absValue">
+    (3/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (8/16)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.carnival.sdk
+&nbsp;
+&nbsp;import com.carnival.sdk.core.database.InMemoryLocalStore
+&nbsp;import com.carnival.sdk.core.database.LocalStore
+&nbsp;import com.carnival.sdk.core.dispatcher.DefaultDispatcherProvider
+&nbsp;import com.carnival.sdk.core.dispatcher.DispatcherProvider
+&nbsp;import com.carnival.sdk.core.network.MutableNetworkMonitor
+&nbsp;import com.carnival.sdk.core.network.NetworkMonitor
+&nbsp;import com.carnival.sdk.core.network.createCruiseHttpClient
+&nbsp;import com.carnival.sdk.core.util.InMemorySecureTokenStore
+&nbsp;import com.carnival.sdk.core.util.JsonCodec
+&nbsp;import com.carnival.sdk.core.util.ResultState
+&nbsp;import com.carnival.sdk.core.util.SecureTokenStore
+&nbsp;import com.carnival.sdk.core.util.SystemTimeProvider
+&nbsp;import com.carnival.sdk.core.util.TimeProvider
+&nbsp;import com.carnival.sdk.data.cache.CachePolicy
+&nbsp;import com.carnival.sdk.data.local.CruiseLocalDataSource
+&nbsp;import com.carnival.sdk.data.repository.AuthRepositoryImpl
+&nbsp;import com.carnival.sdk.data.repository.ChatRepositoryImpl
+&nbsp;import com.carnival.sdk.data.repository.ItineraryRepositoryImpl
+&nbsp;import com.carnival.sdk.data.repository.OrderRepositoryImpl
+&nbsp;import com.carnival.sdk.data.repository.PreferencesRepositoryImpl
+&nbsp;import com.carnival.sdk.data.remote.CruiseRemoteDataSource
+&nbsp;import com.carnival.sdk.data.sync.SyncEngine
+&nbsp;import com.carnival.sdk.domain.model.ChatMessage
+&nbsp;import com.carnival.sdk.domain.model.KitchenOrder
+&nbsp;import com.carnival.sdk.domain.model.OrderStatus
+&nbsp;import com.carnival.sdk.domain.model.UserPreferences
+&nbsp;import com.carnival.sdk.domain.model.UserSession
+&nbsp;import com.carnival.sdk.domain.usecase.FetchItineraryUseCase
+&nbsp;import com.carnival.sdk.domain.usecase.FetchPreferencesUseCase
+&nbsp;import com.carnival.sdk.domain.usecase.GetCachedSessionUseCase
+&nbsp;import com.carnival.sdk.domain.usecase.LoginUseCase
+&nbsp;import com.carnival.sdk.domain.usecase.ObserveOrdersUseCase
+&nbsp;import com.carnival.sdk.domain.usecase.PlaceOrderUseCase
+&nbsp;import com.carnival.sdk.domain.usecase.ReceiveMessagesUseCase
+&nbsp;import com.carnival.sdk.domain.usecase.SavePreferencesUseCase
+&nbsp;import com.carnival.sdk.domain.usecase.SendMessageUseCase
+&nbsp;import com.carnival.sdk.domain.usecase.TriggerSyncUseCase
+&nbsp;import com.carnival.sdk.domain.usecase.UpdateOrderStatusUseCase
+&nbsp;import io.ktor.client.HttpClient
+&nbsp;import kotlinx.coroutines.CoroutineScope
+&nbsp;import kotlinx.coroutines.SupervisorJob
+&nbsp;import kotlinx.coroutines.flow.Flow
+&nbsp;
+&nbsp;data class CruiseSDKConfig(
+&nbsp;    val baseUrl: String,
+&nbsp;    val enableNetworkLogs: Boolean = false,
+&nbsp;    val networkMonitor: NetworkMonitor = MutableNetworkMonitor(initialOnline = true),
+&nbsp;    val localStore: LocalStore = InMemoryLocalStore(),
+&nbsp;    val secureTokenStore: SecureTokenStore = InMemorySecureTokenStore(),
+&nbsp;    val dispatcherProvider: DispatcherProvider = DefaultDispatcherProvider(),
+&nbsp;    val pollingIntervalMillis: Long = 5_000L,
+&nbsp;    val timeProvider: TimeProvider = SystemTimeProvider(),
+&nbsp;    val externalScope: CoroutineScope? = null,
+&nbsp;    val httpClient: HttpClient? = null,
+&nbsp;)
+&nbsp;
+&nbsp;object CruiseSDK {
+&nbsp;    private var components: SDKComponents? = null
+&nbsp;
+&nbsp;    fun initialize(config: CruiseSDKConfig) {
+&nbsp;        components?.close()
+&nbsp;        components = SDKComponents(config).also { it.start() }
+&nbsp;    }
+&nbsp;
+&nbsp;    val auth: AuthApi
+&nbsp;        get() = requireComponents().authApi
+&nbsp;
+&nbsp;    val preferences: PreferencesApi
+&nbsp;        get() = requireComponents().preferencesApi
+&nbsp;
+&nbsp;    val itinerary: ItineraryApi
+&nbsp;        get() = requireComponents().itineraryApi
+&nbsp;
+&nbsp;    val order: OrderApi
+&nbsp;        get() = requireComponents().orderApi
+&nbsp;
+&nbsp;    val chat: ChatApi
+&nbsp;        get() = requireComponents().chatApi
+&nbsp;
+&nbsp;    val sync: SyncApi
+&nbsp;        get() = requireComponents().syncApi
+&nbsp;
+&nbsp;    fun shutdown() {
+&nbsp;        components?.close()
+&nbsp;        components = null
+&nbsp;    }
+&nbsp;
+&nbsp;    private fun requireComponents(): SDKComponents =
+&nbsp;        components ?: error(&quot;CruiseSDK is not initialized. Call CruiseSDK.initialize(config) first.&quot;)
+&nbsp;}
+&nbsp;
+&nbsp;class AuthApi internal constructor(
+&nbsp;    private val loginUseCase: LoginUseCase,
+&nbsp;    private val cachedSessionUseCase: GetCachedSessionUseCase,
+&nbsp;) {
+&nbsp;    fun login(email: String, password: String): Flow&lt;ResultState&lt;UserSession&gt;&gt; = loginUseCase(email, password)
+&nbsp;    fun cachedSession(): Flow&lt;ResultState&lt;UserSession?&gt;&gt; = cachedSessionUseCase()
+&nbsp;}
+&nbsp;
+&nbsp;class PreferencesApi internal constructor(
+&nbsp;    private val saveUseCase: SavePreferencesUseCase,
+&nbsp;    private val fetchUseCase: FetchPreferencesUseCase,
+&nbsp;) {
+&nbsp;    fun save(preferences: UserPreferences): Flow&lt;ResultState&lt;UserPreferences&gt;&gt; = saveUseCase(preferences)
+&nbsp;    fun get(userId: String): Flow&lt;ResultState&lt;UserPreferences?&gt;&gt; = fetchUseCase(userId)
+&nbsp;}
+&nbsp;
+&nbsp;class ItineraryApi internal constructor(
+&nbsp;    private val fetchUseCase: FetchItineraryUseCase,
+&nbsp;) {
+&nbsp;    fun get(page: Int, pageSize: Int): Flow&lt;ResultState&lt;List&lt;com.carnival.sdk.domain.model.ItineraryItem&gt;&gt;&gt; =
+&nbsp;        fetchUseCase(page, pageSize)
+&nbsp;}
+&nbsp;
+&nbsp;class OrderApi internal constructor(
+&nbsp;    private val placeUseCase: PlaceOrderUseCase,
+&nbsp;    private val updateStatusUseCase: UpdateOrderStatusUseCase,
+&nbsp;    private val observeOrdersUseCase: ObserveOrdersUseCase,
+&nbsp;) {
+&nbsp;    fun place(order: KitchenOrder): Flow&lt;ResultState&lt;KitchenOrder&gt;&gt; = placeUseCase(order)
+&nbsp;    fun updateStatus(orderId: String, status: OrderStatus): Flow&lt;ResultState&lt;KitchenOrder&gt;&gt; =
+&nbsp;        updateStatusUseCase(orderId, status)
+&nbsp;
+&nbsp;    fun observe(userId: String): Flow&lt;ResultState&lt;List&lt;KitchenOrder&gt;&gt;&gt; = observeOrdersUseCase(userId)
+&nbsp;}
+&nbsp;
+<b class="fc">&nbsp;class ChatApi internal constructor(</b>
+<b class="fc">&nbsp;    private val sendMessageUseCase: SendMessageUseCase,</b>
+<b class="fc">&nbsp;    private val receiveMessagesUseCase: ReceiveMessagesUseCase,</b>
+&nbsp;) {
+<b class="nc">&nbsp;    fun send(message: ChatMessage): Flow&lt;ResultState&lt;ChatMessage&gt;&gt; = sendMessageUseCase(message)</b>
+<b class="nc">&nbsp;    fun receive(roomId: String): Flow&lt;ResultState&lt;List&lt;ChatMessage&gt;&gt;&gt; = receiveMessagesUseCase(roomId)</b>
+&nbsp;}
+&nbsp;
+&nbsp;class SyncApi internal constructor(
+&nbsp;    private val triggerSyncUseCase: TriggerSyncUseCase,
+&nbsp;) {
+&nbsp;    fun trigger(): Flow&lt;ResultState&lt;Unit&gt;&gt; = triggerSyncUseCase()
+&nbsp;}
+&nbsp;
+&nbsp;private class SDKComponents(config: CruiseSDKConfig) {
+&nbsp;    private val scope = config.externalScope ?: CoroutineScope(SupervisorJob() + config.dispatcherProvider.io)
+&nbsp;    private val httpClient = config.httpClient ?: createCruiseHttpClient(config.enableNetworkLogs)
+&nbsp;    private val jsonCodec = JsonCodec()
+&nbsp;    private val localDataSource = CruiseLocalDataSource(config.localStore, config.timeProvider)
+&nbsp;    private val remoteDataSource = CruiseRemoteDataSource(httpClient, config.baseUrl)
+&nbsp;    private val itineraryCachePolicy = CachePolicy(config.timeProvider, ttlMillis = 5 * 60 * 1000)
+&nbsp;
+&nbsp;    private val authRepository = AuthRepositoryImpl(
+&nbsp;        remoteDataSource = remoteDataSource,
+&nbsp;        localDataSource = localDataSource,
+&nbsp;        networkMonitor = config.networkMonitor,
+&nbsp;        secureTokenStore = config.secureTokenStore,
+&nbsp;        dispatcherProvider = config.dispatcherProvider,
+&nbsp;    )
+&nbsp;
+&nbsp;    private val preferencesRepository = PreferencesRepositoryImpl(
+&nbsp;        remoteDataSource = remoteDataSource,
+&nbsp;        localDataSource = localDataSource,
+&nbsp;        networkMonitor = config.networkMonitor,
+&nbsp;        secureTokenStore = config.secureTokenStore,
+&nbsp;        jsonCodec = jsonCodec,
+&nbsp;        dispatcherProvider = config.dispatcherProvider,
+&nbsp;    )
+&nbsp;
+&nbsp;    private val itineraryRepository = ItineraryRepositoryImpl(
+&nbsp;        remoteDataSource = remoteDataSource,
+&nbsp;        localDataSource = localDataSource,
+&nbsp;        networkMonitor = config.networkMonitor,
+&nbsp;        secureTokenStore = config.secureTokenStore,
+&nbsp;        cachePolicy = itineraryCachePolicy,
+&nbsp;        dispatcherProvider = config.dispatcherProvider,
+&nbsp;    )
+&nbsp;
+&nbsp;    private val orderRepository = OrderRepositoryImpl(
+&nbsp;        remoteDataSource = remoteDataSource,
+&nbsp;        localDataSource = localDataSource,
+&nbsp;        networkMonitor = config.networkMonitor,
+&nbsp;        secureTokenStore = config.secureTokenStore,
+&nbsp;        jsonCodec = jsonCodec,
+&nbsp;        dispatcherProvider = config.dispatcherProvider,
+&nbsp;    )
+&nbsp;
+&nbsp;    private val chatRepository = ChatRepositoryImpl(
+&nbsp;        remoteDataSource = remoteDataSource,
+&nbsp;        localDataSource = localDataSource,
+&nbsp;        networkMonitor = config.networkMonitor,
+&nbsp;        secureTokenStore = config.secureTokenStore,
+&nbsp;        jsonCodec = jsonCodec,
+&nbsp;        dispatcherProvider = config.dispatcherProvider,
+&nbsp;        pollingIntervalMillis = config.pollingIntervalMillis,
+&nbsp;    )
+&nbsp;
+&nbsp;    private val syncEngine = SyncEngine(
+&nbsp;        localDataSource = localDataSource,
+&nbsp;        remoteDataSource = remoteDataSource,
+&nbsp;        secureTokenStore = config.secureTokenStore,
+&nbsp;        networkMonitor = config.networkMonitor,
+&nbsp;        jsonCodec = jsonCodec,
+&nbsp;        dispatcherProvider = config.dispatcherProvider,
+&nbsp;        timeProvider = config.timeProvider,
+&nbsp;    )
+&nbsp;
+&nbsp;    private val loginUseCase = LoginUseCase(authRepository)
+&nbsp;    private val getCachedSessionUseCase = GetCachedSessionUseCase(authRepository)
+&nbsp;    private val savePreferencesUseCase = SavePreferencesUseCase(preferencesRepository)
+&nbsp;    private val fetchPreferencesUseCase = FetchPreferencesUseCase(preferencesRepository)
+&nbsp;    private val fetchItineraryUseCase = FetchItineraryUseCase(itineraryRepository)
+&nbsp;    private val placeOrderUseCase = PlaceOrderUseCase(orderRepository)
+&nbsp;    private val updateOrderStatusUseCase = UpdateOrderStatusUseCase(orderRepository)
+&nbsp;    private val observeOrdersUseCase = ObserveOrdersUseCase(orderRepository)
+&nbsp;    private val sendMessageUseCase = SendMessageUseCase(chatRepository)
+&nbsp;    private val receiveMessagesUseCase = ReceiveMessagesUseCase(chatRepository)
+&nbsp;    private val triggerSyncUseCase = TriggerSyncUseCase(syncEngine)
+&nbsp;
+&nbsp;    val authApi = AuthApi(loginUseCase, getCachedSessionUseCase)
+&nbsp;    val preferencesApi = PreferencesApi(savePreferencesUseCase, fetchPreferencesUseCase)
+&nbsp;    val itineraryApi = ItineraryApi(fetchItineraryUseCase)
+&nbsp;    val orderApi = OrderApi(placeOrderUseCase, updateOrderStatusUseCase, observeOrdersUseCase)
+&nbsp;    val chatApi = ChatApi(sendMessageUseCase, receiveMessagesUseCase)
+&nbsp;    val syncApi = SyncApi(triggerSyncUseCase)
+&nbsp;
+&nbsp;    fun start() {
+&nbsp;        syncEngine.start(scope)
+&nbsp;    }
+&nbsp;
+&nbsp;    fun close() {
+&nbsp;        syncEngine.stop()
+&nbsp;        httpClient.close()
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2026-04-16 18:16</div>
+</div>
+</body>
+</html>

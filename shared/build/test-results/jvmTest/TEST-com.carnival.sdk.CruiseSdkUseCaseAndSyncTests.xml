@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.carnival.sdk.CruiseSdkUseCaseAndSyncTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-04-17T11:25:29" hostname="Admins-MacBook-Air.local" time="0.339">
+  <properties/>
+  <testcase name="loginUseCase_emitsLoadingThenSuccess[jvm]" classname="com.carnival.sdk.CruiseSdkUseCaseAndSyncTests" time="0.297"/>
+  <testcase name="syncEngine_retriesWhenPushFails[jvm]" classname="com.carnival.sdk.CruiseSdkUseCaseAndSyncTests" time="0.039"/>
+  <testcase name="syncEngine_pushesQueuedOrderAndClearsQueue[jvm]" classname="com.carnival.sdk.CruiseSdkUseCaseAndSyncTests" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,7 @@
+:shared
+shared/src/jvmMain/kotlin
+shared/src/commonMain/kotlin
+
+shared/build/classes/kotlin/jvm/main
+
+shared/build/kover/bin-reports/jvmTest.ic

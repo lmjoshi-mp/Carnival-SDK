@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.carnival.sdk.PlatformAbstractionsTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-04-17T11:24:08" hostname="Admins-MacBook-Air.local" time="0.025">
+  <properties/>
+  <testcase name="deviceInfoProvider_returnsValues[iosSimulatorArm64]" classname="com.carnival.sdk.PlatformAbstractionsTests" time="0.017"/>
+  <testcase name="platformLogger_acceptsAllLevels[iosSimulatorArm64]" classname="com.carnival.sdk.PlatformAbstractionsTests" time="0.0"/>
+  <testcase name="fileSystemProvider_readsWritesAndDeletes[iosSimulatorArm64]" classname="com.carnival.sdk.PlatformAbstractionsTests" time="0.008"/>
+  <testcase name="secureTokenStoreFactory_returnsWorkingStore[iosSimulatorArm64]" classname="com.carnival.sdk.PlatformAbstractionsTests" time="0.0"/>
+  <testcase name="platformNetworkMonitor_hasState[iosSimulatorArm64]" classname="com.carnival.sdk.PlatformAbstractionsTests" time="0.0"/>
+  <system-out><![CDATA[DEBUG [PlatformAbstractionsTests] debug
+INFO [PlatformAbstractionsTests] info
+WARN [PlatformAbstractionsTests] warn
+ERROR [PlatformAbstractionsTests] error
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

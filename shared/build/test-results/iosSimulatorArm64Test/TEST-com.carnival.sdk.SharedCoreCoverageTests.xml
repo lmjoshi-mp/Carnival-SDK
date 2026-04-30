@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.carnival.sdk.SharedCoreCoverageTests" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-04-17T11:24:08" hostname="Admins-MacBook-Air.local" time="0.001">
+  <properties/>
+  <testcase name="secureTokenStore_saveGetAndClear[iosSimulatorArm64]" classname="com.carnival.sdk.SharedCoreCoverageTests" time="0.0"/>
+  <testcase name="jsonCodec_roundTripsPayload[iosSimulatorArm64]" classname="com.carnival.sdk.SharedCoreCoverageTests" time="0.0"/>
+  <testcase name="exponentialBackoff_capsAtMaximum[iosSimulatorArm64]" classname="com.carnival.sdk.SharedCoreCoverageTests" time="0.0"/>
+  <testcase name="cachePolicy_expiresAfterTtl[iosSimulatorArm64]" classname="com.carnival.sdk.SharedCoreCoverageTests" time="0.0"/>
+  <testcase name="networkMonitor_updatesState[iosSimulatorArm64]" classname="com.carnival.sdk.SharedCoreCoverageTests" time="0.0"/>
+  <testcase name="inMemoryLocalStore_supportsCrudAndObservation[iosSimulatorArm64]" classname="com.carnival.sdk.SharedCoreCoverageTests" time="0.0"/>
+  <testcase name="localDataSource_updatesOrderAndSyncQueue[iosSimulatorArm64]" classname="com.carnival.sdk.SharedCoreCoverageTests" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

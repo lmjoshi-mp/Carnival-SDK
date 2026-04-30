@@ -1,0 +1,5 @@
+(DEBUG [PlatformAbstractionsTests] debug
+&INFO [PlatformAbstractionsTests] info
+&WARN [PlatformAbstractionsTests] warn
+(ERROR [PlatformAbstractionsTests] error
+3INFO [CruiseSDK] Initializing on iOS 26.2 (iPhone)
