@@ -119,8 +119,15 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/lmjoshi-mp/Carnival-SDK")
             credentials {
-                username = System.getenv("GITHUB_ACTOR") ?: project.findProperty("gpr.user") as String?
-                password = System.getenv("GITHUB_TOKEN") ?: project.findProperty("gpr.key") as String?
+                val gprUser = System.getenv("GITHUB_ACTOR")?.takeIf { it.isNotEmpty() }
+                    ?: project.findProperty("gpr.user")?.toString()
+                    ?: "lmjoshi-mp"
+
+                val gprKey = System.getenv("GITHUB_TOKEN")?.takeIf { it.isNotEmpty() }
+                    ?: project.findProperty("gpr.key")?.toString()
+
+                username = gprUser
+                password = gprKey
             }
         }
     }

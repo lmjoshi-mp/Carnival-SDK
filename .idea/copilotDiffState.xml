@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="/local (snapshot).properties">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="/local (snapshot).properties" />
+              <option name="originalContent" value="## This file must *NOT* be checked into Version Control Systems,&#10;# as it contains information specific to your local configuration.&#10;#&#10;# Location of the SDK. This is only used by Gradle.&#10;# For customization when using a Version Control System, please read the&#10;# header note.&#10;#Wed Apr 15 17:12:06 IST 2026&#10;sdk.dir=/Users/lalitjoshi/Library/Android/sdk&#10;" />
+              <option name="updatedContent" value="## This file must *NOT* be checked into Version Control Systems,&#10;# as it contains information specific to your local configuration.&#10;#&#10;# Location of the SDK. This is only used by Gradle.&#10;# For customization when using a Version Control System, please read the&#10;# header note.&#10;#Wed Apr 15 17:12:06 IST 2026&#10;sdk.dir=/Users/lalitjoshi/Library/Android/sdk&#10;&#10;# GitHub Packages credentials&#10;# Replace YOUR_GITHUB_TOKEN with your Personal Access Token from https://github.com/settings/tokens&#10;gpr.user=lmjoshi-mp&#10;gpr.key=YOUR_GITHUB_TOKEN&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
