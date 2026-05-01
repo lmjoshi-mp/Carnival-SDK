@@ -108,6 +108,7 @@ kover {
 
 publishing {
     publications {
+        // Only configure the kotlinMultiplatform publication
         getByName<MavenPublication>("kotlinMultiplatform") {
             artifactId = "shared"
             groupId = "com.github.lmjoshi-mp.Carnival-SDK"
@@ -132,3 +133,12 @@ publishing {
         }
     }
 }
+
+// Disable publishing platform-specific variants to GitHub Packages
+afterEvaluate {
+    tasks.findByName("publishIosArm64PublicationToGitHubPackagesRepository")?.enabled = false
+    tasks.findByName("publishIosX64PublicationToGitHubPackagesRepository")?.enabled = false
+    tasks.findByName("publishIosSimulatorArm64PublicationToGitHubPackagesRepository")?.enabled = false
+    tasks.findByName("publishJvmPublicationToGitHubPackagesRepository")?.enabled = false
+}
+
