@@ -24,6 +24,7 @@ dependencyResolutionManagement {
 }
 
 include(":sample-android-app")
+include(":consumer-android-app")
 
 val useLocalShared = providers.gradleProperty("useLocalShared")
     .map { it.toBoolean() }

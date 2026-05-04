@@ -1,0 +1,62 @@
+name: Build & Release XCFramework
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-xcframework:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Build XCFramework
+        run: |
+          chmod +x ./build-xcframework.sh
+          ./build-xcframework.sh
+
+      - name: Compute checksum
+        id: checksum
+        run: |
+          CHECKSUM=$(swift package compute-checksum "shared/build/xcframework/CarnivalSDK.xcframework.zip" 2>/dev/null || shasum -a 256 "shared/build/xcframework/CarnivalSDK.xcframework.zip" | awk '{print $1}')
+          echo "checksum=$CHECKSUM" >> $GITHUB_OUTPUT
+          echo "Checksum: $CHECKSUM"
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: shared/build/xcframework/CarnivalSDK.xcframework.zip
+          draft: false
+          prerelease: false
+          body: |
+            # Carnival SDK ${{ github.ref_name }}
+            
+            ## Package.swift Checksum
+            ```
+            ${{ steps.checksum.outputs.checksum }}
+            ```
+            
+            ## Usage
+            
+            Add to your `Package.swift`:
+            ```swift
+            let package = Package(
+                dependencies: [
+                    .package(url: "https://github.com/lmjoshi-mp/Carnival-SDK.git", from: "${{ github.ref_name }}")
+                ]
+            )
+            ```
+            
+            Or in Xcode: **File** → **Add Packages** and enter the repository URL.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

@@ -14,10 +14,10 @@ if [ -z "$GITHUB_TOKEN" ]; then
     echo -e "${RED}ERROR: GITHUB_TOKEN environment variable is not set${NC}"
     echo -e "\nSet your GitHub Personal Access Token:"
     echo "  export GITHUB_ACTOR=lmjoshi-mp"
-    echo "  export GITHUB_TOKEN=REDACTED_token_here"
+    echo "  export GITHUB_TOKEN=REDACTED"
     echo ""
     echo "Or update local.properties with:"
-    echo "  gpr.key=REDACTED_token_here"
+    echo "  gpr.key=REDACTED"
     exit 1
 fi
 

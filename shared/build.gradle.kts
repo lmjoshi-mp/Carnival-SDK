@@ -58,6 +58,7 @@ kotlin {
     }
 }
 
+
 android {
     namespace = "com.carnival.sdk"
     compileSdk = 34
@@ -140,5 +141,51 @@ afterEvaluate {
     tasks.findByName("publishIosX64PublicationToGitHubPackagesRepository")?.enabled = false
     tasks.findByName("publishIosSimulatorArm64PublicationToGitHubPackagesRepository")?.enabled = false
     tasks.findByName("publishJvmPublicationToGitHubPackagesRepository")?.enabled = false
+}
+
+// Task to generate XCFramework for iOS (for Swift Package Manager)
+tasks.register("buildXCFramework") {
+    description = "Build XCFramework for iOS"
+    dependsOn("linkReleaseFrameworkIosArm64", "linkReleaseFrameworkIosSimulatorArm64")
+    
+    doLast {
+        val buildDirLayout = layout.buildDirectory.get().asFile
+        val frameworkName = "CarnivalSDK"
+        val xcframeworkDir = File(buildDirLayout, "xcframework")
+        
+        if (xcframeworkDir.exists()) {
+            xcframeworkDir.deleteRecursively()
+        }
+        xcframeworkDir.mkdirs()
+        
+        // Create XCFramework using xcodebuild
+        val deviceFramework = File(buildDirLayout, "bin/iosArm64/releaseFramework/${frameworkName}.framework")
+        val simulatorFramework = File(buildDirLayout, "bin/iosSimulatorArm64/releaseFramework/${frameworkName}.framework")
+
+        if (deviceFramework.exists() && simulatorFramework.exists()) {
+            val xcframeworkPath = File(xcframeworkDir, "${frameworkName}.xcframework").absolutePath
+
+            val command = arrayOf(
+                "bash",
+                "-c",
+                "xcodebuild -create-xcframework " +
+                "-framework ${deviceFramework.absolutePath} " +
+                "-framework ${simulatorFramework.absolutePath} " +
+                "-output ${xcframeworkPath}"
+            )
+
+            val process = Runtime.getRuntime().exec(command)
+            val exitCode = process.waitFor()
+
+            if (exitCode == 0) {
+                println("✅ XCFramework created successfully at: $xcframeworkPath")
+            } else {
+                val error = process.errorStream.bufferedReader().readText()
+                println("❌ XCFramework creation failed: $error")
+            }
+        } else {
+            println("⚠️ Framework binaries not found. Run 'gradle build' first.")
+        }
+    }
 }
 

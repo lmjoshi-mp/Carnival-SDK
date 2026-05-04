@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.carnival.sdk.CruiseSdkUseCaseAndSyncTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-04-30T17:10:30" hostname="Admins-MacBook-Air.local" time="0.283">
+<testsuite name="com.carnival.sdk.CruiseSdkUseCaseAndSyncTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-05-01T14:44:41" hostname="Admins-MacBook-Air.local" time="0.334">
   <properties/>
-  <testcase name="loginUseCase_emitsLoadingThenSuccess" classname="com.carnival.sdk.CruiseSdkUseCaseAndSyncTests" time="0.248"/>
-  <testcase name="syncEngine_retriesWhenPushFails" classname="com.carnival.sdk.CruiseSdkUseCaseAndSyncTests" time="0.032"/>
+  <testcase name="loginUseCase_emitsLoadingThenSuccess" classname="com.carnival.sdk.CruiseSdkUseCaseAndSyncTests" time="0.292"/>
+  <testcase name="syncEngine_retriesWhenPushFails" classname="com.carnival.sdk.CruiseSdkUseCaseAndSyncTests" time="0.04"/>
   <testcase name="syncEngine_pushesQueuedOrderAndClearsQueue" classname="com.carnival.sdk.CruiseSdkUseCaseAndSyncTests" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

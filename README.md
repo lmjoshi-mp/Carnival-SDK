@@ -51,13 +51,85 @@ CruiseSDK.sync.trigger()
 
 All APIs return `Flow<ResultState<T>>` where `ResultState` is `Loading`, `Success`, or `Error`.
 
-## Publish `shared` on GitHub and use it in sample app
+## Publishing & Distribution
 
-1. Initialize git and push this project to a GitHub repo (example: `Carnival-SDK`).
-2. Create a release tag (example: `v1.0.0`).
-3. Update `gradle.properties`:
-   - `useLocalShared=false`
-   - `sharedLibCoordinate=com.github.<github-username>.Carnival-SDK:shared:v1.0.0`
-4. Sync/build `sample-android-app`; dependency will be resolved from JitPack.
+### For Android Developers
 
-For local development, set `useLocalShared=true` to use `project(":shared")` directly.
+1. Publish to GitHub Packages:
+   ```bash
+   # Set GitHub credentials in local.properties
+   gpr.user=YOUR_USERNAME
+   gpr.key=YOUR_GITHUB_TOKEN
+   
+   # Publish the library
+   ./gradlew :shared:publish
+   ```
+
+2. Update `gradle.properties` in consuming app:
+   ```properties
+   useLocalShared=false
+   sharedLibCoordinate=com.github.lmjoshi-mp.Carnival-SDK:shared:1.0.0
+   ```
+
+3. Add repository to `settings.gradle.kts`:
+   ```kotlin
+   maven("https://maven.pkg.github.com/lmjoshi-mp/Carnival-SDK") {
+       credentials {
+           username = System.getenv("GITHUB_ACTOR") ?: "username"
+           password = System.getenv("GITHUB_TOKEN") ?: "token"
+       }
+   }
+   ```
+
+4. Add dependency to `build.gradle.kts`:
+   ```kotlin
+   dependencies {
+       implementation("com.github.lmjoshi-mp.Carnival-SDK:shared:1.0.0")
+   }
+   ```
+
+### For iOS Developers (Swift Package Manager)
+
+1. **Build XCFramework**:
+   ```bash
+   ./build-xcframework.sh
+   ```
+   This generates `CarnivalSDK.xcframework.zip` with checksum for Package.swift.
+
+2. **Upload to GitHub Releases**:
+   - Create a GitHub release for tag `v1.0.0`
+   - Upload `shared/build/xcframework/CarnivalSDK.xcframework.zip`
+   - Update checksum in `Package.swift`
+
+3. **Use in Xcode (Swift Package Manager)**:
+   ```swift
+   // In Xcode: File → Add Packages
+   // Enter repository URL:
+   https://github.com/lmjoshi-mp/Carnival-SDK.git
+   
+   // Select version: 1.0.0
+   // Add to your target
+   ```
+
+4. **Or add to `Package.swift`**:
+   ```swift
+   dependencies: [
+       .package(url: "https://github.com/lmjoshi-mp/Carnival-SDK.git", from: "1.0.0")
+   ]
+   ```
+
+### For iOS Developers (CocoaPods)
+
+1. **Add to Podfile**:
+   ```ruby
+   pod 'Carnival-SDK', '~> 1.0.0'
+   ```
+
+2. **Run**:
+   ```bash
+   pod install
+   ```
+
+### For Local Development
+
+Set `useLocalShared=true` in `gradle.properties` to use `project(":shared")` directly.

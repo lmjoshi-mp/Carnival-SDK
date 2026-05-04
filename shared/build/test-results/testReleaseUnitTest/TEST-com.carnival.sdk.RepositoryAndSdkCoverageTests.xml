@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.carnival.sdk.RepositoryAndSdkCoverageTests" tests="12" skipped="0" failures="0" errors="0" timestamp="2026-04-30T17:10:32" hostname="Admins-MacBook-Air.local" time="0.331">
+<testsuite name="com.carnival.sdk.RepositoryAndSdkCoverageTests" tests="12" skipped="0" failures="0" errors="0" timestamp="2026-05-01T14:44:43" hostname="Admins-MacBook-Air.local" time="0.349">
   <properties/>
-  <testcase name="syncEngine_pullsRemoteChangesAndMarksEntitiesSynced" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.232"/>
-  <testcase name="preferencesRepository_queuesOfflineSaveAndRefreshesOnlineFetch" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.013"/>
-  <testcase name="cruiseSdk_requiresInitializationAndExposesFeatureApis" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.065"/>
+  <testcase name="syncEngine_pullsRemoteChangesAndMarksEntitiesSynced" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.243"/>
+  <testcase name="preferencesRepository_queuesOfflineSaveAndRefreshesOnlineFetch" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.014"/>
+  <testcase name="cruiseSdk_requiresInitializationAndExposesFeatureApis" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.068"/>
   <testcase name="chatRepository_sendsOfflineAndReceivesLocalMessages" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.003"/>
-  <testcase name="authRepository_supportsOnlineAndOfflineFallback" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.002"/>
-  <testcase name="syncEngine_startStopAndCancellationAreSafe" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.002"/>
-  <testcase name="orderRepository_handlesOfflineQueueAndStatusError" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.002"/>
+  <testcase name="authRepository_supportsOnlineAndOfflineFallback" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.003"/>
+  <testcase name="syncEngine_startStopAndCancellationAreSafe" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.001"/>
+  <testcase name="orderRepository_handlesOfflineQueueAndStatusError" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.005"/>
   <testcase name="authRepository_returnsUnauthorizedWithoutOfflineSession" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.002"/>
   <testcase name="chatRepository_sendsOnlineSuccessfully" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.002"/>
   <testcase name="orderRepository_updatesStatusOnline" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.003"/>
   <testcase name="orderRepository_placesOrderOnline" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.002"/>
-  <testcase name="itineraryRepository_refreshesExpiredCache" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.002"/>
+  <testcase name="itineraryRepository_refreshesExpiredCache" classname="com.carnival.sdk.RepositoryAndSdkCoverageTests" time="0.003"/>
   <system-out><![CDATA[INFO [CruiseSDK] Initializing on Android unknown (unknown)
 ]]></system-out>
   <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
