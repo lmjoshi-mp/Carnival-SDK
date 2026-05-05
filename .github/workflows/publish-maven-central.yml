@@ -52,6 +52,6 @@ jobs:
           ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.MAVEN_SIGNING_PASSWORD }}
         run: |
           ./gradlew \
-            :shared:publishAllPublicationsToSonatypeRepository \
+            publishToSonatype \
             closeAndReleaseSonatypeStagingRepository \
             --no-daemon --stacktrace
