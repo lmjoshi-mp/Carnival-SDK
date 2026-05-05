@@ -1,0 +1,8 @@
+framework module "CarnivalSDK" {
+    umbrella header "CarnivalSDK.h"
+
+    export *
+    module * { export * }
+
+    use Foundation
+}

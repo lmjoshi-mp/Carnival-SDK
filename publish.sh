@@ -13,11 +13,12 @@ echo -e "${BLUE}=== Carnival SDK Library Publisher ===${NC}\n"
 if [ -z "$GITHUB_TOKEN" ]; then
     echo -e "${RED}ERROR: GITHUB_TOKEN environment variable is not set${NC}"
     echo -e "\nSet your GitHub Personal Access Token:"
-    echo "  export GITHUB_ACTOR=lmjoshi-mp"
-    echo "  export GITHUB_TOKEN=REDACTED"
+    echo "  export GITHUB_ACTOR=your_github_username"
+    echo "  export GITHUB_TOKEN=your_github_personal_access_token"
     echo ""
     echo "Or update local.properties with:"
-    echo "  gpr.key=REDACTED"
+    echo "  gpr.user=your_github_username"
+    echo "  gpr.key=your_github_personal_access_token"
     exit 1
 fi
 
