@@ -4,7 +4,6 @@ plugins {
     id("org.jetbrains.kotlinx.kover")
     kotlin("plugin.serialization")
     id("maven-publish")
-    id("com.github.dcendents.android-maven-gradle-plugin") version "2.1"
 }
 
 kotlin {
