@@ -15,8 +15,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "CarnivalSDK",
-            url: "https://github.com/lmjoshi-mp/Carnival-SDK/releases/download/1.0.0/CarnivalSDK.xcframework.zip",
-            checksum: "7572c864414ad5371f5fba5fd6ba5a7c1a4d2af7d467844b49eb9118f29fe3a6"
+            url: "https://github.com/lmjoshi-mp/Carnival-SDK/releases/download/1.0.2/CarnivalSDK.xcframework.zip",
+            checksum: "2af0ac044cff5ce1b079829f190383658baf23831b1466f8bcf76647d5318621"
         )
     ]
 )
