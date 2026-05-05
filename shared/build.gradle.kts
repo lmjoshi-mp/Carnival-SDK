@@ -173,24 +173,6 @@ publishing {
                 }
             }
         }
-        val sonatypeUser = findProperty("mavenCentralUsername")?.toString()
-            ?: System.getenv("MAVEN_CENTRAL_USERNAME")
-        val sonatypePassword = findProperty("mavenCentralPassword")?.toString()
-            ?: System.getenv("MAVEN_CENTRAL_PASSWORD")
-        if (!sonatypeUser.isNullOrBlank() && !sonatypePassword.isNullOrBlank()) {
-            maven {
-                name = "Sonatype"
-                url = if ((findProperty("version")?.toString() ?: project.version.toString()).endsWith("SNAPSHOT")) {
-                    uri("https://s01.oss.sonatype.org/content/repositories/snapshots/")
-                } else {
-                    uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
-                }
-                credentials {
-                    username = sonatypeUser
-                    password = sonatypePassword
-                }
-            }
-        }
     }
 }
 
