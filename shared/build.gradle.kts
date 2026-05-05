@@ -25,9 +25,26 @@ kotlin {
             }
         }
     }
-    iosX64()
-    iosArm64()
-    iosSimulatorArm64()
+
+    // iOS targets with framework configuration
+    iosX64 {
+        binaries.framework {
+            baseName = "CarnivalSDK"
+            isStatic = true
+        }
+    }
+    iosArm64 {
+        binaries.framework {
+            baseName = "CarnivalSDK"
+            isStatic = true
+        }
+    }
+    iosSimulatorArm64 {
+        binaries.framework {
+            baseName = "CarnivalSDK"
+            isStatic = true
+        }
+    }
 
     sourceSets {
         commonMain.dependencies {
@@ -146,8 +163,8 @@ afterEvaluate {
 // Task to generate XCFramework for iOS (for Swift Package Manager)
 tasks.register("buildXCFramework") {
     description = "Build XCFramework for iOS"
-    dependsOn("linkReleaseFrameworkIosArm64", "linkReleaseFrameworkIosSimulatorArm64")
-    
+    dependsOn("iosArm64MainBinaries", "iosSimulatorArm64MainBinaries")
+
     doLast {
         val buildDirLayout = layout.buildDirectory.get().asFile
         val frameworkName = "CarnivalSDK"
@@ -158,7 +175,7 @@ tasks.register("buildXCFramework") {
         }
         xcframeworkDir.mkdirs()
         
-        // Create XCFramework using xcodebuild
+        // Framework paths for device and simulator
         val deviceFramework = File(buildDirLayout, "bin/iosArm64/releaseFramework/${frameworkName}.framework")
         val simulatorFramework = File(buildDirLayout, "bin/iosSimulatorArm64/releaseFramework/${frameworkName}.framework")
 
@@ -184,7 +201,9 @@ tasks.register("buildXCFramework") {
                 println("❌ XCFramework creation failed: $error")
             }
         } else {
-            println("⚠️ Framework binaries not found. Run 'gradle build' first.")
+            println("⚠️ Framework binaries not found.")
+            println("   Device: ${deviceFramework.absolutePath} (exists: ${deviceFramework.exists()})")
+            println("   Simulator: ${simulatorFramework.absolutePath} (exists: ${simulatorFramework.exists()})")
         }
     }
 }
