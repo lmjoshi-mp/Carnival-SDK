@@ -51,7 +51,11 @@ jobs:
           ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.MAVEN_SIGNING_KEY }}
           ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.MAVEN_SIGNING_PASSWORD }}
         run: |
+          test -n "$ORG_GRADLE_PROJECT_mavenCentralUsername" || (echo "Missing secret: MAVEN_CENTRAL_USERNAME" && exit 1)
+          test -n "$ORG_GRADLE_PROJECT_mavenCentralPassword" || (echo "Missing secret: MAVEN_CENTRAL_PASSWORD" && exit 1)
+          test -n "$ORG_GRADLE_PROJECT_signingInMemoryKey" || (echo "Missing secret: MAVEN_SIGNING_KEY" && exit 1)
+          test -n "$ORG_GRADLE_PROJECT_signingInMemoryKeyPassword" || (echo "Missing secret: MAVEN_SIGNING_PASSWORD" && exit 1)
           ./gradlew \
-            publishToSonatype \
-            closeAndReleaseSonatypeStagingRepository \
+            :shared:publishAllPublicationsToSonatypeRepository \
+            closeAndReleaseStagingRepositories \
             --no-daemon --stacktrace
