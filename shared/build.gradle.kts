@@ -130,7 +130,7 @@ publishing {
         getByName<MavenPublication>("kotlinMultiplatform") {
             artifactId = "shared"
             groupId = "com.github.lmjoshi-mp"
-            version = "1.0.0"
+            version = (findProperty("version")?.toString() ?: project.version.toString())
         }
     }
     repositories {

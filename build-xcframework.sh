@@ -26,10 +26,10 @@ if [ $? -eq 0 ]; then
         echo -e "${YELLOW}📋 Checksum for Package.swift: $CHECKSUM${NC}"
         echo ""
         echo -e "${YELLOW}Next steps:${NC}"
-        echo "1. Upload 'CarnivalSDK.xcframework.zip' to GitHub Releases (v1.0.0)"
+        echo "1. Upload 'CarnivalSDK.xcframework.zip' to GitHub Releases (for your target tag)"
         echo "2. Update Package.swift checksum: $CHECKSUM"
-        echo "3. Tag release: git tag -a v1.0.0 -m 'Version 1.0.0'"
-        echo "4. Push to GitHub: git push origin v1.0.0"
+        echo "3. Tag release: git tag -a <tag> -m 'Version <version>'"
+        echo "4. Push to GitHub: git push origin <tag>"
 
         cd ../../..
     else
