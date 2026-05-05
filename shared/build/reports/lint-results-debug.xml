@@ -13,7 +13,7 @@
         errorLine2="                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/lalitjoshi/AndroidStudioProjects/Carnival-SDK/shared/build.gradle.kts"
-            line="34"
+            line="51"
             column="28"/>
     </issue>
 
@@ -29,7 +29,7 @@
         errorLine2="                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/lalitjoshi/AndroidStudioProjects/Carnival-SDK/shared/build.gradle.kts"
-            line="36"
+            line="53"
             column="28"/>
     </issue>
 

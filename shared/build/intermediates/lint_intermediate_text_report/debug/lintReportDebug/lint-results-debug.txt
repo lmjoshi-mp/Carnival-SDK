@@ -1,7 +1,7 @@
-/Users/lalitjoshi/AndroidStudioProjects/Carnival-SDK/shared/build.gradle.kts:34: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-core than 1.8.1 is available: 1.9.0 [GradleDependency]
+/Users/lalitjoshi/AndroidStudioProjects/Carnival-SDK/shared/build.gradle.kts:51: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-core than 1.8.1 is available: 1.9.0 [GradleDependency]
             implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1")
                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/lalitjoshi/AndroidStudioProjects/Carnival-SDK/shared/build.gradle.kts:36: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-datetime than 0.6.1 is available: 0.7.1 [GradleDependency]
+/Users/lalitjoshi/AndroidStudioProjects/Carnival-SDK/shared/build.gradle.kts:53: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-datetime than 0.6.1 is available: 0.7.1 [GradleDependency]
             implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.6.1")
                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

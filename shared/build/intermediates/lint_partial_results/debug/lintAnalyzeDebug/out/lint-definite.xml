@@ -13,12 +13,12 @@
             priority="0"/>
         <location
             file="${:shared*projectDir}/build.gradle.kts"
-            line="34"
+            line="51"
             column="28"
-            startOffset="812"
-            endLine="34"
+            startOffset="1191"
+            endLine="51"
             endColumn="81"
-            endOffset="865"/>
+            endOffset="1244"/>
     </incident>
 
     <incident
@@ -33,12 +33,12 @@
             priority="0"/>
         <location
             file="${:shared*projectDir}/build.gradle.kts"
-            line="36"
+            line="53"
             column="28"
-            startOffset="979"
-            endLine="36"
+            startOffset="1358"
+            endLine="53"
             endColumn="74"
-            endOffset="1025"/>
+            endOffset="1404"/>
     </incident>
 
 </incidents>

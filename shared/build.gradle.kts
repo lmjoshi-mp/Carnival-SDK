@@ -4,6 +4,7 @@ plugins {
     id("org.jetbrains.kotlinx.kover")
     kotlin("plugin.serialization")
     id("maven-publish")
+    id("com.github.dcendents.android-maven-gradle-plugin") version "2.1"
 }
 
 kotlin {
@@ -129,7 +130,7 @@ publishing {
         // Only configure the kotlinMultiplatform publication
         getByName<MavenPublication>("kotlinMultiplatform") {
             artifactId = "shared"
-            groupId = "com.github.lmjoshi-mp.Carnival-SDK"
+            groupId = "com.github.lmjoshi-mp"
             version = "1.0.0"
         }
     }
@@ -207,4 +208,3 @@ tasks.register("buildXCFramework") {
         }
     }
 }
-

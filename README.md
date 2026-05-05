@@ -53,38 +53,22 @@ All APIs return `Flow<ResultState<T>>` where `ResultState` is `Loading`, `Succes
 
 ## Publishing & Distribution
 
-### For Android Developers
+### For Android Developers (JitPack - No Authentication Required)
 
-1. Publish to GitHub Packages:
-   ```bash
-   # Set GitHub credentials in local.properties
-   gpr.user=YOUR_USERNAME
-   gpr.key=YOUR_GITHUB_TOKEN
-   
-   # Publish the library
-   ./gradlew :shared:publish
-   ```
-
-2. Update `gradle.properties` in consuming app:
-   ```properties
-   useLocalShared=false
-   sharedLibCoordinate=com.github.lmjoshi-mp.Carnival-SDK:shared:1.0.0
-   ```
-
-3. Add repository to `settings.gradle.kts`:
+1. **Add JitPack repository** to `settings.gradle.kts`:
    ```kotlin
-   maven("https://maven.pkg.github.com/lmjoshi-mp/Carnival-SDK") {
-       credentials {
-           username = System.getenv("GITHUB_ACTOR") ?: "username"
-           password = System.getenv("GITHUB_TOKEN") ?: "token"
+   dependencyResolutionManagement {
+       repositories {
+           mavenCentral()
+           maven { url 'https://jitpack.io' }
        }
    }
    ```
 
-4. Add dependency to `build.gradle.kts`:
+2. **Add dependency** to `build.gradle.kts`:
    ```kotlin
    dependencies {
-       implementation("com.github.lmjoshi-mp.Carnival-SDK:shared:1.0.0")
+       implementation("com.github.lmjoshi-mp:Carnival-SDK:1.0.0")
    }
    ```
 
@@ -106,7 +90,7 @@ All APIs return `Flow<ResultState<T>>` where `ResultState` is `Loading`, `Succes
    // In Xcode: File → Add Packages
    // Enter repository URL:
    https://github.com/lmjoshi-mp/Carnival-SDK.git
-   
+
    // Select version: 1.0.0
    // Add to your target
    ```
@@ -129,6 +113,24 @@ All APIs return `Flow<ResultState<T>>` where `ResultState` is `Loading`, `Succes
    ```bash
    pod install
    ```
+
+### Publishing New Versions
+
+1. **Update version** in `shared/build.gradle.kts`:
+   ```kotlin
+   version = "1.0.1" // Increment version
+   ```
+
+2. **Commit and tag**:
+   ```bash
+   git add .
+   git commit -m "Release version 1.0.1"
+   git tag -a 1.0.1 -m "Version 1.0.1"
+   git push origin main
+   git push origin 1.0.1
+   ```
+
+3. **JitPack will automatically build** the new version within minutes.
 
 ### For Local Development
 
