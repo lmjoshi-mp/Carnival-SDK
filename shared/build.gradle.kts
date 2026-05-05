@@ -4,6 +4,7 @@ plugins {
     id("org.jetbrains.kotlinx.kover")
     kotlin("plugin.serialization")
     id("maven-publish")
+    signing
 }
 
 kotlin {
@@ -125,39 +126,83 @@ kover {
 }
 
 publishing {
-    publications {
-        // Only configure the kotlinMultiplatform publication
-        getByName<MavenPublication>("kotlinMultiplatform") {
+    publications.withType<MavenPublication>().configureEach {
+        groupId = (findProperty("group")?.toString() ?: "io.github.lmjoshi-mp")
+        version = (findProperty("version")?.toString() ?: project.version.toString())
+
+        if (name == "kotlinMultiplatform") {
             artifactId = "shared"
-            groupId = "com.github.lmjoshi-mp"
-            version = (findProperty("version")?.toString() ?: project.version.toString())
+        }
+
+        pom {
+            name.set("Carnival SDK")
+            description.set("Kotlin Multiplatform SDK for Carnival applications.")
+            url.set("https://github.com/lmjoshi-mp/Carnival-SDK")
+            licenses {
+                license {
+                    name.set("MIT License")
+                    url.set("https://opensource.org/licenses/MIT")
+                }
+            }
+            developers {
+                developer {
+                    id.set("lmjoshi-mp")
+                    name.set("Lalit Joshi")
+                }
+            }
+            scm {
+                url.set("https://github.com/lmjoshi-mp/Carnival-SDK")
+                connection.set("scm:git:git://github.com/lmjoshi-mp/Carnival-SDK.git")
+                developerConnection.set("scm:git:ssh://git@github.com/lmjoshi-mp/Carnival-SDK.git")
+            }
         }
     }
     repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/lmjoshi-mp/Carnival-SDK")
-            credentials {
-                val gprUser = System.getenv("GITHUB_ACTOR")?.takeIf { it.isNotEmpty() }
-                    ?: project.findProperty("gpr.user")?.toString()
-                    ?: "lmjoshi-mp"
-
-                val gprKey = System.getenv("GITHUB_TOKEN")?.takeIf { it.isNotEmpty() }
-                    ?: project.findProperty("gpr.key")?.toString()
-
-                username = gprUser
-                password = gprKey
+        val gprUser = System.getenv("GITHUB_ACTOR")?.takeIf { it.isNotEmpty() }
+            ?: project.findProperty("gpr.user")?.toString()
+            ?: "lmjoshi-mp"
+        val gprKey = System.getenv("GITHUB_TOKEN")?.takeIf { it.isNotEmpty() }
+            ?: project.findProperty("gpr.key")?.toString()
+        if (!gprKey.isNullOrBlank()) {
+            maven {
+                name = "GitHubPackages"
+                url = uri("https://maven.pkg.github.com/lmjoshi-mp/Carnival-SDK")
+                credentials {
+                    username = gprUser
+                    password = gprKey
+                }
+            }
+        }
+        val sonatypeUser = findProperty("mavenCentralUsername")?.toString()
+            ?: System.getenv("MAVEN_CENTRAL_USERNAME")
+        val sonatypePassword = findProperty("mavenCentralPassword")?.toString()
+            ?: System.getenv("MAVEN_CENTRAL_PASSWORD")
+        if (!sonatypeUser.isNullOrBlank() && !sonatypePassword.isNullOrBlank()) {
+            maven {
+                name = "Sonatype"
+                url = if ((findProperty("version")?.toString() ?: project.version.toString()).endsWith("SNAPSHOT")) {
+                    uri("https://s01.oss.sonatype.org/content/repositories/snapshots/")
+                } else {
+                    uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
+                }
+                credentials {
+                    username = sonatypeUser
+                    password = sonatypePassword
+                }
             }
         }
     }
 }
 
-// Disable publishing platform-specific variants to GitHub Packages
-afterEvaluate {
-    tasks.findByName("publishIosArm64PublicationToGitHubPackagesRepository")?.enabled = false
-    tasks.findByName("publishIosX64PublicationToGitHubPackagesRepository")?.enabled = false
-    tasks.findByName("publishIosSimulatorArm64PublicationToGitHubPackagesRepository")?.enabled = false
-    tasks.findByName("publishJvmPublicationToGitHubPackagesRepository")?.enabled = false
+signing {
+    val signingKey = findProperty("signingInMemoryKey")?.toString() ?: System.getenv("MAVEN_SIGNING_KEY")
+    val signingPassword = findProperty("signingInMemoryKeyPassword")?.toString() ?: System.getenv("MAVEN_SIGNING_PASSWORD")
+    val signingKeyId = findProperty("signingInMemoryKeyId")?.toString() ?: System.getenv("MAVEN_SIGNING_KEY_ID")
+
+    if (!signingKey.isNullOrBlank()) {
+        useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
+        sign(publishing.publications)
+    }
 }
 
 // Task to generate XCFramework for iOS (for Swift Package Manager)
